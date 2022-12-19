@@ -35,7 +35,7 @@ const Editor = ({ }) => {
 		e.preventDefault();
 
 		let finalVidStr = "tell me 5 viral video ideas of " + vidData.shortDes + " on " + vidData.channel + " in a list";
-		
+
 		setIsLoading(true);
 		if (finalVidStr) {
 			const result = await writeInOpenAI({ prompt: finalVidStr });
@@ -94,7 +94,7 @@ const Editor = ({ }) => {
 			</div>
 			<div className='h-80 overflow-y-auto border-2 p-2 border-gray-200 rounded-md'>
 				{text ? text?.split("\n")?.map(el => <p className=' text-stone-600 leading-relaxed px-2 pb-2'>{el}</p>
-				) : <span className='text-center block my-auto'>write somthing on the textbox....</span>
+				) : <span className='text-center block my-auto'>Did you like that?</span>
 				}
 			</div>
 		</div>
