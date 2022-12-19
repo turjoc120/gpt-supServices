@@ -5,11 +5,20 @@ import { ADMIN, USER } from 'constants/roles.constant'
 const appsRoute = [
     {
         key: 'appsProject.dashboard',
-        path: `${APP_PREFIX_PATH}/project/dashboard`,
-        component: React.lazy(() => import('views/project/ProjectDashboard')),
+        path: `services/image-captions`,
+        component: React.lazy(() => import('views/project/ProjectList')),
         authority: [ADMIN, USER],
 
     },
+    // testroute
+    {
+
+        path: `/services/image-captions/:id`,
+        component: React.lazy(() => import('views/knowledge-base/EditArticle')),
+
+    },
+
+
     {
         key: 'appsProject.projectList',
         path: `${APP_PREFIX_PATH}/project/project-list`,
@@ -50,7 +59,7 @@ const appsRoute = [
         authority: [ADMIN, USER],
         meta: {
             header: 'Customers',
-            
+
         }
     },
     {
@@ -83,6 +92,7 @@ const appsRoute = [
             footer: false
         }
     },
+
     {
         key: 'appsSales.dashboard',
         path: `${APP_PREFIX_PATH}/sales/dashboard`,

@@ -3,9 +3,9 @@ const y = new Date().getFullYear()
 export const projectList = [
 	{
 		id: 27,
-		name: 'EVO SaaS',
+		name: 'Image Captions',
 		category: 'Web Application',
-		desc: 'Most of you are familiar with the virtues of a programmer',
+		desc: 'Need help on what to say about your image?',
 		attachmentCount: 12,
 		totalTask: 32,
 		completedTask: 27,
@@ -33,167 +33,185 @@ export const projectList = [
 	},
 	{
 		id: 28,
-		name: 'AIA Bill App',
-		category: 'Mobile Application',
-		desc: 'We are not shipping your machine!',
-		attachmentCount: 5,
-		totalTask: 36,
-		completedTask: 15,
-		progression: 45,
-		dayleft: 19,
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
 		status: 'none',
 		member: [
 			{
-				name: 'Carolyn Perkins',
-				img: '/img/avatars/thumb-1.jpg',
+				name: 'Frederick Adams',
+				img: '/img/avatars/thumb-8.jpg',
 			},
 			{
-				name: 'Gabriel Frazier',
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
+			{
+				name: 'Clayton Bates',
 				img: '',
 			},
 		]
 	},
 	{
 		id: 29,
-		name: 'IOP Web',
-		category: 'Web Backend Application',
-		desc: 'There are two ways to write error-free programs; only the third one works.',
-		attachmentCount: 8,
-		totalTask: 27,
-		completedTask: 19,
-		progression: 73,
-		dayleft: 6,
-		status: 'orange',
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
+		status: 'none',
 		member: [
-			{
-				name: 'Debra Hamilton',
-				img: '',
-			},
-			{
-				name: 'Stacey Ward',
-				img: '',
-			},
-			{
-				name: 'Ron Vargas',
-				img: '/img/avatars/thumb-3.jpg'
-			},
-			{
-				name: 'Ron Vargas',
-				img: '/img/avatars/thumb-3.jpg'
-			},
-			{
-				name: 'Ron Vargas',
-				img: '/img/avatars/thumb-3.jpg'
-			},{
-				name: 'Ron Vargas',
-				img: '/img/avatars/thumb-3.jpg'
-			},
-		]
-	},
-	{
-		id: 31,
-		name: 'Octonine POS',
-		category: 'Backend Application',
-		desc: 'Everything that can be invented has been invented.',
-		attachmentCount: 8,
-		totalTask: 78,
-		completedTask: 23,
-		progression: 21,
-		dayleft: 52,
-		status: 'cyan',
-		member: [
-			{
-				name: 'Brittany Hale',
-				img: '/img/avatars/thumb-10.jpg'
-			},
 			{
 				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg'
+				img: '/img/avatars/thumb-8.jpg',
 			},
 			{
-				name: 'Samantha Phillips',
-				img: '/img/avatars/thumb-6.jpg'
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
 			},
 			{
-				name: 'Samantha Phillips',
-				img: '/img/avatars/thumb-6.jpg'
+				name: 'Clayton Bates',
+				img: '',
 			},
 			{
-				name: 'Samantha Phillips',
-				img: '/img/avatars/thumb-6.jpg'
+				name: 'Clayton Bates',
+				img: '',
 			},
 		]
 	},
 	{
 		id: 30,
-		name: 'Evo SaaS API',
-		category: 'Backend Services',
-		desc: 'Debugging is twice as hard as writing the code in the first place.',
-		attachmentCount: 2,
-		totalTask: 15,
-		completedTask: 13,
-		progression: 87,
-		dayleft: 2,
-		status: 'red',
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
+		status: 'none',
 		member: [
 			{
-				name: 'Troy Alexander',
-				img: ''
+				name: 'Frederick Adams',
+				img: '/img/avatars/thumb-8.jpg',
 			},
 			{
-				name: 'Lloyd Obrien',
-				img: '/img/avatars/thumb-11.jpg'
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
+		]
+	},
+	{
+		id: 31,
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
+		status: 'none',
+		member: [
+			{
+				name: 'Frederick Adams',
+				img: '/img/avatars/thumb-8.jpg',
+			},
+			{
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
 			},
 		]
 	},
 	{
 		id: 32,
-		name: 'Posiflex Web',
-		category: 'Frontend Web Application',
-		desc: 'The function of good software is to make the complex appear to be simple.',
-		attachmentCount: 6,
-		totalTask: 18,
-		completedTask: 9,
-		progression: 50,
-		dayleft: 6,
-		status: 'orange',
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
+		status: 'none',
 		member: [
 			{
-				name: 'Gabriella May',
-				img: '/img/avatars/thumb-12.jpg'
+				name: 'Frederick Adams',
+				img: '/img/avatars/thumb-8.jpg',
 			},
 			{
-				name: 'Larry Campbell',
-				img: ''
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
 			},
 			{
-				name: 'Phyllis Chapman',
-				img: ''
+				name: 'Clayton Bates',
+				img: '',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
 			},
 		]
 	},
 	{
 		id: 33,
-		name: 'FoksMart APP',
-		category: 'Mobile Application',
-		desc: 'It is not about bits, bytes and protocols, but profits, losses and margins. ',
-		attachmentCount: 3,
-		totalTask: 26,
-		completedTask: 19,
-		progression: 67,
-		dayleft: 14,
+		name: 'Image Captions',
+		category: 'Web Application',
+		desc: 'Need help on what to say about your image?',
+		attachmentCount: 12,
+		totalTask: 32,
+		completedTask: 27,
+		progression: 80,
+		dayleft: 21,
 		status: 'none',
 		member: [
 			{
-				name: 'Lee Wheeler',
-				img: '/img/avatars/thumb-13.jpg'
+				name: 'Frederick Adams',
+				img: '/img/avatars/thumb-8.jpg',
 			},
 			{
-				name: 'Ella Robinson',
-				img: '/img/avatars/thumb-15.jpg'
-			}
+				name: 'Joyce Freeman',
+				img: '/img/avatars/thumb-5.jpg',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
+			{
+				name: 'Clayton Bates',
+				img: '',
+			},
 		]
-	},
+	}
+
 ]
 
 export const projectDashboardData = {
@@ -215,7 +233,7 @@ export const projectDashboardData = {
 						data: [1, 4, 8, 15, 16, 18]
 					}
 				],
-				range:['6:00am', '9:00am', '12:00pm', '03:00pm', '06:00pm', '09:00pm']
+				range: ['6:00am', '9:00am', '12:00pm', '03:00pm', '06:00pm', '09:00pm']
 			},
 			weekly: {
 				onGoing: 126,
@@ -231,7 +249,7 @@ export const projectDashboardData = {
 						data: [35, 41, 62, 62, 75, 81, 87]
 					}
 				],
-				range:['21 Jan', '22 Jan', '23 Jan', '24 Jan', '25 Jan', '26 Jan', '27 Jan']
+				range: ['21 Jan', '22 Jan', '23 Jan', '24 Jan', '25 Jan', '26 Jan', '27 Jan']
 			},
 			monthly: {
 				onGoing: 270,
@@ -247,7 +265,7 @@ export const projectDashboardData = {
 						data: [22, 31, 74, 88, 97, 107, 113]
 					}
 				],
-				range:['01 Jan', '05 Jan', '10 Jan', '15 Jan', '20 Jan', '25 Jan', '27 Jan']
+				range: ['01 Jan', '05 Jan', '10 Jan', '15 Jan', '20 Jan', '25 Jan', '27 Jan']
 			},
 		}
 	},
@@ -262,7 +280,7 @@ export const projectDashboardData = {
 					name: 'Carolyn Perkins',
 					email: 'eileen_h@hotmail.com',
 					img: '/img/avatars/thumb-1.jpg'
-				}, 
+				},
 				{
 					id: '2',
 					name: 'Terrance Moreno',
@@ -281,7 +299,7 @@ export const projectDashboardData = {
 					name: 'Carolyn Perkins',
 					email: 'eileen_h@hotmail.com',
 					img: '/img/avatars/thumb-1.jpg'
-				}, 
+				},
 			],
 		},
 		{
@@ -294,7 +312,7 @@ export const projectDashboardData = {
 					name: 'Carolyn Perkins',
 					email: 'eileen_h@hotmail.com',
 					img: '/img/avatars/thumb-1.jpg'
-				}, 
+				},
 				{
 					id: '2',
 					name: 'Terrance Moreno',
@@ -319,7 +337,7 @@ export const projectDashboardData = {
 					name: 'Carolyn Perkins',
 					email: 'eileen_h@hotmail.com',
 					img: '/img/avatars/thumb-1.jpg'
-				}, 
+				},
 				{
 					id: '5',
 					name: 'Joyce Freeman',
@@ -372,7 +390,7 @@ export const projectDashboardData = {
 			type: 'workshop'
 		}
 	],
-	projectsData: projectList.filter((_, index)=> index <= 3),
+	projectsData: projectList.filter((_, index) => index <= 3),
 	activitiesData: [
 		{
 			type: 'UPDATE-TICKET',
@@ -400,11 +418,11 @@ export const projectDashboardData = {
 			dateTime: 1646569123,
 			userName: 'Luke Cook',
 			files: ['document.csv'],
-			ticket: 'PD-1092' 
+			ticket: 'PD-1092'
 		},
 	]
 }
-  
+
 export const labels = [
 	{
 		color: 'blue',
@@ -423,8 +441,8 @@ export const labels = [
 		label: 'Low priority'
 	}
 ]
-	
-  
+
+
 const toBeProcessCards = [
 	{
 		id: 'zb7zxtjctd',
@@ -437,7 +455,7 @@ const toBeProcessCards = [
 				name: 'Carolyn Perkins',
 				email: 'eileen_h@hotmail.com',
 				img: '/img/avatars/thumb-1.jpg'
-			}, 
+			},
 			{
 				id: '2',
 				name: 'Terrance Moreno',
@@ -556,7 +574,7 @@ const processingCards = [
 				name: 'Terrance Moreno',
 				email: '',
 				img: '/img/avatars/thumb-2.jpg'
-			}, 
+			},
 			{
 				id: '8',
 				name: 'Frederick Adams',
@@ -668,7 +686,7 @@ const submittedCards = [
 				name: 'Carolyn Hanson',
 				email: 'carolyn_h@gmail.com',
 				img: '/img/avatars/thumb-9.jpg'
-			}, 
+			},
 			{
 				id: '10',
 				name: 'Brittany Hale',
@@ -710,7 +728,7 @@ const completedCards = [
 				name: 'Lee Wheeler',
 				email: 'leeWheeler@infotech.io',
 				img: '/img/avatars/thumb-13.jpg'
-			}, 
+			},
 			{
 				id: '9',
 				name: 'Carolyn Hanson',
@@ -741,20 +759,20 @@ const completedCards = [
 			name: 'Joyce Freeman',
 			email: 'joyce991@infotech.io',
 			img: '/img/avatars/thumb-5.jpg'
-		}, 
+		},
 		{
 			id: '6',
 			name: 'Samantha Phillips',
 			email: 'samanthaphil@infotech.io',
 			img: '/img/avatars/thumb-6.jpg'
-		}, 
+		},
 		{
 			id: '7',
 			name: 'Tara Fletcher',
 			email: 'taratarara@imaze.edu.du',
 			img: '/img/avatars/thumb-7.jpg'
 		},
-	],
+		],
 		labels: ['Bug'],
 		attachments: [],
 		comments: [],
@@ -789,7 +807,7 @@ const completedCards = [
 				name: 'Joyce Freeman',
 				email: 'joyce991@infotech.io',
 				img: '/img/avatars/thumb-5.jpg'
-			}, 
+			},
 			{
 				id: '3',
 				name: 'Ron Vargas',
@@ -842,7 +860,7 @@ export const issueData = {
 			name: 'Joyce Freeman',
 			email: 'joyce991@infotech.io',
 			img: '/img/avatars/thumb-5.jpg'
-		}, 
+		},
 	],
 	labels: [
 		{
@@ -892,7 +910,7 @@ export const issueData = {
 		},
 	]
 }
-  
+
 export const scrumboardData = {
 	'To Do': toBeProcessCards,
 	'In Progress': processingCards,

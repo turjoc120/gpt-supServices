@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 import { Button, Input, Tooltip } from 'components/ui'
-import { 
-	HiOutlinePlusCircle, 
+import {
+	HiOutlinePlusCircle,
 	HiOutlineSearch,
 	HiOutlineViewGrid,
 	HiOutlineViewList,
-	HiOutlineSortAscending, 
+	HiOutlineSortAscending,
 	HiOutlineSortDescending
 } from 'react-icons/hi'
 import { toggleView, toggleSort, setSearch, toggleNewProjectDialog } from '../store/stateSlice'
@@ -22,12 +22,12 @@ const ActionBar = () => {
 
 	const { sort } = useSelector((state) => state.projectList.state.query)
 
-	const onViewToggle = () => { 
-		dispatch(toggleView(view === 'grid' ? 'list' : 'grid')) 
+	const onViewToggle = () => {
+		dispatch(toggleView(view === 'grid' ? 'list' : 'grid'))
 	}
 
 	const onToggleSort = () => {
-		dispatch(toggleSort(sort === 'asc' ? 'desc' : 'asc')) 
+		dispatch(toggleSort(sort === 'asc' ? 'desc' : 'asc'))
 	}
 
 	const onAddNewProject = () => {
@@ -46,41 +46,41 @@ const ActionBar = () => {
 
 	return (
 		<div className="lg:flex items-center justify-between mb-4">
-			<h3 className="mb-4 lg:mb-0">Project List</h3>
+			<h3 className="mb-4 lg:mb-0">services</h3>
 			<div className="flex flex-col md:flex-row md:items-center gap-1">
-				<Input 
-					ref={inputRef} 
+				{/* <Input
+					ref={inputRef}
 					size="sm"
-					placeholder="Search" 
+					placeholder="Search"
 					prefix={<HiOutlineSearch className="text-lg" />}
 					onChange={handleInputChange}
-				/>
-				<Tooltip title={view === 'grid' ? 'List view' : 'Grid view'}>
+				/> */}
+				{/* <Tooltip title={view === 'grid' ? 'List view' : 'Grid view'}>
 					<Button
 						className="hidden md:flex"
-						onClick={() => onViewToggle()} 
-						variant="plain" 
-						size="sm" 
-						icon={view === 'grid' ? <HiOutlineViewList /> : <HiOutlineViewGrid />} 
+						onClick={() => onViewToggle()}
+						variant="plain"
+						size="sm"
+						icon={view === 'grid' ? <HiOutlineViewList /> : <HiOutlineViewGrid />}
 					/>
-				</Tooltip>
-				<Tooltip title={`Sort: ${sort === 'asc' ? 'A-Z' : 'Z-A'}`}>
+				</Tooltip> */}
+				{/* <Tooltip title={`Sort: ${sort === 'asc' ? 'A-Z' : 'Z-A'}`}>
 					<Button
 						className="hidden md:flex"
-						variant="plain" 
-						size="sm" 
+						variant="plain"
+						size="sm"
 						icon={sort === 'asc' ? <HiOutlineSortAscending /> : <HiOutlineSortDescending />}
 						onClick={onToggleSort}
 					/>
-				</Tooltip>
-				<Button 
-					size="sm" 
+				</Tooltip> */}
+				{/* <Button
+					size="sm"
 					variant="twoTone"
 					icon={<HiOutlinePlusCircle />}
 					onClick={onAddNewProject}
 				>
 					New Project
-				</Button>
+				</Button> */}
 			</div>
 		</div>
 	)
