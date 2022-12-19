@@ -20,18 +20,18 @@ const EditArticle = () => {
 	const query = useQuery()
 
 	const id = query.get('id')
-	
+
 	useEffect(() => {
 		fetchData()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	const fetchData = () => {	
+	const fetchData = () => {
 		const categoryLabel = query.get('categoryLabel')
 		const categoryValue = query.get('categoryValue')
 
 		if (id) {
-			dispatch(getArticle({id}))
+			dispatch(getArticle({ id }))
 		}
 
 		if (!id) {
@@ -39,8 +39,8 @@ const EditArticle = () => {
 			dispatch(setArticle(''))
 		}
 
-		if(categoryLabel && categoryValue) {
-			dispatch(setCategory({categoryLabel, categoryValue}))
+		if (categoryLabel && categoryValue) {
+			dispatch(setCategory({ categoryLabel, categoryValue }))
 		}
 
 	}
@@ -55,31 +55,31 @@ const EditArticle = () => {
 				<div className="max-w-[800px] mx-auto">
 					<div className="flex justify-between items-center mb-4">
 						<h3>
-							{mode === 'edit' && <span>Edit Article</span>}
-							{mode === 'add' && <span>Add Article</span>}
-							{mode === 'preview' && <span>Preview Article</span>}
+							{/* {mode === 'edit' && <span>Edit Article</span>} */}
+							{mode === 'add' && <span>Write Down Your Query</span>}
+							{/* {mode === 'preview' && <span>Preview Article</span>} */}
 						</h3>
-						{
-							mode === 'preview' ? 
-							(
-								<Button 
-									onClick={() => onModeChange(id ? 'edit' : 'add')} 
-									size="sm"
-								>
-									Back
-								</Button>
-							)
-							:
-							(
-								<Button 
-									onClick={() => onModeChange('preview')} 
-									size="sm"
-								>
-									Preview
-								</Button>
-							)
-						}
-						
+						{/* {
+							mode === 'preview' ?
+								(
+									<Button
+										onClick={() => onModeChange(id ? 'edit' : 'add')}
+										size="sm"
+									>
+										Back
+									</Button>
+								)
+								:
+								(
+									<Button
+										onClick={() => onModeChange('preview')}
+										size="sm"
+									>
+										Preview
+									</Button>
+								)
+						} */}
+
 					</div>
 					<Editor mode={mode} />
 				</div>

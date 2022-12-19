@@ -11,8 +11,8 @@ export const publicRoutes = [
 
 export const protectedRoutes = [
     ...appsRoute,
-    ...uiComponentsRoute,
-    ...pagesRoute,
-    ...authDemoRoute,
-    ...docsRoute
+    // ...uiComponentsRoute,
+    // ...pagesRoute,
+    // ...authDemoRoute,
+    // ...docsRoute
 ]

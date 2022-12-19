@@ -7,26 +7,26 @@ import HorizontalMenuDropdownItem from './HorizontalMenuDropdownItem'
 import { NAV_ITEM_TYPE_TITLE, NAV_ITEM_TYPE_COLLAPSE, NAV_ITEM_TYPE_ITEM } from 'constants/navigation.constant'
 import { useTranslation } from 'react-i18next'
 
-const HorizontalMenuContent = ({manuVariant, userAuthority = []}) => {
+const HorizontalMenuContent = ({ manuVariant, userAuthority = [] }) => {
 
 	const { t } = useTranslation()
 
 	return (
 		<span className="flex items-center">
 			{navigationConfig.map(nav => {
-				if(nav.type === NAV_ITEM_TYPE_TITLE || nav.type === NAV_ITEM_TYPE_COLLAPSE) {
+				if (nav.type === NAV_ITEM_TYPE_TITLE || nav.type === NAV_ITEM_TYPE_COLLAPSE) {
 					return (
 						<AuthorityCheck
 							authority={nav.authority}
 							userAuthority={userAuthority}
-							key={nav.key} 
+							key={nav.key}
 						>
 							<Dropdown
-								trigger="hover" 
+								trigger="hover"
 								renderTitle={
 									<HorizontalMenuItem
-										manuVariant={manuVariant} 
-										nav={nav} 
+										manuVariant={manuVariant}
+										nav={nav}
 									/>
 								}
 							>
@@ -45,9 +45,9 @@ const HorizontalMenuContent = ({manuVariant, userAuthority = []}) => {
 																<AuthorityCheck
 																	authority={tertiarySubNav.authority}
 																	userAuthority={userAuthority}
-																	key={tertiarySubNav.key} 
+																	key={tertiarySubNav.key}
 																>
-																	<HorizontalMenuDropdownItem 
+																	<HorizontalMenuDropdownItem
 																		nav={tertiarySubNav}
 																	/>
 																</AuthorityCheck>
@@ -55,13 +55,13 @@ const HorizontalMenuContent = ({manuVariant, userAuthority = []}) => {
 														}
 													</Dropdown.Menu>
 												)
-												:
-												(
-													<HorizontalMenuDropdownItem 
-														nav={secondarySubNav} 
-														key={secondarySubNav.key} 
-													/>
-												)
+													:
+													(
+														<HorizontalMenuDropdownItem
+															nav={secondarySubNav}
+															key={secondarySubNav.key}
+														/>
+													)
 											}
 										</AuthorityCheck>
 									))
@@ -70,17 +70,17 @@ const HorizontalMenuContent = ({manuVariant, userAuthority = []}) => {
 						</AuthorityCheck>
 					)
 				}
-				if(nav.type === NAV_ITEM_TYPE_ITEM) {
+				if (nav.type === NAV_ITEM_TYPE_ITEM) {
 					return (
 						<AuthorityCheck
 							authority={nav.authority}
 							userAuthority={userAuthority}
-							key={nav.key} 
+							key={nav.key}
 						>
-							<HorizontalMenuItem 
-								isLink 
-								nav={nav} 
-								manuVariant={manuVariant} 
+							<HorizontalMenuItem
+								isLink
+								nav={nav}
+								manuVariant={manuVariant}
 							/>
 						</AuthorityCheck>
 					)

@@ -13,12 +13,12 @@ const validationSchema = Yup.object().shape({
 })
 
 const ResetPasswordForm = props => {
-	
+
 	const { disableSubmit = false, className, signInUrl = '/sign-in' } = props
 
-	const [ resetComplete, setResetComplete ] = useState(false)
+	const [resetComplete, setResetComplete] = useState(false)
 
-	const [ message, setMessage ] = useTimeOutMessage()
+	const [message, setMessage] = useTimeOutMessage()
 
 	const navigate = useNavigate()
 
@@ -45,34 +45,34 @@ const ResetPasswordForm = props => {
 		<div className={className}>
 			<div className="mb-6">
 				{
-					resetComplete ? 
-					<>
-						<h3 className="mb-1">Reset done</h3>
-						<p>Your password has been successfully reset</p>
-					</>
-					:
-					<>
-						<h3 className="mb-1">Set new password</h3>
-						<p>Your new password must different to previos password</p>
-					</>
+					resetComplete ?
+						<>
+							<h3 className="mb-1">Reset done</h3>
+							<p>Your password has been successfully reset</p>
+						</>
+						:
+						<>
+							<h3 className="mb-1">Set new password</h3>
+							<p>Your new password must different to previos password</p>
+						</>
 				}
 			</div>
 			{message && <Alert className="mb-4" type="danger" showIcon>{message}</Alert>}
 			<Formik
 				initialValues={{
-					password: '123Qwe1', 
-					confirmPassword: '123Qwe1',
+					password: 'test11',
+					confirmPassword: 'test11',
 				}}
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting }) => {
-					if(!disableSubmit) {
+					if (!disableSubmit) {
 						onSubmit(values, setSubmitting)
 					} else {
 						setSubmitting(false)
 					}
 				}}
 			>
-				{({touched, errors, isSubmitting}) => (
+				{({ touched, errors, isSubmitting }) => (
 					<Form>
 						<FormContainer>
 							{
@@ -84,10 +84,10 @@ const ResetPasswordForm = props => {
 											errorMessage={errors.password}
 										>
 											<Field
-												autoComplete="off" 
-												name="password" 
-												placeholder="Password" 
-												component={PasswordInput} 
+												autoComplete="off"
+												name="password"
+												placeholder="Password"
+												component={PasswordInput}
 											/>
 										</FormItem>
 										<FormItem
@@ -96,35 +96,35 @@ const ResetPasswordForm = props => {
 											errorMessage={errors.confirmPassword}
 										>
 											<Field
-												autoComplete="off" 
-												name="confirmPassword" 
-												placeholder="Confirm Password" 
-												component={PasswordInput} 
+												autoComplete="off"
+												name="confirmPassword"
+												placeholder="Confirm Password"
+												component={PasswordInput}
 											/>
 										</FormItem>
-										<Button 
-											block 
-											loading={isSubmitting} 
-											variant="solid" 
+										<Button
+											block
+											loading={isSubmitting}
+											variant="solid"
 											type="submit"
 										>
-											{ isSubmitting ? 'Submiting...' : 'Submit' }
+											{isSubmitting ? 'Submiting...' : 'Submit'}
 										</Button>
 									</>
 								)
-								:
-								(
-									<Button 
-										block 
-										variant="solid" 
-										type="button"
-										onClick={onContinue}
-									>
-										Continue
-									</Button>
-								)
+									:
+									(
+										<Button
+											block
+											variant="solid"
+											type="button"
+											onClick={onContinue}
+										>
+											Continue
+										</Button>
+									)
 							}
-							
+
 							<div className="mt-4 text-center">
 								<span>Back to </span>
 								<ActionLink to={signInUrl}>

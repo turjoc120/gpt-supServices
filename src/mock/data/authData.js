@@ -3,9 +3,9 @@ export const signInUserData = [
         id: '21',
         avatar: '/img/avatars/thumb-1.jpg',
         userName: 'Carolyn Perkins',
-        email: 'carolyn.p@elstar.com',
+        email: 'user1@xxx.com',
         authority: ['admin', 'user'],
-        password: '123Qwe',
-        accountUserName: 'admin'
+        password: 'gpt321',
+        accountUserName: 'user1@xxx.com'
     }
 ]
