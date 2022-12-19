@@ -8,46 +8,48 @@ import { injectReducer } from 'store/index'
 import { getArticle, setArticle } from './store/dataSlice'
 import { setCategory, setMode } from './store/stateSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 injectReducer('knowledgeBaseEditArticle', reducer)
 
 const EditArticle = () => {
 
-	const dispatch = useDispatch()
+	// const dispatch = useDispatch()
 
-	const mode = useSelector((state) => state.knowledgeBaseEditArticle.state.mode)
+	// const mode = useSelector((state) => state.knowledgeBaseEditArticle.state.mode)
 
-	const query = useQuery()
+	// const query = useQuery()
 
-	const id = query.get('id')
+	// const id = query.get('id')
 
-	useEffect(() => {
-		fetchData()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	// useEffect(() => {
+	// 	fetchData()
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [])
+	const { id } = useParams()
 
-	const fetchData = () => {
-		const categoryLabel = query.get('categoryLabel')
-		const categoryValue = query.get('categoryValue')
+	// const fetchData = () => {
+	// 	const categoryLabel = query.get('categoryLabel')
+	// 	const categoryValue = query.get('categoryValue')
 
-		if (id) {
-			dispatch(getArticle({ id }))
-		}
+	// 	if (id) {
+	// 		dispatch(getArticle({ id }))
+	// 	}
 
-		if (!id) {
-			dispatch(setMode('add'))
-			dispatch(setArticle(''))
-		}
+	// 	if (!id) {
+	// 		dispatch(setMode('add'))
+	// 		dispatch(setArticle(''))
+	// 	}
 
-		if (categoryLabel && categoryValue) {
-			dispatch(setCategory({ categoryLabel, categoryValue }))
-		}
+	// 	if (categoryLabel && categoryValue) {
+	// 		dispatch(setCategory({ categoryLabel, categoryValue }))
+	// 	}
 
-	}
+	// }
 
-	const onModeChange = (mode) => {
-		dispatch(setMode(mode))
-	}
+	// const onModeChange = (mode) => {
+	// 	dispatch(setMode(mode))
+	// }
 
 	return (
 		<Container>
@@ -56,7 +58,7 @@ const EditArticle = () => {
 					<div className="flex justify-between items-center mb-4">
 						<h3>
 							{/* {mode === 'edit' && <span>Edit Article</span>} */}
-							{mode === 'add' && <span>Write Down Your Query</span>}
+							{id === "30" ? < span className='font-black	 text-2xl text-stone-900'> Video Ideas</span> : <span>Write Your Query</span>}
 							{/* {mode === 'preview' && <span>Preview Article</span>} */}
 						</h3>
 						{/* {
@@ -81,10 +83,10 @@ const EditArticle = () => {
 						} */}
 
 					</div>
-					<Editor mode={mode} />
+					<Editor />
 				</div>
 			</AdaptableCard>
-		</Container>
+		</Container >
 	)
 }
 
