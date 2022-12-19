@@ -4,8 +4,8 @@ import { ADMIN, USER } from 'constants/roles.constant'
 
 const appsRoute = [
     {
-        key: 'appsProject.dashboard',
-        path: `services/image-captions`,
+        key: 'services.socialMedia',
+        path: `services/social-media`,
         component: React.lazy(() => import('views/project/ProjectList')),
         authority: [ADMIN, USER],
 
@@ -13,7 +13,7 @@ const appsRoute = [
     // testroute
     {
 
-        path: `/services/image-captions/:id`,
+        path: `services/social-media/:id`,
         component: React.lazy(() => import('views/knowledge-base/EditArticle')),
 
     },
