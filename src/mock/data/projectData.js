@@ -33,7 +33,7 @@ export const projectList = [
 	},
 	{
 		id: 28,
-		name: 'Image Captions',
+		name: 'Personal Opinion',
 		category: 'Web Application',
 		desc: 'Need help on what to say about your image?',
 		attachmentCount: 12,
@@ -63,7 +63,7 @@ export const projectList = [
 	},
 	{
 		id: 29,
-		name: 'Image Captions',
+		name: 'Video Descriptions',
 		category: 'Web Application',
 		desc: 'Need help on what to say about your image?',
 		attachmentCount: 12,
@@ -93,7 +93,7 @@ export const projectList = [
 	},
 	{
 		id: 30,
-		name: 'Image Captions',
+		name: 'Video Ideas',
 		category: 'Web Application',
 		desc: 'Need help on what to say about your image?',
 		attachmentCount: 12,
@@ -123,67 +123,7 @@ export const projectList = [
 	},
 	{
 		id: 31,
-		name: 'Image Captions',
-		category: 'Web Application',
-		desc: 'Need help on what to say about your image?',
-		attachmentCount: 12,
-		totalTask: 32,
-		completedTask: 27,
-		progression: 80,
-		dayleft: 21,
-		status: 'none',
-		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-		]
-	},
-	{
-		id: 32,
-		name: 'Image Captions',
-		category: 'Web Application',
-		desc: 'Need help on what to say about your image?',
-		attachmentCount: 12,
-		totalTask: 32,
-		completedTask: 27,
-		progression: 80,
-		dayleft: 21,
-		status: 'none',
-		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-		]
-	},
-	{
-		id: 33,
-		name: 'Image Captions',
+		name: 'Video Titles',
 		category: 'Web Application',
 		desc: 'Need help on what to say about your image?',
 		attachmentCount: 12,
@@ -211,6 +151,7 @@ export const projectList = [
 			},
 		]
 	}
+
 
 ]
 

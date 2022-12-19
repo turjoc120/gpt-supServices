@@ -13,10 +13,10 @@ const appsNavigationConfig = [
 		authority: [ADMIN, USER],
 		subMenu: [
 			{
-				key: 'services.imageCaption',
-				path: `services/image-captions`,
-				title: 'Image Caption',
-				translateKey: 'nav.imageCaption.imageCaptions',
+				key: 'services.socialMedia',
+				path: `services/social-media`,
+				title: 'Social Media',
+				translateKey: 'nav.socialMedia.socialMediaServ',
 				icon: 'project',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
@@ -66,7 +66,7 @@ const appsNavigationConfig = [
 			{
 				key: 'services.personalOpinion',
 				path: '',
-				title: 'Personal Opinion',
+				title: 'Demo',
 				translateKey: 'nav.personalOpinion.personalOpinions',
 				icon: 'crm',
 				type: NAV_ITEM_TYPE_COLLAPSE,
@@ -127,7 +127,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.sales',
 				path: '',
-				title: 'Social Media Post',
+				title: 'demo',
 				translateKey: 'nav.Social.sales',
 				icon: 'sales',
 				type: NAV_ITEM_TYPE_COLLAPSE,
@@ -198,7 +198,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.crypto',
 				path: '',
-				title: 'Video Descriptions',
+				title: 'demo',
 				translateKey: 'nav.Descriptions.crypto',
 				icon: 'crypto',
 				type: NAV_ITEM_TYPE_COLLAPSE,
@@ -249,7 +249,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.knowledgeBase',
 				path: '',
-				title: 'Video Ideas',
+				title: 'demo',
 				translateKey: 'nav.Ideas.knowledgeBase',
 				icon: 'knowledgeBase',
 				type: NAV_ITEM_TYPE_COLLAPSE,
@@ -300,7 +300,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.account',
 				path: '',
-				title: 'Video Titles',
+				title: 'demo',
 				translateKey: 'nav.Titles.account',
 				icon: 'account',
 				type: NAV_ITEM_TYPE_COLLAPSE,
