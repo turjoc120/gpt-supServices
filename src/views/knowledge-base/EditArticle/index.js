@@ -58,7 +58,19 @@ const EditArticle = () => {
 					<div className="flex justify-between items-center mb-4">
 						<h3>
 
-							{id === "30" ? < span className='font-black	 text-2xl text-stone-900'> Video Ideas</span> : id === "31" ? < span className='font-black	 text-2xl text-stone-900'> Social Media Post Ideas</span> : ""}
+							{id === "30" ? < span className='font-black	text-2xl text-stone-900'> Video Ideas</span> :
+
+								id === "31" ? < span className='font-black text-2xl text-stone-900'> Social Media Post Ideas</span> :
+
+									id === "27" ? < span className='font-black text-2xl text-stone-900'> Image Captions</span> :
+
+										id === "28" ? < span className='font-black text-2xl text-stone-900'> Personal Opinion</span> :
+
+											id === "29" ? < span className='font-black text-2xl text-stone-900'> Video Descriptions</span> :
+
+												id === "32" ? < span className='font-black text-2xl text-stone-900'> Video Titles</span> :
+
+													""}
 
 						</h3>
 
