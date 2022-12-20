@@ -1,9 +1,12 @@
+import { FcEditImage } from "react-icons/fc"
+
 const y = new Date().getFullYear()
 
 export const projectList = [
 	{
 		id: 27,
 		name: 'Captions For Your Image',
+		icon: "FcEditImage",
 		category: 'Web Application',
 		desc: 'Let us help you create the best caption for your post',
 		attachmentCount: 12,
@@ -34,6 +37,7 @@ export const projectList = [
 	{
 		id: 28,
 		name: 'Personal Opinion',
+		icon: "FcBusinessman",
 		category: 'Web Application',
 		desc: 'Want our personal take on a topic, we’re here to help ',
 		attachmentCount: 12,
@@ -65,6 +69,7 @@ export const projectList = [
 		id: 29,
 		name: 'Video Descriptions',
 		category: 'Web Application',
+		icon: "FcNews",
 		desc: 'Ai Creatives will generate you the best description for your videos with ease. Let us make it stand out.',
 		attachmentCount: 12,
 		totalTask: 32,
@@ -95,6 +100,7 @@ export const projectList = [
 		id: 30,
 		name: 'Video Ideas',
 		category: 'Web Application',
+		icon: "FcIdea",
 		desc: 'Use our ideas and increase the chances of your next video to go viral! ',
 		attachmentCount: 12,
 		totalTask: 32,
@@ -125,6 +131,7 @@ export const projectList = [
 		id: 31,
 		name: 'Social Media Post Ideas',
 		category: 'Web Application',
+		icon: "FcViewDetails",
 		desc: 'Stuck on making a social media post, let us assist you. ',
 		attachmentCount: 12,
 		totalTask: 32,
@@ -155,6 +162,7 @@ export const projectList = [
 		id: 32,
 		name: 'Video Titles',
 		category: 'Web Application',
+		icon: "FcVideoCall",
 		desc: 'We’ll make you some attention-grabbing titles for your videos. Give them what they deserve.',
 		attachmentCount: 12,
 		totalTask: 32,

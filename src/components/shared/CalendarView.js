@@ -38,15 +38,15 @@ const CalendarView = props => {
 			<FullCalendar
 				initialView="dayGridMonth"
 				headerToolbar={{
-					left:   'title',
+					left: 'title',
 					center: '',
-					right:  'dayGridMonth,timeGridWeek,timeGridDay prev,next'
+					right: 'dayGridMonth,timeGridWeek,timeGridDay prev,next'
 				}}
 				eventContent={arg => {
 					const { extendedProps } = arg.event
 					const { isEnd, isStart } = arg
 					return (
-						<div 
+						<div
 							className={
 								classNames(
 									'custom-calendar-event',
@@ -57,7 +57,7 @@ const CalendarView = props => {
 								)
 							}>
 							{(!(isEnd && !isStart)) && (
-								<Badge 
+								<Badge
 									className={
 										classNames(
 											'mr-1 rtl:ml-1',

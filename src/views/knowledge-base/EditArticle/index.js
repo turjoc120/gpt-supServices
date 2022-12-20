@@ -57,30 +57,11 @@ const EditArticle = () => {
 				<div className="max-w-[800px] mx-auto">
 					<div className="flex justify-between items-center mb-4">
 						<h3>
-							{/* {mode === 'edit' && <span>Edit Article</span>} */}
-							{id === "30" ? < span className='font-black	 text-2xl text-stone-900'> Video Ideas</span> : <span>Write Your Query</span>}
-							{/* {mode === 'preview' && <span>Preview Article</span>} */}
+
+							{id === "30" ? < span className='font-black	 text-2xl text-stone-900'> Video Ideas</span> : id === "31" ? < span className='font-black	 text-2xl text-stone-900'> Social Media Post Ideas</span> : ""}
+
 						</h3>
-						{/* {
-							mode === 'preview' ?
-								(
-									<Button
-										onClick={() => onModeChange(id ? 'edit' : 'add')}
-										size="sm"
-									>
-										Back
-									</Button>
-								)
-								:
-								(
-									<Button
-										onClick={() => onModeChange('preview')}
-										size="sm"
-									>
-										Preview
-									</Button>
-								)
-						} */}
+
 
 					</div>
 					<Editor />

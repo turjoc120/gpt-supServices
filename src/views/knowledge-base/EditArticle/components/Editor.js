@@ -34,8 +34,14 @@ const Editor = ({ }) => {
 	const handleVidIdeaSubmit = async (e) => {
 		e.preventDefault();
 
-		let finalVidStr = vidData.shortDes + " for " + vidData.channel + " in detail";
-
+		// let finalVidStr = vidData.shortDes + " for " + vidData.channel + " in detail";
+		let finalVidStr;
+		if (id === "30") {
+			finalVidStr = "tell me 5 viral video ideas of " + vidData.shortDes + " on " + vidData.channel + " in a list";
+		}
+		if (id === "31") {
+			finalVidStr = "write few social media posts about " + vidData.shortDes;
+		}
 		setIsLoading(true);
 		if (finalVidStr) {
 			const result = await writeInOpenAI({ prompt: finalVidStr });
@@ -49,52 +55,79 @@ const Editor = ({ }) => {
 
 
 	return (
-		<div className='grid grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 '>
+		<div className='grid lg:grid-cols-2 xl:grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 '>
 
 			<div className='sm:mb-4'>
-				{id === "30" ?
-					<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-						<div>
-							<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-							<small className='text-gray-500 block mb-2'>recommend viral ideas for your video</small>
-							<input
-								onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-								type="text"
-								name="shortDes"
-								placeholder="e.g home workouts"
-								class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-							/>
-						</div>
-						<div className='mt-8'>
-							<label className='font-bold text-base text-stone-600'>CHANNEL</label>
-							<small className='text-gray-500 block mb-2'>Facebook,Tiktok or youtube</small>
+				{
+					// get video ideas 
+					id === "30" ?
+						<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
+							<div>
+								<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
+								<small className='text-gray-500 block mb-2'>recommend viral ideas for your video</small>
+								<input
+									onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
+									type="text"
+									name="shortDes"
+									placeholder="e.g home workouts"
+									class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+								/>
+							</div>
+							<div className='mt-8'>
+								<label className='font-bold text-base text-stone-600'>CHANNEL</label>
+								<small className='text-gray-500 block mb-2'>Facebook,Tiktok or youtube</small>
 
-							<Select onChange={onStatusFilterChange} className="w-full block  outline-none " placeholder="Choose an option" options={channelOptions}></Select>
-						</div>
-						{isLoading ?
-							<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-								<Spinner className="mx-auto block" color="white" />
-							</Button>
+								<Select onChange={onStatusFilterChange} className="w-full block  outline-none " placeholder="Choose an option" options={channelOptions}></Select>
+							</div>
+							{isLoading ?
+								<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
+									<Spinner className="mx-auto block" color="white" />
+								</Button>
+								:
+								<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
+							{/* onClick={openAIhandler} */}
+						</form>
+						:
+
+						// social media posts
+						id === "31" ?
+							<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2 '>
+								<div>
+									<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
+									<small className='text-gray-500 block mb-2'>what your social media page is about</small>
+									<input
+										onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
+										type="text"
+										name="shortDes"
+										placeholder="e.g home workouts"
+										class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+									/>
+								</div>
+
+								{isLoading ?
+									<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
+										<Spinner className="mx-auto block" color="white" />
+									</Button>
+									:
+									<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
+
+							</form>
 							:
-							<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-						{/* onClick={openAIhandler} */}
-					</form>
-					:
 
-					<div>
-						<div className="mb-4">
-							<Input rows="12" ref={inputRef} placeholder="write...." textArea />
-						</div>
-						{isLoading ? <Spinner /> : <Button className="block" variant="solid" >Submit</Button>}
-					</div>
-					// onClick={openAIhandler}
+							// other 
+							<div>
+								<div className="mb-4">
+									<Input rows="12" ref={inputRef} placeholder="write...." textArea />
+								</div>
+								{isLoading ? <Spinner /> : <Button className="block" variant="solid" >Submit</Button>}
+							</div>
 				}
 
 
 			</div>
 			<div className='h-80 overflow-y-auto border-2 p-2 border-gray-200 rounded-md'>
 				{text ? text?.split("\n")?.map(el => <p className=' text-stone-600 leading-relaxed px-2 pb-2'>{el}</p>
-				) : <span className='text-center block my-auto'>write somthing on the textbox....</span>
+				) : <h3 className='flex h-full font-black'><span className='m-auto'>Ans Box...</span></h3>
 				}
 			</div>
 		</div>

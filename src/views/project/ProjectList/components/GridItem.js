@@ -6,6 +6,9 @@ import ProgressionBar from './ProgressionBar'
 import { HiOutlineClipboardCheck } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 import { FcEditImage } from 'react-icons/fc'
+import navigationIcon from 'configs/navigation-icon.config'
+
+
 
 const GridItem = ({ data }) => {
 
@@ -15,17 +18,22 @@ const GridItem = ({ data }) => {
 		completedTask,
 		progression,
 		desc,
-		member
+		member, icon
 	} = data
 
 	return (
 		<Link to={`/services/social-media/${data.id}`}>
 			<Card className="h-full">
-				<div className="flex justify-between align-center">
-					<FcEditImage className=' text-2xl' />
-					<div className="w-70">
-						<h6>{name}</h6>
-						<p className="mt-4">{desc}</p>
+				<div className="flex justify-between items-center">
+					<div className='mr-4'>
+						{/* <FcEditImage size={35} /> */}
+						<span className="text-3xl">
+							{navigationIcon[icon]}
+						</span>
+					</div>
+					<div className="">
+						<h6 className='text-sm mb-1'>{name}</h6>
+						<p className="text-gray-500 block text-xs">{desc}</p>
 					</div>
 
 				</div>
