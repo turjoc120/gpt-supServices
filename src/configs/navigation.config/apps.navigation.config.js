@@ -24,7 +24,7 @@ const appsNavigationConfig = [
 					{
 						key: 'appsProject.dashboard',
 						path: `services/social-media/`,
-						title: 'All Services',
+						title: 'Social Media Services',
 						translateKey: 'nav.services',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
@@ -32,7 +32,7 @@ const appsNavigationConfig = [
 						subMenu: []
 					},
 					{
-						key: 'appsProject.dashboard',
+						key: 'appsProject.dashboard1',
 						path: `services/social-media/27`,
 						title: 'Image Captions',
 						translateKey: 'nav.services.captions',
@@ -93,6 +93,69 @@ const appsNavigationConfig = [
 					}
 				]
 			},
+			{
+				key: 'services.miscellaneous',
+				path: `/services/social-media`,
+				title: 'Miscellaneous',
+				translateKey: 'nav.miscellaneous',
+				icon: 'apps',
+				type: NAV_ITEM_TYPE_COLLAPSE,
+				authority: [ADMIN, USER],
+				subMenu: [
+					{
+						key: 'miscellaneous.dashboard',
+						path: `services/miscellaneous`,
+						title: 'All Miscellaneous Services',
+						translateKey: 'nav.services.all',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'miscellaneous.Latter',
+						path: `services/miscellaneous/cover-latter`,
+						title: 'Cover Latter',
+						translateKey: 'nav.services.Cover',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'miscellaneous.Job',
+						path: `services/social-media/27`,
+						title: 'Job Descriptions',
+						translateKey: 'nav.services.Job',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'miscellaneous.pdDes',
+						path: `services/social-media/27`,
+						title: 'Product Reviews',
+						translateKey: 'nav.services.pdDes',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'miscellaneous.linkedinbio',
+						path: `services/social-media/27`,
+						title: 'Personal Linkedin Bio',
+						translateKey: 'nav.services.linkedinbio',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					}
+				]
+			},
+
+
 			{
 				key: 'services.personalOpinion',
 				path: '',

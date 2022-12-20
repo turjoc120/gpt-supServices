@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import GridItem from './GridItem'
 import ListItem from './ListItem'
 import { Spinner } from 'components/ui'
-import { getList } from '../store/dataSlice'
+import { getList, getMmiscellaneous, putProject } from '../store/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { miscellaneousData } from 'mock/data/projectData'
 
 const ProjectListContent = () => {
-
+	const { categoryIdx } = useParams();
+	const [servicesData, setServicesData] = useState();
 	const dispatch = useDispatch()
 
 	const loading = useSelector((state) => state.projectList.data.loading)
@@ -15,9 +18,17 @@ const ProjectListContent = () => {
 	const view = useSelector((state) => state.projectList.state.view)
 	const { sort, search } = useSelector((state) => state.projectList.state.query)
 
+
 	useEffect(() => {
-		dispatch(getList({ sort, search }))
-	}, [dispatch, sort, search])
+		if (categoryIdx === "social-media") {
+			dispatch(getList({ sort, search }))
+		}
+		if (categoryIdx === "miscellaneous") {
+			dispatch(getMmiscellaneous({ sort, search }))
+		}
+		console.log("hit........");
+
+	}, [categoryIdx, dispatch])
 
 	return (
 		<div className={classNames('mt-6 h-full flex flex-col', loading && 'justify-center')}>

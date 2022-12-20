@@ -1,6 +1,6 @@
 import ApiService from "./ApiService"
 
-export async function apiGetProjectDashboardData (params) {
+export async function apiGetProjectDashboardData(params) {
     return ApiService.fetchData({
         url: '/project/dashboard',
         method: 'get',
@@ -8,15 +8,22 @@ export async function apiGetProjectDashboardData (params) {
     })
 }
 
-export async function apiGetProjectList (data) {
+export async function apiGetProjectList(data) {
     return ApiService.fetchData({
         url: '/project/list',
         method: 'post',
         data
     })
 }
+export async function apiGetMiscellaneous(data) {
+    return ApiService.fetchData({
+        url: '/project/miscellaneous',
+        method: 'post',
+        data
+    })
+}
 
-export async function apiPutProjectList (data) {
+export async function apiPutProjectList(data) {
     return ApiService.fetchData({
         url: '/project/list/add',
         method: 'put',
@@ -24,21 +31,21 @@ export async function apiPutProjectList (data) {
     })
 }
 
-export async function apiGetScrumBoards () {
+export async function apiGetScrumBoards() {
     return ApiService.fetchData({
         url: '/project/scrum-board/boards',
         method: 'post',
     })
 }
 
-export async function apiGetScrumBoardtMembers () {
+export async function apiGetScrumBoardtMembers() {
     return ApiService.fetchData({
         url: '/project/scrum-board/members',
         method: 'post',
     })
 }
 
-export async function apiGetScrumBoardtTicketDetail (params) {
+export async function apiGetScrumBoardtTicketDetail(params) {
     return ApiService.fetchData({
         url: '/project/scrum-board/tickets/detail',
         method: 'get',
