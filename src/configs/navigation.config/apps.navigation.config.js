@@ -14,59 +14,89 @@ const appsNavigationConfig = [
 		subMenu: [
 			{
 				key: 'services.socialMedia',
-				path: `services/social-media`,
+				path: `/services/social-media`,
 				title: 'Social Media',
 				translateKey: 'nav.socialMedia.socialMediaServ',
 				icon: 'project',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					// {
-					// 	key: 'appsProject.dashboard',
-					// 	path: `${APP_PREFIX_PATH}/project/dashboard`,
-					// 	title: 'Dashboard',
-					// 	translateKey: 'nav.appsProject.dashboard',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.projectList',
-					// 	path: `${APP_PREFIX_PATH}/project/project-list`,
-					// 	title: 'Project List',
-					// 	translateKey: 'nav.appsProject.projectList',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.scrumBoard',
-					// 	path: `${APP_PREFIX_PATH}/project/scrum-board`,
-					// 	title: 'Scrum Board',
-					// 	translateKey: 'nav.appsProject.scrumBoard',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.issue',
-					// 	path: `${APP_PREFIX_PATH}/project/issue`,
-					// 	title: 'Issue',
-					// 	translateKey: 'nav.appsProject.issue',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
+					{
+						key: 'appsProject.dashboard',
+						path: `services/social-media/`,
+						title: 'All Services',
+						translateKey: 'nav.services',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'appsProject.dashboard',
+						path: `services/social-media/27`,
+						title: 'Image Captions',
+						translateKey: 'nav.services.captions',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'personal.Opinion',
+						path: `services/social-media/28`,
+						title: 'Personal Opinion',
+						translateKey: 'nav.services.personal',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'services.Description',
+						path: `services/social-media/29`,
+						title: 'Video Description',
+						translateKey: 'nav.services.description',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'services.video',
+						path: `services/social-media/30`,
+						title: 'Video Ideas',
+						translateKey: 'nav.services.video',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'services.Post',
+						path: `services/social-media/31`,
+						title: 'Social Media Post Ideas',
+						translateKey: 'nav.services.Post',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'services.Video',
+						path: `services/social-media/32`,
+						title: 'Video Titles',
+						translateKey: 'nav.services.Video',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					}
 				]
 			},
 			{
 				key: 'services.personalOpinion',
 				path: '',
-				title: 'Demo',
+				title: 'Business ',
 				translateKey: 'nav.personalOpinion.personalOpinions',
 				icon: 'crm',
 				type: NAV_ITEM_TYPE_COLLAPSE,
@@ -127,7 +157,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.sales',
 				path: '',
-				title: 'demo',
+				title: 'Marketing',
 				translateKey: 'nav.Social.sales',
 				icon: 'sales',
 				type: NAV_ITEM_TYPE_COLLAPSE,

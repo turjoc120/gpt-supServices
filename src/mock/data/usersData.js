@@ -1,7 +1,7 @@
 export const usersData = [
 	{
 		id: '1',
-		name: 'Carolyn Perkins',
+		name: 'Mujtaba',
 		email: 'eileen_h@hotmail.com',
 		img: '/img/avatars/thumb-1.jpg'
 	},

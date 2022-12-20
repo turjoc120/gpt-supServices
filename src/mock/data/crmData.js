@@ -14,25 +14,25 @@ export const crmDashboardData = {
     statisticData: [
         {
             key: 'newLeads',
-            label: 'New Leads',
+            label: 'Active users',
             value: 63,
             growShrink: 2.6
         },
         {
             key: 'emailResponse',
-            label: 'Email',
+            label: 'Words Generated',
             value: 25,
             growShrink: 5.5
         },
         {
             key: 'proposals',
-            label: 'Proposals',
+            label: 'Happy Customers',
             value: 49,
             growShrink: -0.7
         },
         {
-            key: 'appointment',
-            label: 'Appointment',
+            key: 'Appointment',
+            label: 'Designs Made',
             value: 12,
             growShrink: 2.6
         },
@@ -129,9 +129,9 @@ export const crmDashboardData = {
 }
 
 export const eventsData = [
-    { 
+    {
         id: '0',
-        title: "All Day Event", 
+        title: "All Day Event",
         start: getDate("YEAR-MONTH-01"),
         eventColor: 'orange'
     },
@@ -170,33 +170,33 @@ export const eventsData = [
         end: getDate("YEAR-MONTH-18T12:30:00+00:00"),
         eventColor: 'blue'
     },
-    { 
+    {
         id: '6',
-        title: "Lunch", 
+        title: "Lunch",
         start: getDate("YEAR-MONTH-18T12:00:00+00:00"),
         eventColor: 'emerald'
     },
     {
         id: '7',
-        title: "Birthday Party", 
+        title: "Birthday Party",
         start: getDate("YEAR-MONTH-19T07:00:00+00:00"),
         eventColor: 'purple'
     },
     {
         id: '8',
-        title: "Meeting", 
+        title: "Meeting",
         start: getDate("YEAR-MONTH-18T14:30:00+00:00"),
         eventColor: 'blue'
     },
     {
         id: '9',
-        title: "Happy Hour", 
+        title: "Happy Hour",
         start: getDate("YEAR-MONTH-18T17:30:00+00:00"),
         eventColor: 'cyan'
     },
     {
         id: '10',
-        title: "Dinner", 
+        title: "Dinner",
         start: getDate("YEAR-MONTH-18T20:00:00+00:00"),
         eventColor: 'emerald'
     }
@@ -213,12 +213,12 @@ export const mailData = [
         from: 'eileen_h@hotmail.com',
         avatar: "/img/avatars/thumb-1.jpg",
         title: "An 'extremely credible source'",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 11,
                 name: "Eileen Horton",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'eileen_h@hotmail.com',
                 avatar: "/img/avatars/thumb-1.jpg",
                 date: "12:06PM",
@@ -239,7 +239,7 @@ export const mailData = [
             {
                 id: 12,
                 name: "Nathan",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'eileen_h@hotmail.com',
                 avatar: "/img/avatars/thumb-16.jpg",
                 date: "08:49AM",
@@ -249,7 +249,7 @@ export const mailData = [
             {
                 id: 22,
                 name: "Eileen Horton",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'eileen_h@hotmail.com',
                 avatar: "/img/avatars/thumb-1.jpg",
                 date: "03:27AM",
@@ -268,12 +268,12 @@ export const mailData = [
         from: 'terrance_moreno@infotech.io',
         avatar: "/img/avatars/thumb-2.jpg",
         title: "Lorem Ipsum is FAKE TEXT!",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 13,
                 name: "Terrance Moreno",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'terrance_moreno@infotech.io',
                 avatar: "/img/avatars/thumb-2.jpg",
                 date: "9:35PM",
@@ -303,12 +303,12 @@ export const mailData = [
         from: 'ronnie_vergas@infotech.io',
         avatar: "/img/avatars/thumb-3.jpg",
         title: "My text is long and beautiful",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 14,
                 name: "Ron Vargas",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'ronnie_vergas@infotech.io',
                 avatar: "/img/avatars/thumb-3.jpg",
                 date: "8:16am",
@@ -333,12 +333,12 @@ export const mailData = [
         from: 'cookie_lukie@hotmail.com',
         avatar: "/img/avatars/thumb-4.jpg",
         title: "They're bringing mistakes",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 15,
                 name: "Luke Cook",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'cookie_lukie@hotmail.com',
                 avatar: "/img/avatars/thumb-4.jpg",
                 date: "Feb 3",
@@ -348,7 +348,7 @@ export const mailData = [
             {
                 id: 22,
                 name: "Nathan",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'nathan@themenate.com',
                 avatar: "/img/avatars/thumb-16.jpg",
                 date: "Feb 2",
@@ -358,7 +358,7 @@ export const mailData = [
             {
                 id: 23,
                 name: "Luke Cook",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'cookie_lukie@hotmail.com',
                 avatar: "/img/avatars/thumb-16.jpg",
                 date: "Feb 2",
@@ -383,12 +383,12 @@ export const mailData = [
         from: 'joyce991@infotech.io',
         avatar: "/img/avatars/thumb-5.jpg",
         title: "I don't think anybody knows",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 16,
                 name: "Joyce Freeman",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'joyce991@infotech.io',
                 avatar: "/img/avatars/thumb-5.jpg",
                 date: "Feb 2",
@@ -407,12 +407,12 @@ export const mailData = [
         from: 'samanthaphil@infotech.io',
         avatar: "/img/avatars/thumb-6.jpg",
         title: "Lorem Ipsum is unattractive",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 17,
                 name: "Samantha Phillips",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'samanthaphil@infotech.io',
                 avatar: "/img/avatars/thumb-6.jpg",
                 date: "Jan 30",
@@ -431,12 +431,12 @@ export const mailData = [
         from: 'taratarara@imaze.edu.du',
         avatar: "/img/avatars/thumb-7.jpg",
         title: "He's not a word hero",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 18,
                 name: "Tara Fletcher",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'taratarara@imaze.edu.du',
                 avatar: "/img/avatars/thumb-7.jpg",
                 date: "Jan 28",
@@ -448,9 +448,9 @@ export const mailData = [
                         type: "jpg"
                     },
                     {
-                            file: "Brotherhood.jpg",
-                            size: "1.9MB",
-                            type: "jpg"
+                        file: "Brotherhood.jpg",
+                        size: "1.9MB",
+                        type: "jpg"
                     }
                 ]
             }
@@ -466,12 +466,12 @@ export const mailData = [
         from: 'iamfred@imaze.infotech.io',
         avatar: "/img/avatars/thumb-8.jpg",
         title: "I love Hispanics",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 19,
                 name: "Lisa Smith",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'iamfred@imaze.infotech.io',
                 avatar: "/img/avatars/thumb-8.jpg",
                 date: "Jan 27",
@@ -501,12 +501,12 @@ export const mailData = [
         from: 'carolyn_h@gmail.com',
         avatar: "/img/avatars/thumb-9.jpg",
         title: "Greater than ever before",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 20,
                 name: "Carolyn Hanson",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'carolyn_h@gmail.com',
                 avatar: "/img/avatars/thumb-9.jpg",
                 date: "Jan 26",
@@ -536,12 +536,12 @@ export const mailData = [
         from: 'brittany1134@gmail.com',
         avatar: "/img/avatars/thumb-10.jpg",
         title: "I will write some great placeholder",
-        mail:  ['nathan@themenate.com'],
+        mail: ['nathan@themenate.com'],
         message: [
             {
                 id: 21,
                 name: "Brittany Hale",
-                mail:  ['nathan@themenate.com'],
+                mail: ['nathan@themenate.com'],
                 from: 'brittany1134@gmail.com',
                 avatar: "/img/avatars/thumb-10.jpg",
                 date: "Jan 26",

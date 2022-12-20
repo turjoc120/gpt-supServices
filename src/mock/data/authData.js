@@ -2,7 +2,7 @@ export const signInUserData = [
     {
         id: '21',
         avatar: '/img/avatars/thumb-1.jpg',
-        userName: 'Carolyn Perkins',
+        userName: 'Mujtaba',
         email: 'user1@xxx.com',
         authority: ['admin', 'user'],
         password: 'gpt321',

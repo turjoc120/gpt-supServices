@@ -1,6 +1,6 @@
 const appConfig = {
     apiPrefix: '/api',
-    authenticatedEntryPath: 'services/social-media',
+    authenticatedEntryPath: 'app/crm/dashboard',
     unAuthenticatedEntryPath: '/sign-in',
     tourPath: '/app/account/kyc-form',
     enableMock: true
