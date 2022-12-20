@@ -76,6 +76,7 @@ const Editor = ({ }) => {
 		<div className='grid lg:grid-cols-2 xl:grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 '>
 
 			<div className='sm:mb-4'>
+
 				{
 					// get video ideas 
 					id === "30" ?
@@ -277,6 +278,7 @@ const Editor = ({ }) => {
 			<div className='h-80 overflow-y-auto border-2 p-2 border-gray-200 rounded-md'>
 				{text ? text?.split("\n")?.map((el, i) => <p key={i} className=' text-stone-600 leading-relaxed px-2 pb-2'>{el}</p>
 				) : <h3 className='flex h-full font-black'><span className='m-auto'>Ans Box...</span></h3>
+
 				}
 			</div>
 		</div>
