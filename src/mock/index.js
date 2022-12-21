@@ -1,17 +1,17 @@
 
 import { createServer } from 'miragejs'
-import appConfig from 'configs/app.config'  
+import appConfig from 'configs/app.config'
 import { notificationListData, searchQueryPoolData } from './data/commonData'
-import { projectList, scrumboardData, issueData, projectDashboardData } from './data/projectData'
+import { projectList, miscellaneousData, scrumboardData, issueData, projectDashboardData } from './data/projectData'
 import { usersData, userDetailData } from './data/usersData'
 import { eventsData, mailData, crmDashboardData } from './data/crmData'
 import { productsData, ordersData, orderDetailsData, salesDashboardData } from './data/salesData'
 import { portfolioData, walletsData, marketData, transactionHistoryData, cryptoDashboardData } from './data/cryptoData'
-import { 
-    settingData, 
-    settingIntergrationData, 
-    settingBillingData, 
-    invoiceData, 
+import {
+    settingData,
+    settingIntergrationData,
+    settingBillingData,
+    invoiceData,
     logData,
     accountFormData
 } from './data/accountData'
@@ -19,7 +19,7 @@ import { helpCenterCategoriesData, helpCenterArticleListData } from './data/know
 import { signInUserData } from './data/authData'
 
 import {
-    commonFakeApi, 
+    commonFakeApi,
     projectFakeApi,
     crmFakeApi,
     salesFakeApi,
@@ -35,10 +35,13 @@ export default function mockServer({ environment = 'test' }) {
     return createServer({
         environment,
         seeds(server) {
-			server.db.loadData({
-				notificationListData,
+            server.db.loadData({
+                notificationListData,
                 searchQueryPoolData,
+                // test 
+                miscellaneousData,
                 projectList,
+                ///////
                 scrumboardData,
                 issueData,
                 usersData,
@@ -65,8 +68,8 @@ export default function mockServer({ environment = 'test' }) {
                 crmDashboardData,
                 projectDashboardData,
                 cryptoDashboardData
-			})
-		},
+            })
+        },
         routes() {
             this.urlPrefix = ''
             this.namespace = ''
@@ -75,7 +78,7 @@ export default function mockServer({ environment = 'test' }) {
                 return isExternal
             })
             this.passthrough()
-            
+
             commonFakeApi(this, apiPrefix)
             projectFakeApi(this, apiPrefix)
             crmFakeApi(this, apiPrefix)

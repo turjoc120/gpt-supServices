@@ -5,15 +5,19 @@ import { ADMIN, USER } from 'constants/roles.constant'
 const appsRoute = [
     {
         key: 'services.socialMedia',
-        path: `services/social-media`,
+        path: `services/:categoryIdx`,
         component: React.lazy(() => import('views/project/ProjectList')),
         authority: [ADMIN, USER],
 
     },
-    // testroute
+    // dynamic routes for services
     {
-
         path: `services/social-media/:id`,
+        component: React.lazy(() => import('views/knowledge-base/EditArticle')),
+
+    },
+    {
+        path: `services/miscellaneous/:id`,
         component: React.lazy(() => import('views/knowledge-base/EditArticle')),
 
     },

@@ -26,7 +26,6 @@ const GridItem = ({ data }) => {
 			<Card className="h-full">
 				<div className="flex justify-between items-center">
 					<div className='mr-4'>
-						{/* <FcEditImage size={35} /> */}
 						<span className="text-3xl">
 							{navigationIcon[icon]}
 						</span>

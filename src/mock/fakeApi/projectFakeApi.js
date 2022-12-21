@@ -1,18 +1,18 @@
 import wildCardSearch from 'utils/wildCardSearch'
 
-export default function projectFakeApi (server, apiPrefix) {
+export default function projectFakeApi(server, apiPrefix) {
 
     server.get(`${apiPrefix}/project/dashboard`, (schema) => {
         return schema.db.projectDashboardData[0]
     })
 
-    server.post(`${apiPrefix}/project/list`, (schema, {requestBody}) => {
+    server.post(`${apiPrefix}/project/list`, (schema, { requestBody }) => {
         const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.projectList
-        if(sort === 'asc') {
+        if (sort === 'asc') {
             data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
         }
-        if(sort === 'desc') {
+        if (sort === 'desc') {
             data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
         }
 
@@ -22,17 +22,23 @@ export default function projectFakeApi (server, apiPrefix) {
 
         return data
     })
+    server.post(`${apiPrefix}/project/miscellaneous`, (schema, { requestBody }) => {
 
-    server.put(`${apiPrefix}/project/list/add`, (schema, {requestBody}) => {
+        let data = schema.db.miscellaneousData
+
+        return data
+    })
+
+    server.put(`${apiPrefix}/project/list/add`, (schema, { requestBody }) => {
         const data = JSON.parse(requestBody)
-        
+
         schema.db.projectList.insert(data)
 
         return schema.db.projectList
     })
-    
+
     server.post(`${apiPrefix}/project/scrum-board/members`, schema => {
-        const borderMembersId = [ '3', '2', '5', '7', '1', '10', '9' ]
+        const borderMembersId = ['3', '2', '5', '7', '1', '10', '9']
         const participantMembers = schema.db.usersData.filter(user => borderMembersId.includes(user.id))
         const allMembers = schema.db.usersData
         return {
