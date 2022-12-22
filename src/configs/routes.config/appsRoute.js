@@ -188,7 +188,7 @@ const appsRoute = [
         authority: [ADMIN, USER],
     },
     {
-        key: 'appsknowledgeBase.manageArticles',
+        key: 'appsknowledgeBase.manageArrticles',
         path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
         component: React.lazy(() => import('views/knowledge-base/ManageArticles')),
         authority: [ADMIN, USER],
