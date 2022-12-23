@@ -161,7 +161,7 @@ const Editor = ({ }) => {
 														<ServiceInputForm
 															data={{
 																"field1": "SHORT DESCRIPTION",
-																"field1Short": "what your dish is about?",
+																"field1Short": "what your dish is about",
 																"field1Place": "e.g chicken tikka masala",
 															}}
 															key={id}
