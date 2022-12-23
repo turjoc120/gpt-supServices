@@ -22,6 +22,13 @@ export async function apiGetMiscellaneous(data) {
         data
     })
 }
+export async function apiGetBusiness(data) {
+    return ApiService.fetchData({
+        url: '/project/business',
+        method: 'post',
+        data
+    })
+}
 
 export async function apiPutProjectList(data) {
     return ApiService.fetchData({

@@ -207,64 +207,15 @@ const appsNavigationConfig = [
 
 
 			{
-				key: 'services.personalOpinion',
-				path: '',
+				key: 'services.business',
+				path: '/services/business',
 				title: 'Business ',
-				translateKey: 'nav.personalOpinion.personalOpinions',
+				translateKey: 'nav.business',
 				icon: 'crm',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					// 	{
-					// 		key: 'appsCrm.dashboard',
-					// 		path: `${APP_PREFIX_PATH}/crm/dashboard`,
-					// 		title: 'Dashboard',
-					// 		translateKey: 'nav.appsCrm.dashboard',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.calendar',
-					// 		path: `${APP_PREFIX_PATH}/crm/calendar`,
-					// 		title: 'Calendar',
-					// 		translateKey: 'nav.appsCrm.calendar',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.customers',
-					// 		path: `${APP_PREFIX_PATH}/crm/customers`,
-					// 		title: 'Customers',
-					// 		translateKey: 'nav.appsCrm.customers',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.customerDetails',
-					// 		path: `${APP_PREFIX_PATH}/crm/customer-details?id=8`,
-					// 		title: 'Customer Details',
-					// 		translateKey: 'nav.appsCrm.customerDetails',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.mail',
-					// 		path: `${APP_PREFIX_PATH}/crm/mail`,
-					// 		title: 'Mail',
-					// 		translateKey: 'nav.appsCrm.mail',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
+
 				]
 			},
 			{

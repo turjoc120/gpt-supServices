@@ -16,22 +16,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	},
 	{
@@ -47,22 +32,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	},
 	{
@@ -78,22 +48,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	},
 	{
@@ -109,22 +64,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	},
 	{
@@ -140,22 +80,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	},
 	{
@@ -171,22 +96,7 @@ export const projectList = [
 		dayleft: 21,
 		status: 'none',
 		member: [
-			{
-				name: 'Frederick Adams',
-				img: '/img/avatars/thumb-8.jpg',
-			},
-			{
-				name: 'Joyce Freeman',
-				img: '/img/avatars/thumb-5.jpg',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
-			{
-				name: 'Clayton Bates',
-				img: '',
-			},
+
 		]
 	}
 
@@ -253,6 +163,93 @@ export const miscellaneousData = [
 		icon: "FcEditImage",
 		desc: 'Need help with your cover latter? wer are here to rescue',
 	}
+]
+export const businessData = [
+	{
+		id: "book-descriptions",
+		name: 'Book Descriptions',
+		icon: "FcDocument",
+		desc: 'Need captivating description for your book? let us help',
+	},
+
+	{
+		id: "book-titles",
+		name: 'Book Titles',
+		icon: "FcDocument",
+		desc: 'want best selling book tiles for your books? ask us',
+	},
+	{
+		id: "brand-name",
+		name: 'Brand Name Ideas',
+		icon: "FcRegisteredTrademark",
+		desc: 'need ideas for your business brand name? let us help',
+	},
+	{
+		id: "features-benefits",
+		name: 'Features to Benefits',
+		icon: "FcMoneyTransfer",
+		desc: 'let us turn boring products features into amazing benifits',
+	},
+	{
+		id: "product-descriptions",
+		name: 'Product Descriptions',
+		icon: "FcServices",
+		desc: 'Need compelling copy for your product. let us help',
+	},
+	{
+		id: "marketing-ideas",
+		name: 'Marketing Ideas',
+		icon: "FcBullish",
+		desc: 'get your creative juices flowing with marketing ideas from us',
+	},
+	{
+		id: "product-names",
+		name: 'Product Names',
+		icon: "FcSurvey",
+		desc: 'unable to think a name for your product? we got ideas',
+	},
+	{
+		id: "reste-des",
+		name: 'Real Estate Listing Description',
+		icon: "FcEditImage",
+		desc: 'write a compelling description for a real estate listing that sells',
+	},
+	{
+		id: "review-responder",
+		name: 'Review Responder',
+		icon: "FcDocument",
+		desc: "craft the perfact response to a review - good or bad",
+	},
+	{
+		id: "startup-pitch",
+		name: 'Startup Elevator Pitch',
+		icon: "FcPositiveDynamic",
+		desc: "create irresistible elevator pitches for your startup",
+	},
+	{
+		id: "startup-ideas",
+		name: 'Startup Ideas',
+		icon: "FcIdea",
+		desc: "Get Inspired by us for your next startup idea!",
+	},
+	{
+		id: "startup-slogans",
+		name: 'Startup Slogans',
+		icon: "FcDocument",
+		desc: "need a better slogan for your startup. ask us!",
+	},
+	{
+		id: "startup-value",
+		name: 'Startup Value Propositions',
+		icon: "FcDocument",
+		desc: "get unique value for your startup proposition for your business",
+	},
+	{
+		id: "vision-mission",
+		name: 'Vision Mission',
+		icon: "FcDocument",
+		desc: "create vision and mission statement for your business",
+	},
 ]
 
 export const projectDashboardData = {
