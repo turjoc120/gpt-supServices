@@ -200,6 +200,36 @@ export const miscellaneousData = [
 		desc: 'Need help with your cover latter? wer are here to rescue',
 	},
 	{
+		id: "fictional-story",
+		name: 'Fictional Story Ideas',
+		icon: "FcEditImage",
+		desc: 'Need help with your cover latter? wer are here to rescue',
+	},
+	{
+		id: "food-recipe",
+		name: 'Food Recipes',
+		icon: "FcEditImage",
+		desc: 'Need help with your cover latter? wer are here to rescue',
+	},
+	{
+		id: "poems",
+		name: 'Poems',
+		icon: "FcEditImage",
+		desc: 'Need help with your cover latter? wer are here to rescue',
+	},
+	{
+		id: "quora-answers",
+		name: 'Quora Answers',
+		icon: "FcEditImage",
+		desc: 'Need help with your cover latter? wer are here to rescue',
+	},
+	{
+		id: "song-lyrics",
+		name: 'Song Lyrics',
+		icon: "FcEditImage",
+		desc: 'Need help with your cover latter? wer are here to rescue',
+	},
+	{
 		id: "greetings",
 		name: 'Greetings',
 		icon: "FcEditImage",

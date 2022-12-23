@@ -4,13 +4,13 @@ import ItemDropdown from './ItemDropdown'
 import Members from './Members'
 import ProgressionBar from './ProgressionBar'
 import { HiOutlineClipboardCheck } from 'react-icons/hi'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { FcEditImage } from 'react-icons/fc'
 import navigationIcon from 'configs/navigation-icon.config'
 
 
 
-const GridItem = ({ data }) => {
+const GridItem = ({ data, categoryIdx }) => {
 
 	const {
 		name,
@@ -21,8 +21,9 @@ const GridItem = ({ data }) => {
 		member, icon
 	} = data
 
+
 	return (
-		<Link to={`/services/social-media/${data.id}`}>
+		<Link to={`/services/${categoryIdx}/${data.id}`}>
 			<Card className="h-full">
 				<div className="flex justify-between items-center">
 					<div className='mr-4'>

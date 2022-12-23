@@ -43,7 +43,7 @@ const ProjectListContent = () => {
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 						{
 							projectList.map(project => (
-								<GridItem key={project.id} data={project} />
+								<GridItem key={project.id} data={project} categoryIdx={categoryIdx} />
 							))
 						}
 					</div>

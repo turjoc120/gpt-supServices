@@ -21,15 +21,19 @@ export const putProject = createAsyncThunk('projectList/putProject', async (data
     return response.data
 })
 
+
 const dataSlice = createSlice({
     name: 'projectList/data',
     initialState: {
         loading: false,
         projectList: [],
         miscellaneousData: [],
-        allMembers: []
+        allMembers: [],
+
     },
-    reducers: {},
+    reducers: {
+
+    },
     extraReducers: {
         [getList.fulfilled]: (state, action) => {
             state.projectList = action.payload
@@ -50,5 +54,6 @@ const dataSlice = createSlice({
         },
     }
 })
+
 
 export default dataSlice.reducer
