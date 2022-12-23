@@ -148,7 +148,7 @@ const Editor = ({ }) => {
 															"field1Short": "main characters and their characteristics",
 															"field1Place": "e.g a boy finds a new type of coffe",
 															"field2": "GENRE",
-															"field2Short": "fantasy,horror,romance or science fiction",
+															"field2Short": "fantasy,horror,romance or science fiction.",
 
 
 														}}
