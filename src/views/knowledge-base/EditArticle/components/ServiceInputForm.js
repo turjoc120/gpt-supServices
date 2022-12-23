@@ -13,8 +13,6 @@ const ServiceInputForm = ({ data, id }) => {
     const [vidData, setVidData] = useState({});
 
 
-
-
     const [isLoading, setIsLoading] = useState(false);
     const inputRef = useRef(null);
 
@@ -123,20 +121,22 @@ const ServiceInputForm = ({ data, id }) => {
             <div>
                 <label className='font-bold text-base text-stone-600'>{data.field1}</label>
                 <small className='text-gray-500 block mb-2'>{data.field1Short}</small>
-                {id === "greetings" || id === "song-lyrics" || id === "job-description" || id === "linkedin-bio" ? <textarea
-                    onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-                    type="text"
-                    name="shortDes"
-                    rows={id === "linkedin-bio" ? 4 : 2}
-                    placeholder={data.field1Place}
-                    class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-                /> : <input
-                    onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-                    type="text"
-                    name="shortDes"
-                    placeholder={data.field1Place}
-                    class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-                />}
+
+                {id === "greetings" || id === "song-lyrics" || id === "job-description" || id === "linkedin-bio" ?
+                    <textarea
+                        onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
+                        type="text"
+                        name="shortDes"
+                        rows={id === "linkedin-bio" ? 4 : 2}
+                        placeholder={data.field1Place}
+                        class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+                    /> : <input
+                        onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
+                        type="text"
+                        name="shortDes"
+                        placeholder={data.field1Place}
+                        class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+                    />}
             </div>
 
             {id === "30" || id === "fictional-story" ? <div className='mt-8'>

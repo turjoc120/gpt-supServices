@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, AdaptableCard } from 'components/shared'
 import { Button } from 'components/ui'
 import Editor from './components/Editor'
@@ -14,9 +14,59 @@ injectReducer('knowledgeBaseEditArticle', reducer)
 
 const EditArticle = () => {
 
+	const [headingText, setHedingText] = useState("");
+	const { id } = useParams();
 
-	const { id } = useParams()
-
+	useEffect(() => {
+		if (id === "30") {
+			setHedingText("Video Ideas")
+		}
+		if (id === "31") {
+			setHedingText("Social Media Post Ideas")
+		}
+		if (id === "27") {
+			setHedingText("Image Captions")
+		}
+		if (id === "28") {
+			setHedingText("Personal Opinion")
+		}
+		if (id === "29") {
+			setHedingText("Video Descriptions")
+		}
+		if (id === "32") {
+			setHedingText("Video Titles")
+		}
+		if (id === "cover-latter") {
+			setHedingText("Cover Latter")
+		}
+		if (id === "fictional-story") {
+			setHedingText("Fictional Story Ideas")
+		}
+		if (id === "food-recipe") {
+			setHedingText("Food Recipes")
+		}
+		if (id === "quora-answers") {
+			setHedingText("Quora Answers")
+		}
+		if (id === "greetings") {
+			setHedingText("Greetings")
+		}
+		if (id === "song-lyrics") {
+			setHedingText("Song Lyrics")
+		}
+		if (id === "pd-reviews") {
+			setHedingText("Product Reviews")
+		}
+		if (id === "linkedin-bio") {
+			setHedingText("Personal Linkedin Bio")
+		}
+		if (id === "job-description") {
+			setHedingText("Job Description")
+		}
+		if (id === "poems") {
+			setHedingText("Poems")
+		}
+	}, [id])
 
 
 	return (
@@ -24,35 +74,7 @@ const EditArticle = () => {
 			<AdaptableCard>
 				<div className="max-w-[800px] mx-auto">
 					<div className="flex justify-between items-center mb-4">
-						<h3>
-
-							{id === "30" ? < span className='font-black	text-2xl text-stone-900'> Video Ideas</span> :
-
-								id === "31" ? < span className='font-black text-2xl text-stone-900'> Social Media Post Ideas</span> :
-
-									id === "27" ? < span className='font-black text-2xl text-stone-900'> Image Captions</span> :
-
-										id === "28" ? < span className='font-black text-2xl text-stone-900'> Personal Opinion</span> :
-
-											id === "29" ? < span className='font-black text-2xl text-stone-900'> Video Descriptions</span> :
-
-												id === "32" ? < span className='font-black text-2xl text-stone-900'> Video Titles</span> :
-													id === "cover-latter" ? < span className='font-black text-2xl text-stone-900'>Cover Latter</span> :
-														id === "fictional-story" ? < span className='font-black text-2xl text-stone-900'>Fictional Story Ideas</span> :
-															id === "food-recipe" ? < span className='font-black text-2xl text-stone-900'>Food Recipes</span> :
-																id === "quora-answers" ? < span className='font-black text-2xl text-stone-900'>Quora Answers</span> :
-																	id === "greetings" ? < span className='font-black text-2xl text-stone-900'>Greetings</span> :
-																		id === "song-lyrics" ? < span className='font-black text-2xl text-stone-900'>Song Lyrics</span> :
-																			id === "job-description" ? < span className='font-black text-2xl text-stone-900'>Job Description</span> :
-																				id === "pd-reviews" ? < span className='font-black text-2xl text-stone-900'>Product Reviews</span> :
-																					id === "linkedin-bio" ? < span className='font-black text-2xl text-stone-900'>Personal Linkedin Bio</span> :
-																						id === "poems" ? < span className='font-black text-2xl text-stone-900'>Poems</span> :
-
-																							""}
-
-						</h3>
-
-
+						<h3> < span className='font-black text-2xl text-stone-900'>{headingText}</span></h3>
 					</div>
 					<Editor />
 				</div>
