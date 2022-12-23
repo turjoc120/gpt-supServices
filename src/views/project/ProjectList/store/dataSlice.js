@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiPutProjectList } from 'services/ProjectService'
+import { apiGetBusiness, apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiPutProjectList } from 'services/ProjectService'
 
 export const getList = createAsyncThunk('projectList/getList', async (data) => {
     const response = await apiGetProjectList(data)
@@ -7,6 +7,10 @@ export const getList = createAsyncThunk('projectList/getList', async (data) => {
 })
 export const getMmiscellaneous = createAsyncThunk('projectList/miscellaneous', async (data) => {
     const response = await apiGetMiscellaneous(data)
+    return response.data
+})
+export const getbusiness = createAsyncThunk('projectList/business', async (data) => {
+    const response = await apiGetBusiness(data)
     return response.data
 })
 
@@ -43,7 +47,17 @@ const dataSlice = createSlice({
             state.projectList = action.payload
             state.loading = false
         },
+        [getbusiness.fulfilled]: (state, action) => {
+            state.projectList = action.payload
+            state.loading = false
+        },
         [getList.pending]: (state) => {
+            state.loading = true
+        },
+        [getMmiscellaneous.pending]: (state) => {
+            state.loading = true
+        },
+        [getbusiness.pending]: (state) => {
             state.loading = true
         },
         [getMembers.fulfilled]: (state, action) => {

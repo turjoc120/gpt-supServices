@@ -2,7 +2,7 @@
 import { createServer } from 'miragejs'
 import appConfig from 'configs/app.config'
 import { notificationListData, searchQueryPoolData } from './data/commonData'
-import { projectList, miscellaneousData, scrumboardData, issueData, projectDashboardData } from './data/projectData'
+import { projectList, miscellaneousData, businessData, scrumboardData, issueData, projectDashboardData } from './data/projectData'
 import { usersData, userDetailData } from './data/usersData'
 import { eventsData, mailData, crmDashboardData } from './data/crmData'
 import { productsData, ordersData, orderDetailsData, salesDashboardData } from './data/salesData'
@@ -39,7 +39,9 @@ export default function mockServer({ environment = 'test' }) {
                 notificationListData,
                 searchQueryPoolData,
                 // test 
+                businessData,
                 miscellaneousData,
+
                 projectList,
                 ///////
                 scrumboardData,

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import GridItem from './GridItem'
 import ListItem from './ListItem'
 import { Spinner } from 'components/ui'
-import { getList, getMmiscellaneous, putProject } from '../store/dataSlice'
+import { getbusiness, getList, getMmiscellaneous, putProject } from '../store/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { miscellaneousData } from 'mock/data/projectData'
@@ -25,6 +25,9 @@ const ProjectListContent = () => {
 		}
 		if (categoryIdx === "miscellaneous") {
 			dispatch(getMmiscellaneous({ sort, search }))
+		}
+		if (categoryIdx === "business") {
+			dispatch(getbusiness({ sort, search }))
 		}
 		console.log("hit........");
 
