@@ -122,6 +122,61 @@ const ServiceInputForm = ({ data, id }) => {
       } linkedin bio for ${vidData.shortDes}`;
     }
 
+    if (id === "book-descriptions") {
+      finalVidStr = `Write a ${
+        vidData?.tone ? vidData?.tone : ""
+      } book Description for ${vidData.shortDes} with keywords like ${
+        vidData.keywords
+      }`;
+    }
+
+    if (id === "book-titles") {
+      finalVidStr = `write suggestions of a ${vidData.channel} book title using this description ${vidData.shortDes}`;
+    }
+
+    if (id === "brand-name") {
+      finalVidStr = `Suggest some brand names i can use for my product/business. A brief description of my business: ${vidData.shortDes} and some related keywords are ${vidData.tone}`;
+    }
+
+    if (id === "features-benefits") {
+      finalVidStr = `Write me some benefits based on the following features: ${vidData.skillExp},  my product is all about the following ${vidData.shortDes}`;
+    }
+
+    if (id === "product-descriptions") {
+      finalVidStr = `Write me a ${vidData.tone} toned description about my product. my product is all about the following ${vidData.shortDes}`;
+    }
+    if (id === "marketing-ideas") {
+      finalVidStr = `write me some ${vidData.channel} marketing ideas about ${vidData.shortDes}`;
+    }
+
+    if (id === "product-names") {
+      finalVidStr = `Write me some ${vidData.tone} product names about ${vidData.shortDes}`;
+    }
+    if (id === "reste-des") {
+      finalVidStr = `Write me some ${vidData.tone} real estate listing description about ${vidData.shortDes}`;
+    }
+    if (id === "review-responder") {
+      finalVidStr = `Write me some ${vidData.tone} content to respond a customer's review that is about ${vidData.shortDes}`;
+    }
+    if (id === "startup-pitch") {
+      finalVidStr = `Write me a ${vidData.tone} startup elevator pitch about ${vidData.shortDes}`;
+    }
+    if (id === "startup-ideas") {
+      finalVidStr = `Write some some startup ideas i can venture into. i have expertise in ${vidData.shortDes} and passion in ${vidData.skillExp}`;
+    }
+
+    if (id === "startup-slogans") {
+      finalVidStr = `write me some startup slogans about ${vidData.shortDes} `;
+    }
+
+    if (id === "startup-value") {
+      finalVidStr = `write a ${vidData.tone} startup Value Proposition about ${vidData.shortDes} `;
+    }
+
+    if (id === "vision-mission") {
+      finalVidStr = `write a ${vidData.tone} vision mission statement about ${vidData.shortDes}`;
+    }
+
     setIsLoading(true);
     if (finalVidStr) {
       const result = await writeInOpenAI({ prompt: finalVidStr });
@@ -229,7 +284,7 @@ const ServiceInputForm = ({ data, id }) => {
 
           <textarea
             onChange={(e) =>
-              setVidData({ ...vidData, skillExp: e.target.value })
+              setVidData({ ...vidData, keywords: e.target.value })
             }
             type="text"
             name="keywords"
