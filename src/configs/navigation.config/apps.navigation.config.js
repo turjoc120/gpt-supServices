@@ -97,17 +97,6 @@ const appsNavigationConfig = [
           // }
         ],
       },
-
-      {
-        key: "services.business",
-        path: "/services/business",
-        title: "Business Tools",
-        translateKey: "nav.business",
-        icon: "crm",
-        type: NAV_ITEM_TYPE_COLLAPSE,
-        authority: [ADMIN, USER],
-        subMenu: [],
-      },
       {
         key: "apps.sales",
         path: "",
@@ -178,6 +167,26 @@ const appsNavigationConfig = [
           // 		subMenu: []
           // 	},
         ],
+      },
+      {
+        key: "services.business",
+        path: "/services/business",
+        title: "Business Tools",
+        translateKey: "nav.business",
+        icon: "crm",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [],
+      },
+      {
+        key: "services.writingTools",
+        path: "/services/writing-tools",
+        title: "Writing Tools",
+        translateKey: "nav.writingTools",
+        icon: "guide",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [],
       },
       {
         key: "services.miscellaneous",
@@ -291,158 +300,168 @@ const appsNavigationConfig = [
         ],
       },
       {
-        key: "apps.crypto",
-        path: "",
-        title: "demo",
-        translateKey: "nav.Descriptions.crypto",
-        icon: "crypto",
+        key: "services.allServices",
+        path: "/services/all-services",
+        title: "All Our Services",
+        translateKey: "nav.allServices",
+        icon: "apps",
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
-        subMenu: [
-          // 	{
-          // 		key: 'appsCrypto.dashboard',
-          // 		path: `${APP_PREFIX_PATH}/crypto/dashboard`,
-          // 		title: 'Dashboard',
-          // 		translateKey: 'nav.appsCrypto.dashboard',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsCrypto.portfolio',
-          // 		path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-          // 		title: 'Portfolio',
-          // 		translateKey: 'nav.appsCrypto.portfolio',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsCrypto.market',
-          // 		path: `${APP_PREFIX_PATH}/crypto/market`,
-          // 		title: 'Market',
-          // 		translateKey: 'nav.appsCrypto.market',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsCrypto.wallets',
-          // 		path: `${APP_PREFIX_PATH}/crypto/wallets`,
-          // 		title: 'Wallets',
-          // 		translateKey: 'nav.appsCrypto.wallets',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-        ],
+        subMenu: [],
       },
-      {
-        key: "apps.knowledgeBase",
-        path: "",
-        title: "demo",
-        translateKey: "nav.Ideas.knowledgeBase",
-        icon: "knowledgeBase",
-        type: NAV_ITEM_TYPE_COLLAPSE,
-        authority: [ADMIN, USER],
-        subMenu: [
-          // 	{
-          // 		key: 'appsknowledgeBase.helpCenter',
-          // 		path: `${APP_PREFIX_PATH}/knowledge-base/help-center`,
-          // 		title: 'Help Center',
-          // 		translateKey: 'nav.appsknowledgeBase.helpCenter',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsknowledgeBase.article',
-          // 		path: `${APP_PREFIX_PATH}/knowledge-base/article?id=rZjCbSyae5`,
-          // 		title: 'Article',
-          // 		translateKey: 'nav.appsknowledgeBase.article',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsknowledgeBase.manageArticles',
-          // 		path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
-          // 		title: 'Manage Articles',
-          // 		translateKey: 'nav.appsknowledgeBase.manageArticles',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsknowledgeBase.editArticle',
-          // 		path: `${APP_PREFIX_PATH}/knowledge-base/edit-article?id=rZjCbSyae5&categoryLabel=Survey&categoryValue=survey`,
-          // 		title: 'Edit Article',
-          // 		translateKey: 'nav.appsknowledgeBase.editArticle',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-        ],
-      },
-      {
-        key: "apps.account",
-        path: "",
-        title: "demo",
-        translateKey: "nav.Titles.account",
-        icon: "account",
-        type: NAV_ITEM_TYPE_COLLAPSE,
-        authority: [ADMIN, USER],
-        subMenu: [
-          // 	{
-          // 		key: 'appsAccount.settings',
-          // 		path: `${APP_PREFIX_PATH}/account/settings/profile`,
-          // 		title: 'Settings',
-          // 		translateKey: 'nav.appsAccount.settings',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsAccount.invoice',
-          // 		path: `${APP_PREFIX_PATH}/account/invoice/36223`,
-          // 		title: 'Invoice',
-          // 		translateKey: 'nav.appsAccount.invoice',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsAccount.activityLog',
-          // 		path: `${APP_PREFIX_PATH}/account/activity-log`,
-          // 		title: 'Activity Log',
-          // 		translateKey: 'nav.appsAccount.activityLog',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsAccount.kycForm',
-          // 		path: `${APP_PREFIX_PATH}/account/kyc-form`,
-          // 		title: 'KYC Form',
-          // 		translateKey: 'nav.appsAccount.kycForm',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-        ],
-      },
+      //   {
+      //     key: "apps.crypto",
+      //     path: "",
+      //     title: "demo",
+      //     translateKey: "nav.Descriptions.crypto",
+      //     icon: "crypto",
+      //     type: NAV_ITEM_TYPE_COLLAPSE,
+      //     authority: [ADMIN, USER],
+      //     subMenu: [
+      //       // 	{
+      //       // 		key: 'appsCrypto.dashboard',
+      //       // 		path: `${APP_PREFIX_PATH}/crypto/dashboard`,
+      //       // 		title: 'Dashboard',
+      //       // 		translateKey: 'nav.appsCrypto.dashboard',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsCrypto.portfolio',
+      //       // 		path: `${APP_PREFIX_PATH}/crypto/portfolio`,
+      //       // 		title: 'Portfolio',
+      //       // 		translateKey: 'nav.appsCrypto.portfolio',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsCrypto.market',
+      //       // 		path: `${APP_PREFIX_PATH}/crypto/market`,
+      //       // 		title: 'Market',
+      //       // 		translateKey: 'nav.appsCrypto.market',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsCrypto.wallets',
+      //       // 		path: `${APP_PREFIX_PATH}/crypto/wallets`,
+      //       // 		title: 'Wallets',
+      //       // 		translateKey: 'nav.appsCrypto.wallets',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //     ],
+      //   },
+      //   {
+      //     key: "apps.knowledgeBase",
+      //     path: "",
+      //     title: "demo",
+      //     translateKey: "nav.Ideas.knowledgeBase",
+      //     icon: "knowledgeBase",
+      //     type: NAV_ITEM_TYPE_COLLAPSE,
+      //     authority: [ADMIN, USER],
+      //     subMenu: [
+      //       // 	{
+      //       // 		key: 'appsknowledgeBase.helpCenter',
+      //       // 		path: `${APP_PREFIX_PATH}/knowledge-base/help-center`,
+      //       // 		title: 'Help Center',
+      //       // 		translateKey: 'nav.appsknowledgeBase.helpCenter',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsknowledgeBase.article',
+      //       // 		path: `${APP_PREFIX_PATH}/knowledge-base/article?id=rZjCbSyae5`,
+      //       // 		title: 'Article',
+      //       // 		translateKey: 'nav.appsknowledgeBase.article',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsknowledgeBase.manageArticles',
+      //       // 		path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
+      //       // 		title: 'Manage Articles',
+      //       // 		translateKey: 'nav.appsknowledgeBase.manageArticles',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsknowledgeBase.editArticle',
+      //       // 		path: `${APP_PREFIX_PATH}/knowledge-base/edit-article?id=rZjCbSyae5&categoryLabel=Survey&categoryValue=survey`,
+      //       // 		title: 'Edit Article',
+      //       // 		translateKey: 'nav.appsknowledgeBase.editArticle',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //     ],
+      //   },
+      //   {
+      //     key: "apps.account",
+      //     path: "",
+      //     title: "demo",
+      //     translateKey: "nav.Titles.account",
+      //     icon: "account",
+      //     type: NAV_ITEM_TYPE_COLLAPSE,
+      //     authority: [ADMIN, USER],
+      //     subMenu: [
+      //       // 	{
+      //       // 		key: 'appsAccount.settings',
+      //       // 		path: `${APP_PREFIX_PATH}/account/settings/profile`,
+      //       // 		title: 'Settings',
+      //       // 		translateKey: 'nav.appsAccount.settings',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsAccount.invoice',
+      //       // 		path: `${APP_PREFIX_PATH}/account/invoice/36223`,
+      //       // 		title: 'Invoice',
+      //       // 		translateKey: 'nav.appsAccount.invoice',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsAccount.activityLog',
+      //       // 		path: `${APP_PREFIX_PATH}/account/activity-log`,
+      //       // 		title: 'Activity Log',
+      //       // 		translateKey: 'nav.appsAccount.activityLog',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //       // 	{
+      //       // 		key: 'appsAccount.kycForm',
+      //       // 		path: `${APP_PREFIX_PATH}/account/kyc-form`,
+      //       // 		title: 'KYC Form',
+      //       // 		translateKey: 'nav.appsAccount.kycForm',
+      //       // 		icon: '',
+      //       // 		type: NAV_ITEM_TYPE_ITEM,
+      //       // 		authority: [ADMIN, USER],
+      //       // 		subMenu: []
+      //       // 	},
+      //     ],
+      //   },
     ],
   },
 ];
