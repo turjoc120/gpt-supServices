@@ -35,8 +35,8 @@ const EditArticle = () => {
     if (id === "32") {
       setHedingText("Video Titles");
     }
-    if (id === "cover-latter") {
-      setHedingText("Cover Latter");
+    if (id === "cover-letter") {
+      setHedingText("Cover Letter");
     }
     if (id === "fictional-story") {
       setHedingText("Fictional Story Ideas");

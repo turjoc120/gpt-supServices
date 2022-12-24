@@ -74,8 +74,8 @@ const ServiceInputForm = ({ data, id }) => {
     if (id === "32") {
       finalVidStr = `write down 5 video titles about ${vidData.shortDes}`;
     }
-    // cover latter
-    if (id === "cover-latters") {
+    // cover letter
+    if (id === "cover-letters") {
       finalVidStr = `Write a cover letter to apply as a ${
         vidData.shortDes
       } i have ${vidData.skillExp} in ${
@@ -256,7 +256,7 @@ const ServiceInputForm = ({ data, id }) => {
         ""
       )}
 
-      {id === "cover-latters" && (
+      {id === "cover-letters" && (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field3}
@@ -334,7 +334,7 @@ const ServiceInputForm = ({ data, id }) => {
       {id === "28" ||
       id === "29" ||
       id === "27" ||
-      id === "cover-latters" ||
+      id === "cover-letters" ||
       id === "quora-answers" ||
       id === "song-lyrics" ||
       id === "job-description" ||

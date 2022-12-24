@@ -91,64 +91,64 @@ export const projectList = [
 
 export const miscellaneousData = [
   {
-    id: "cover-latters",
-    name: "Cover Latters",
+    id: "cover-letters",
+    name: "Cover Letters",
     icon: "FcDocument",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "fictional-story",
     name: "Fictional Story Ideas",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "food-recipe",
     name: "Food Recipes",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "poems",
     name: "Poems",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "quora-answers",
     name: "Quora Answers",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "song-lyrics",
     name: "Song Lyrics",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "greetings",
     name: "Greetings",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "job-description",
     name: "Job Description",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "pd-reviews",
     name: "Product Reviews",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "linkedin-bio",
     name: "Personal Linkedin Bio",
     icon: "FcEditImage",
-    desc: "Need help with your cover latter? wer are here to rescue",
+    desc: "Need help with your cover letter? wer are here to rescue",
   },
 ];
 export const businessData = [

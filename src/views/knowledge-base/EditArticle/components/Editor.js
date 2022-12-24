@@ -132,8 +132,8 @@ const Editor = ({}) => {
           )
         }
         {
-          // cover-latter
-          id === "cover-latters" && (
+          // cover-letter
+          id === "cover-letters" && (
             <ServiceInputForm
               data={{
                 field1: "ROLE",
