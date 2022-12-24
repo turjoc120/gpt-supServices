@@ -9,8 +9,10 @@ const stateSlice = createSlice({
             search: ''
         },
         newProjectDialog: false
+
     },
     reducers: {
+
         toggleView: (state, action) => {
             state.view = action.payload
         },

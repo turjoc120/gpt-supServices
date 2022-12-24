@@ -21,200 +21,201 @@ const appsNavigationConfig = [
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					{
-						key: 'appsProject.dashboard',
-						path: `services/social-media/`,
-						title: 'Social Media Services',
-						translateKey: 'nav.services',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsProject.dashboard1',
-						path: `services/social-media/27`,
-						title: 'Image Captions',
-						translateKey: 'nav.services.captions',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'personal.Opinion',
-						path: `services/social-media/28`,
-						title: 'Personal Opinion',
-						translateKey: 'nav.services.personal',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'services.Description',
-						path: `services/social-media/29`,
-						title: 'Video Description',
-						translateKey: 'nav.services.description',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'services.video',
-						path: `services/social-media/30`,
-						title: 'Video Ideas',
-						translateKey: 'nav.services.video',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'services.Post',
-						path: `services/social-media/31`,
-						title: 'Social Media Post Ideas',
-						translateKey: 'nav.services.Post',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'services.Video',
-						path: `services/social-media/32`,
-						title: 'Video Titles',
-						translateKey: 'nav.services.Video',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					}
+					// {
+					// 	key: 'appsProject.dashboard',
+					// 	path: `services/social-media/`,
+					// 	title: 'Social Media Services',
+					// 	translateKey: 'nav.services',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsProject.dashboard1',
+					// 	path: `services/social-media/27`,
+					// 	title: 'Image Captions',
+					// 	translateKey: 'nav.services.captions',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'personal.Opinion',
+					// 	path: `services/social-media/28`,
+					// 	title: 'Personal Opinion',
+					// 	translateKey: 'nav.services.personal',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'services.Description',
+					// 	path: `services/social-media/29`,
+					// 	title: 'Video Description',
+					// 	translateKey: 'nav.services.description',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'services.video',
+					// 	path: `services/social-media/30`,
+					// 	title: 'Video Ideas',
+					// 	translateKey: 'nav.services.video',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'services.Post',
+					// 	path: `services/social-media/31`,
+					// 	title: 'Social Media Post Ideas',
+					// 	translateKey: 'nav.services.Post',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'services.Video',
+					// 	path: `services/social-media/32`,
+					// 	title: 'Video Titles',
+					// 	translateKey: 'nav.services.Video',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// }
 				]
 			},
 			{
 				key: 'services.miscellaneous',
-				path: `/services/social-media`,
+				path: `/services/miscellaneous`,
 				title: 'Miscellaneous',
 				translateKey: 'nav.miscellaneous',
 				icon: 'apps',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					{
-						key: 'miscellaneous.dashboard',
-						path: `services/miscellaneous`,
-						title: 'All Miscellaneous Services',
-						translateKey: 'nav.services.all',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'miscellaneous.Latter',
-						path: `services/miscellaneous/cover-latter`,
-						title: 'Cover Latter',
-						translateKey: 'nav.services.Cover',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'miscellaneous.Job',
-						path: `services/social-media/27`,
-						title: 'Job Descriptions',
-						translateKey: 'nav.services.Job',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'miscellaneous.pdDes',
-						path: `services/social-media/27`,
-						title: 'Product Reviews',
-						translateKey: 'nav.services.pdDes',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'miscellaneous.linkedinbio',
-						path: `services/social-media/27`,
-						title: 'Personal Linkedin Bio',
-						translateKey: 'nav.services.linkedinbio',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					}
+					// {
+					// 	key: 'miscellaneous.dashboard',
+					// 	path: `services/miscellaneous`,
+					// 	title: 'All Miscellaneous Services',
+					// 	translateKey: 'nav.miscellaneous.all',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.Latter',
+					// 	path: `services/miscellaneous/cover-latter`,
+					// 	title: 'Cover Latter',
+					// 	translateKey: 'nav.miscellaneous.Cover',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.fictional',
+					// 	path: `services/miscellaneous/fictional-story`,
+					// 	title: 'Fictional Story Ideas',
+					// 	translateKey: 'nav.miscellaneous.fictional',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.recipe',
+					// 	path: `services/miscellaneous/food-recipe`,
+					// 	title: 'Food Recipes',
+					// 	translateKey: 'nav.miscellaneous.recipe',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.quora',
+					// 	path: `services/miscellaneous/quora-answers`,
+					// 	title: 'Quora Answers',
+					// 	translateKey: 'nav.miscellaneous.quora',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.greetings',
+					// 	path: `services/miscellaneous/greetings`,
+					// 	title: 'Greetings',
+					// 	translateKey: 'nav.miscellaneous.greetings',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.song',
+					// 	path: `services/miscellaneous/song-lyrics`,
+					// 	title: 'Song Lyrics',
+					// 	translateKey: 'nav.miscellaneous.song',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.Job',
+					// 	path: `services/miscellaneous/job-description`,
+					// 	title: 'Job Descriptions',
+					// 	translateKey: 'nav.miscellaneous.Job',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.pdDes',
+					// 	path: `services/miscellaneous/pd-reviews`,
+					// 	title: 'Product Reviews',
+					// 	translateKey: 'nav.miscellaneous.pdDes',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'miscellaneous.linkedinbio',
+					// 	path: `services/miscellaneous/linkedin-bio`,
+					// 	title: 'Personal Linkedin Bio',
+					// 	translateKey: 'nav.miscellaneous.linkedinbio',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// }
 				]
 			},
 
 
 			{
-				key: 'services.personalOpinion',
-				path: '',
+				key: 'services.business',
+				path: '/services/business',
 				title: 'Business ',
-				translateKey: 'nav.personalOpinion.personalOpinions',
+				translateKey: 'nav.business',
 				icon: 'crm',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					// 	{
-					// 		key: 'appsCrm.dashboard',
-					// 		path: `${APP_PREFIX_PATH}/crm/dashboard`,
-					// 		title: 'Dashboard',
-					// 		translateKey: 'nav.appsCrm.dashboard',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.calendar',
-					// 		path: `${APP_PREFIX_PATH}/crm/calendar`,
-					// 		title: 'Calendar',
-					// 		translateKey: 'nav.appsCrm.calendar',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.customers',
-					// 		path: `${APP_PREFIX_PATH}/crm/customers`,
-					// 		title: 'Customers',
-					// 		translateKey: 'nav.appsCrm.customers',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.customerDetails',
-					// 		path: `${APP_PREFIX_PATH}/crm/customer-details?id=8`,
-					// 		title: 'Customer Details',
-					// 		translateKey: 'nav.appsCrm.customerDetails',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
-					// 	{
-					// 		key: 'appsCrm.mail',
-					// 		path: `${APP_PREFIX_PATH}/crm/mail`,
-					// 		title: 'Mail',
-					// 		translateKey: 'nav.appsCrm.mail',
-					// 		icon: '',
-					// 		type: NAV_ITEM_TYPE_ITEM,
-					// 		authority: [ADMIN, USER],
-					// 		subMenu: []
-					// 	},
+
 				]
 			},
 			{

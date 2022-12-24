@@ -32,6 +32,14 @@ import {
     FcIdea,
     FcViewDetails,
     FcVideoCall,
+    FcDocument,
+    FcRegisteredTrademark,
+    FcMoneyTransfer,
+    FcBullish,
+    FcRules,
+    FcSurvey,
+    FcPositiveDynamic,
+    FcServices,
 } from 'react-icons/fc'
 
 const navigationIcon = {
@@ -41,6 +49,16 @@ const navigationIcon = {
     FcIdea: <FcIdea />,
     FcViewDetails: <FcViewDetails />,
     FcVideoCall: <FcVideoCall />,
+    FcDocument: <FcDocument />,
+    FcRegisteredTrademark: <FcRegisteredTrademark />,
+    FcMoneyTransfer: <FcMoneyTransfer />,
+    FcBullish: <FcBullish />,
+    FcRules: <FcRules />,
+    FcSurvey: <FcSurvey />,
+    FcPositiveDynamic: <FcPositiveDynamic />,
+    FcServices: <FcServices />,
+
+
     apps: <HiOutlineViewGridAdd />,
     project: <HiOutlineChartSquareBar />,
     crm: <HiOutlineUserGroup />,

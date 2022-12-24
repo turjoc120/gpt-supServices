@@ -2,76 +2,30 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Input, Button, Spinner, Select } from 'components/ui'
 import { writeInOpenAI } from './openAIMachine';
 import { useParams } from 'react-router-dom';
+import ServiceInputForm from './ServiceInputForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAiResultText } from '../store/stateSlice';
 
 
 const Editor = ({ }) => {
-	const [text, setText] = useState("");
-	const [vidData, setVidData] = useState({});
+	// const [text, setText] = useState("");
+	// const [vidData, setVidData] = useState({});
 
+	const aiResultText = useSelector((state) => state.knowledgeBaseEditArticle.state.aiResultText)
+	const dispatch = useDispatch();
 
 	const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState(false);
 	const inputRef = useRef(null);
 
-	// const openAIhandler = async (e) => {
-	// 	e.preventDefault();
+	useEffect(() => {
+		dispatch(setAiResultText(""))
+	}, [id])
+	console.log("llllll " + id);
+	const handleVidIdeaSubmit = () => {
 
-	// }
-
-
-	const channelOptions = [
-		{ value: 'youtube', label: 'youtube' },
-		{ value: 'facebook', label: 'facebook' },
-		{ value: 'instagram', label: 'instagram' },
-		{ value: 'tiktok', label: 'tiktok' }
-
-	]
-	const onStatusFilterChange = (selected) => {
-		setVidData({ ...vidData, channel: selected.value })
 	}
-
-	const handleVidIdeaSubmit = async (e) => {
-		e.preventDefault();
-
-		let finalVidStr;
-		// video ideas
-		if (id === "30") {
-			finalVidStr = "tell me 5 viral video ideas of " + vidData.shortDes + " on " + vidData.channel + " in a list";
-		}
-		// social media posts
-		if (id === "31") {
-			finalVidStr = "write few social media posts about " + vidData.shortDes;
-		}
-		// image captions
-		if (id === "27") {
-			finalVidStr = "write few " + vidData.tone + " image captions for " + vidData.shortDes;
-		}
-		// personal opinion 
-		if (id === "28") {
-			finalVidStr = `write down your 5 ${vidData?.tone ? vidData?.tone : ""} opinion about ${vidData.shortDes}`;
-		}
-		// video description
-		if (id === "29") {
-			finalVidStr = `write down 5 ${vidData?.tone ? vidData?.tone : ""} video description about ${vidData.shortDes}`;
-		}
-		// video titles
-		if (id === "32") {
-			finalVidStr = `write down 5 video titles about ${vidData.shortDes}`;
-		}
-
-		setIsLoading(true);
-		if (finalVidStr) {
-			const result = await writeInOpenAI({ prompt: finalVidStr });
-			if (result.length) {
-				setText(result);
-			}
-			console.log(result);
-		}
-		setIsLoading(false);
-	}
-
-
 	return (
 		<div className='grid lg:grid-cols-2 xl:grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 '>
 
@@ -79,204 +33,260 @@ const Editor = ({ }) => {
 
 				{
 					// get video ideas 
-					id === "30" ?
-						<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-							<div>
-								<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-								<small className='text-gray-500 block mb-2'>recommend viral ideas for your video</small>
-								<input
-									onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-									type="text"
-									name="shortDes"
-									placeholder="e.g home workouts"
-									class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-								/>
-							</div>
-							<div className='mt-8'>
-								<label className='font-bold text-base text-stone-600'>CHANNEL</label>
-								<small className='text-gray-500 block mb-2'>Facebook,Tiktok or youtube</small>
-
-								<Select onChange={onStatusFilterChange} className="w-full block  outline-none " placeholder="Choose an option" options={channelOptions}></Select>
-							</div>
-							{isLoading ?
-								<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-									<Spinner className="mx-auto block" color="white" />
-								</Button>
-								:
-								<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-							{/* onClick={openAIhandler} */}
-						</form>
-						:
-
-						// social media posts
-						id === "31" ?
-							<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2 '>
-								<div>
-									<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-									<small className='text-gray-500 block mb-2'>what your social media page is about</small>
-									<input
-										onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-										type="text"
-										name="shortDes"
-										placeholder="e.g home workouts"
-										class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-									/>
-								</div>
-
-								{isLoading ?
-									<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-										<Spinner className="mx-auto block" color="white" />
-									</Button>
-									:
-									<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-
-							</form>
-							:
-
-							// captions for your image
-							id === "27" ?
-								<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-									<div>
-										<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-										<small className='text-gray-500 block mb-2'>what is the image about</small>
-										<input
-											onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-											type="text"
-											name="shortDes"
-											placeholder="e.g a picture of my self in front of eiffel tower"
-											class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-										/>
-									</div>
-									<div className='mt-8'>
-										<label className='font-bold text-base text-stone-600'>TONE</label>
-										<small className='text-gray-500 block mb-2'>Tone of voice your want the AI to write it.</small>
-										<input
-											onChange={(e) => setVidData({ ...vidData, tone: e.target.value })}
-											type="text"
-											name="tone"
-											placeholder="e.g excited"
-											class="w-60 block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-										/>
-									</div>
-									{isLoading ?
-										<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-											<Spinner className="mx-auto block" color="white" />
-										</Button>
-										:
-										<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-									{/* onClick={openAIhandler} */}
-								</form>
-								:
-
-								// Personal Opinion
-								id === "28" ?
-									<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-										<div>
-											<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-											<small className='text-gray-500 block mb-2'>what you want my opinion on</small>
-											<input
-												onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-												type="text"
-												name="shortDes"
-												placeholder="e.g climate change"
-												class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-											/>
-										</div>
-										<div className='mt-8'>
-											<label className='font-bold text-base text-stone-600'>TONE</label>
-											<small className='text-gray-500 block mb-2'>Tone of voice your want the AI to write in. </small>
-											<input
-												onChange={(e) => setVidData({ ...vidData, tone: e.target.value })}
-												type="text"
-												name="tone"
-												placeholder="e.g excited"
-												class="w-60 block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-											/>
-										</div>
-										{isLoading ?
-											<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-												<Spinner className="mx-auto block" color="white" />
-											</Button>
-											:
-											<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-										{/* onClick={openAIhandler} */}
-									</form>
-									:
-
-
-									// video descriptions
-									id === "29" ?
-										<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-											<div>
-												<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-												<small className='text-gray-500 block mb-2'>what your video is about</small>
-												<input
-													onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-													type="text"
-													name="shortDes"
-													placeholder="e.g how to start weight lifting"
-													class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-												/>
-											</div>
-											<div className='mt-8'>
-												<label className='font-bold text-base text-stone-600'>TONE</label>
-												<small className='text-gray-500 block mb-2'>Tone of voice your want the AI to write in. </small>
-												<input
-													onChange={(e) => setVidData({ ...vidData, tone: e.target.value })}
-													type="text"
-													name="tone"
-													placeholder="e.g excited"
-													class="w-60 block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-												/>
-											</div>
-											{isLoading ?
-												<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-													<Spinner className="mx-auto block" color="white" />
-												</Button>
-												:
-												<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-											{/* onClick={openAIhandler} */}
-										</form>
-										:
-
-										// video titles 
-										id === "32" ?
-											<form onSubmit={handleVidIdeaSubmit} className='bg-neutral-100	rounded-md py-8 px-4 mb-2'>
-												<div>
-													<label className='font-bold text-base text-stone-600'>SHORT DESCRIPTIONS</label>
-													<small className='text-gray-500 block mb-2'>what your video is about</small>
-													<input
-														onChange={(e) => setVidData({ ...vidData, shortDes: e.target.value })}
-														type="text"
-														name="shortDes"
-														placeholder="e.g how to start weight lifting"
-														class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
-													/>
-												</div>
-
-												{isLoading ?
-													<Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
-														<Spinner className="mx-auto block" color="white" />
-													</Button>
-													:
-													<Button type="submit" className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >WRITE FOR ME</Button>}
-												{/* onClick={openAIhandler} */}
-											</form>
-											:
-
-											// other 
-											<div>
-												<div className="mb-4">
-													<Input rows="12" ref={inputRef} placeholder="write...." textArea />
-												</div>
-												{isLoading ? <Spinner /> : <Button className="block" variant="solid" >Submit</Button>}
-											</div>
+					id === "30" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "recommend viral ideas for your video",
+							"field1Place": "e.g home workouts",
+							"field2": "CHANNEL",
+							"field2Short": "Facebook,Tiktok or youtube",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
 				}
+
+				{// social media posts
+					id === "31" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "what your social media page is about",
+							"field1Place": "e.g home workouts",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+
+				{// captions for your image
+					id === "27" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "What your image is about.",
+							"field1Place": "e.g me in front of burj khalifa",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+
+
+				{// Personal Opinion
+					id === "28" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "what you want my opinion on",
+							"field1Place": "e.g climate change",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+
+
+				{// video descriptions
+					id === "29" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "what your video is about",
+							"field1Place": "e.g how to start weight lifting",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+
+				{// video titles 
+					id === "32" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTIONS",
+							"field1Short": "what your video is about",
+							"field1Place": "e.g how to start weight lifting",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// cover-latter
+					id === "cover-latters" &&
+					<ServiceInputForm
+						data={{
+							"field1": "ROLE",
+							"field1Short": "the role your are applying for",
+							"field1Place": "e.g sales manager",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+							"field3": "SKILLS AND EXPERIENCE",
+							"field3Short": "your skills and experience related to this role",
+							"field3Place": "e.g sales manager in multiple companies for 10 years",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{id === "fictional-story" &&
+					<ServiceInputForm
+						data={{
+							"field1": "MAIN CHARACTER/S",
+							"field1Short": "main characters and their characteristics",
+							"field1Place": "e.g a boy finds a new type of coffe",
+							"field2": "GENRE",
+							"field2Short": "fantasy,horror,romance or science fiction.",
+
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// food-recipe
+					id === "food-recipe" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION",
+							"field1Short": "what your dish is about?",
+							"field1Place": "e.g chicken tikka masala",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// quora-answers
+					id === "quora-answers" &&
+					<ServiceInputForm
+						data={{
+							"field1": "QUESTION",
+							"field1Short": "the question you want an answer to",
+							"field1Place": "e.g why the sea is blue",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{id === "poems" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION",
+							"field1Short": "what your poem is about",
+							"field1Place": "e.g travlling to jungle and enjoying the bauty",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{id === "linkedin-bio" &&
+					<ServiceInputForm
+						data={{
+							"field1": "BULLET POINTS",
+							"field1Short": "your most important skills point form",
+							"field1Place": `e.g digital marketing freelancer for 3 years
+																			-facebook marketing expert -founder of profit food for kids`,
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{id === "pd-reviews" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION",
+							"field1Short": "product name and description include any important points",
+							"field1Place": "e.g AI writing tool, easy to use interface",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// greetings
+					id === "greetings" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION",
+							"field1Short": "what is the event. include short phrases you want to include",
+							"field1Place": "e.g congrats on your new baby. she is so cute, hope to see you all soon",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// song-lyrics
+					id === "song-lyrics" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION",
+							"field1Short": "what your song is about.",
+							"field1Place": "e.g forbidden love between two peoples whose parents hate each others",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{// job-description
+					id === "job-description" &&
+					<ServiceInputForm
+						data={{
+							"field1": "SHORT DESCRIPTION OF ROLE",
+							"field1Short": "breifly describe the role. include important requirements( in short scentance)",
+							"field1Place": "e.g marketing director for pharmaceutical company 10 years of experience is required",
+							"field2": "TONE",
+							"field2Short": "Tone of voice your want the AI to write in. optional",
+							"field2Place": "e.g excited",
+						}}
+						key={id}
+						id={id}
+					></ServiceInputForm>
+				}
+				{/* // // other 
+					// <div>
+					// 	<div className="mb-4">
+					// 		<Input rows="12" ref={inputRef} placeholder="write...." textArea />
+					// 	</div>
+					// 	{isLoading ? <Spinner /> : <Button className="block" variant="solid" >Submit</Button>}
+					// </div> */}
+
 
 
 			</div>
 			<div className='h-80 overflow-y-auto border-2 p-2 border-gray-200 rounded-md'>
-				{text && text?.split("\n")?.map((el, i) => <p key={i} className=' text-stone-600 leading-relaxed px-2 pb-2'>{el}</p>
+				{aiResultText && aiResultText?.split("\n")?.map((el, i) => <p key={i} className=' text-stone-600 leading-relaxed px-2 pb-2'>{el}</p>
 				)
 				}
 			</div>

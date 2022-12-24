@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, AdaptableCard } from 'components/shared'
 import { Button } from 'components/ui'
 import Editor from './components/Editor'
@@ -14,67 +14,67 @@ injectReducer('knowledgeBaseEditArticle', reducer)
 
 const EditArticle = () => {
 
-	// const dispatch = useDispatch()
+	const [headingText, setHedingText] = useState("");
+	const { id } = useParams();
 
-	// const mode = useSelector((state) => state.knowledgeBaseEditArticle.state.mode)
+	useEffect(() => {
+		if (id === "30") {
+			setHedingText("Video Ideas")
+		}
+		if (id === "31") {
+			setHedingText("Social Media Post Ideas")
+		}
+		if (id === "27") {
+			setHedingText("Image Captions")
+		}
+		if (id === "28") {
+			setHedingText("Personal Opinion")
+		}
+		if (id === "29") {
+			setHedingText("Video Descriptions")
+		}
+		if (id === "32") {
+			setHedingText("Video Titles")
+		}
+		if (id === "cover-latter") {
+			setHedingText("Cover Latter")
+		}
+		if (id === "fictional-story") {
+			setHedingText("Fictional Story Ideas")
+		}
+		if (id === "food-recipe") {
+			setHedingText("Food Recipes")
+		}
+		if (id === "quora-answers") {
+			setHedingText("Quora Answers")
+		}
+		if (id === "greetings") {
+			setHedingText("Greetings")
+		}
+		if (id === "song-lyrics") {
+			setHedingText("Song Lyrics")
+		}
+		if (id === "pd-reviews") {
+			setHedingText("Product Reviews")
+		}
+		if (id === "linkedin-bio") {
+			setHedingText("Personal Linkedin Bio")
+		}
+		if (id === "job-description") {
+			setHedingText("Job Description")
+		}
+		if (id === "poems") {
+			setHedingText("Poems")
+		}
+	}, [id])
 
-	// const query = useQuery()
-
-	// const id = query.get('id')
-
-	// useEffect(() => {
-	// 	fetchData()
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [])
-	const { id } = useParams()
-
-	// const fetchData = () => {
-	// 	const categoryLabel = query.get('categoryLabel')
-	// 	const categoryValue = query.get('categoryValue')
-
-	// 	if (id) {
-	// 		dispatch(getArticle({ id }))
-	// 	}
-
-	// 	if (!id) {
-	// 		dispatch(setMode('add'))
-	// 		dispatch(setArticle(''))
-	// 	}
-
-	// 	if (categoryLabel && categoryValue) {
-	// 		dispatch(setCategory({ categoryLabel, categoryValue }))
-	// 	}
-
-	// }
-
-	// const onModeChange = (mode) => {
-	// 	dispatch(setMode(mode))
-	// }
 
 	return (
 		<Container>
 			<AdaptableCard>
 				<div className="max-w-[800px] mx-auto">
 					<div className="flex justify-between items-center mb-4">
-						<h3>
-
-							{id === "30" ? < span className='font-black	text-2xl text-stone-900'> Video Ideas</span> :
-
-								id === "31" ? < span className='font-black text-2xl text-stone-900'> Social Media Post Ideas</span> :
-
-									id === "27" ? < span className='font-black text-2xl text-stone-900'> Image Captions</span> :
-
-										id === "28" ? < span className='font-black text-2xl text-stone-900'> Personal Opinion</span> :
-
-											id === "29" ? < span className='font-black text-2xl text-stone-900'> Video Descriptions</span> :
-
-												id === "32" ? < span className='font-black text-2xl text-stone-900'> Video Titles</span> :
-
-													""}
-
-						</h3>
-
-
+						<h3> < span className='font-black text-2xl text-stone-900'>{headingText}</span></h3>
 					</div>
 					<Editor />
 				</div>

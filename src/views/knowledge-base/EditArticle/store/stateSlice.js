@@ -5,9 +5,13 @@ const stateSlice = createSlice({
     initialState: {
         categoryValue: '',
         categoryLabel: '',
-        mode: 'edit'
+        mode: 'edit',
+        aiResultText: ""
     },
     reducers: {
+        setAiResultText: (state, { payload }) => {
+            state.aiResultText = payload
+        },
         setCategory: (state, action) => {
             state.categoryValue = action.payload.categoryValue
             state.categoryLabel = action.payload.categoryLabel
@@ -18,7 +22,7 @@ const stateSlice = createSlice({
     },
 })
 
-export const { setCategory, setMode } = stateSlice.actions
+export const { setCategory, setMode, setAiResultText } = stateSlice.actions
 
 
 export default stateSlice.reducer
