@@ -111,19 +111,19 @@ export const miscellaneousData = [
   {
     id: "poems",
     name: "Poems",
-    icon: "FcEditImage",
+    icon: "FcKindle",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "quora-answers",
     name: "Quora Answers",
-    icon: "FcEditImage",
+    icon: "FcFinePrint",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "song-lyrics",
     name: "Song Lyrics",
-    icon: "FcEditImage",
+    icon: "FcHeadset",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
@@ -135,7 +135,7 @@ export const miscellaneousData = [
   {
     id: "job-description",
     name: "Job Description",
-    icon: "FcEditImage",
+    icon: "FcBusiness",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
