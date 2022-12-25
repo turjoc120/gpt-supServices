@@ -18,7 +18,7 @@ const SignUpForm = props => {
 
 	const { disableSubmit = false, className, signInUrl = '/sign-in' } = props
 
-	const { signUp, authRes } = useAuthContext()
+	const { signUp, authRes, isLoading } = useAuthContext()
 
 	const [message, setMessage] = useTimeOutMessage()
 
@@ -108,11 +108,11 @@ const SignUpForm = props => {
 							</FormItem>
 							<Button
 								block
-								loading={isSubmitting}
+								loading={isLoading}
 								variant="solid"
 								type="submit"
 							>
-								{isSubmitting ? 'Creating Account...' : 'Sign Up'}
+								{isLoading ? 'Creating Account...' : 'Sign Up'}
 							</Button>
 							<div className="mt-4 text-center">
 								<span>Already have an account? </span>

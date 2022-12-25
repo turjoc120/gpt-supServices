@@ -23,7 +23,7 @@ const SignInForm = props => {
 
 	const [message, setMessage] = useTimeOutMessage()
 
-	const { signIn, authRes } = useAuthContext()
+	const { signIn, authRes, isLoading } = useAuthContext()
 
 	const onSignIn = (values, setSubmitting) => {
 		const { email, password } = values
@@ -90,8 +90,8 @@ const SignInForm = props => {
 									Forgot Password?
 								</ActionLink>
 							</div>
-							<Button block loading={isSubmitting} variant="solid" type="submit">
-								{isSubmitting ? 'Signing in...' : 'Sign In'}
+							<Button block loading={isLoading} variant="solid" type="submit">
+								{isLoading ? 'Signing in...' : 'Sign In'}
 							</Button>
 							<div className="mt-4 text-center">
 								<span>Don't have an account yet? </span>

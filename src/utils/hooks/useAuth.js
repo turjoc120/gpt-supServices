@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
-	const [userL, setUserL] = useState({})
+
 	const dispatch = useDispatch()
 
 	const navigate = useNavigate()
@@ -33,7 +33,7 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
-					setUserL(userCredential?.user)
+
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
 					dispatch(setUser({
 						avatar: '',
@@ -60,7 +60,6 @@ function useAuth() {
 		createUserWithEmailAndPassword(auth, values.email, values.password)
 			.then((userCredential) => {
 				if (userCredential.user) {
-					setUserL(userCredential?.user)
 					setAuthRes({
 						status: 'success',
 						message: ""
@@ -68,7 +67,6 @@ function useAuth() {
 					updateProfile(auth.currentUser, {
 						displayName: values.userName
 					})
-					console.log(userCredential.user);
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
 					dispatch(setUser({
 						avatar: '',
@@ -137,9 +135,8 @@ function useAuth() {
 		authenticated: token && signedIn,
 		signIn,
 		signUp,
-		// signOut,
 		logOut,
-		authRes, isLoading, userL
+		authRes, isLoading,
 
 	}
 }
