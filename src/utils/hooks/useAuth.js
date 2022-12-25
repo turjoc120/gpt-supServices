@@ -15,6 +15,7 @@ function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
 
+
 	const dispatch = useDispatch()
 
 	const navigate = useNavigate()
@@ -64,6 +65,7 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
+
 					updateProfile(auth.currentUser, {
 						displayName: values.userName
 					})
@@ -94,14 +96,17 @@ function useAuth() {
 
 	useEffect(() => {
 		const unsubscribed = onAuthStateChanged(auth, (user) => {
-			if (user) {
+			if (user?.email) {
+
 				dispatch(setUser({
 					avatar: '',
 					userName: user.displayName,
 					authority: ['admin', 'user'],
 					email: user.email
 				}))
+
 			} else {
+
 				dispatch(setUser({
 					avatar: '',
 					userName: '',
@@ -157,6 +162,7 @@ function useAuth() {
 		forgotPasswordHandler,
 		authRes, isLoading,
 		setAuthRes,
+
 	}
 }
 

@@ -30,10 +30,11 @@ export const UserDropdown = ({ className }) => {
 			<Avatar size={32} shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 			<div className="hidden md:block">
 				<div className="text-xs capitalize">{!isLoading && user.authority[0] || 'guest'}</div>
-				<div className="font-bold">{!isLoading && user?.userName}</div>
+				<div className="font-bold">{user.authority[0] && user?.userName}</div>
 			</div>
 		</div>
 	)
+
 
 	return (
 		<div>
@@ -42,7 +43,7 @@ export const UserDropdown = ({ className }) => {
 					<div className="py-2 px-3 flex items-center gap-2">
 						<Avatar shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 						<div>
-							<div className="font-bold text-gray-900 dark:text-gray-100">{!isLoading && user?.userName}</div>
+							<div className="font-bold text-gray-900 dark:text-gray-100">{user.authority[0] && user?.userName}</div>
 							<div className="text-xs">{!isLoading && user?.email}</div>
 						</div>
 					</div>
