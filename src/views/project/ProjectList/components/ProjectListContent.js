@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import GridItem from './GridItem'
 import ListItem from './ListItem'
 import { Spinner } from 'components/ui'
-import { getbusiness, getList, getMmiscellaneous, putProject } from '../store/dataSlice'
+import { getbusiness, getList, getMarketing, getMmiscellaneous, getWriting, putProject } from '../store/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { miscellaneousData } from 'mock/data/projectData'
@@ -28,6 +28,12 @@ const ProjectListContent = () => {
 		}
 		if (categoryIdx === "business") {
 			dispatch(getbusiness({ sort, search }))
+		}
+		if (categoryIdx === "marketing-tools") {
+			dispatch(getMarketing({ sort, search }))
+		}
+		if (categoryIdx === "writing-tools") {
+			dispatch(getWriting({ sort, search }))
 		}
 		console.log("hit........");
 

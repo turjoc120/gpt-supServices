@@ -29,6 +29,20 @@ export async function apiGetBusiness(data) {
         data
     })
 }
+export async function apiGetMarketing(data) {
+    return ApiService.fetchData({
+        url: '/project/marketing',
+        method: 'post',
+        data
+    })
+}
+export async function apiGetWriting(data) {
+    return ApiService.fetchData({
+        url: '/project/writing',
+        method: 'post',
+        data
+    })
+}
 
 export async function apiPutProjectList(data) {
     return ApiService.fetchData({

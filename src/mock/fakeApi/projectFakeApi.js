@@ -34,6 +34,18 @@ export default function projectFakeApi(server, apiPrefix) {
 
         return data
     })
+    server.post(`${apiPrefix}/project/marketing`, (schema, { requestBody }) => {
+
+        let data = schema.db.marketingData
+
+        return data
+    })
+    server.post(`${apiPrefix}/project/writing`, (schema, { requestBody }) => {
+
+        let data = schema.db.writingData
+
+        return data
+    })
 
     server.put(`${apiPrefix}/project/list/add`, (schema, { requestBody }) => {
         const data = JSON.parse(requestBody)
