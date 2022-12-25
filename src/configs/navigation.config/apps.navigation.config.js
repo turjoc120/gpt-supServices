@@ -24,9 +24,7 @@ const appsNavigationConfig = [
         icon: "project",
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
-        subMenu: [
-
-        ],
+        subMenu: [],
       },
       {
         key: "services.marketing",
@@ -36,9 +34,7 @@ const appsNavigationConfig = [
         icon: "sales",
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
-        subMenu: [
-
-        ],
+        subMenu: [],
       },
       {
         key: "services.business",
@@ -176,7 +172,7 @@ const appsNavigationConfig = [
         path: "/services/all-services",
         title: "All Our Services",
         translateKey: "nav.allServices",
-        icon: "apps",
+        icon: "dashboard",
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
         subMenu: [],
