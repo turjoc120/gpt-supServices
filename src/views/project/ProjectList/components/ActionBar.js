@@ -1,61 +1,87 @@
-import React, { useRef } from 'react'
-import { Button, Input, Tooltip } from 'components/ui'
+import React, { useRef } from "react";
+import { Button, Input, Tooltip } from "components/ui";
+import { useLocation } from "react-router-dom";
 import {
-	HiOutlinePlusCircle,
-	HiOutlineSearch,
-	HiOutlineViewGrid,
-	HiOutlineViewList,
-	HiOutlineSortAscending,
-	HiOutlineSortDescending
-} from 'react-icons/hi'
-import { toggleView, toggleSort, setSearch, toggleNewProjectDialog } from '../store/stateSlice'
-import { useDispatch, useSelector } from 'react-redux'
-import debounce from 'lodash/debounce'
+  HiOutlinePlusCircle,
+  HiOutlineSearch,
+  HiOutlineViewGrid,
+  HiOutlineViewList,
+  HiOutlineSortAscending,
+  HiOutlineSortDescending,
+} from "react-icons/hi";
+import {
+  toggleView,
+  toggleSort,
+  setSearch,
+  toggleNewProjectDialog,
+} from "../store/stateSlice";
+import { useDispatch, useSelector } from "react-redux";
+import debounce from "lodash/debounce";
 
 const ActionBar = () => {
+  const location = useLocation();
 
-	const dispatch = useDispatch()
+  let headerText;
 
-	const inputRef = useRef()
+  if (location.pathname === "/services/social-media") {
+    headerText = "Social Media Services";
+  } else if (location.pathname === "/services/marketing-tools") {
+    headerText = "Marketing Tools";
+  } else if (location.pathname === "/services/business") {
+    headerText = "Business Tools";
+  } else if (location.pathname === "/services/writing-tools") {
+    headerText = "Writing Tools";
+  } else if (location.pathname === "/services/miscellaneous") {
+    headerText = "Miscellaneous";
+  } else if (location.pathname === "/services/all-services") {
+    headerText = "All Services";
+  } else {
+    headerText = "Services";
+  }
 
-	const view = useSelector((state) => state.projectList.state.view)
+  const dispatch = useDispatch();
 
-	const { sort } = useSelector((state) => state.projectList.state.query)
+  const inputRef = useRef();
 
-	const onViewToggle = () => {
-		dispatch(toggleView(view === 'grid' ? 'list' : 'grid'))
-	}
+  const view = useSelector((state) => state.projectList.state.view);
 
-	const onToggleSort = () => {
-		dispatch(toggleSort(sort === 'asc' ? 'desc' : 'asc'))
-	}
+  const { sort } = useSelector((state) => state.projectList.state.query);
 
-	const onAddNewProject = () => {
-		dispatch(toggleNewProjectDialog(true))
-	}
+  const onViewToggle = () => {
+    dispatch(toggleView(view === "grid" ? "list" : "grid"));
+  };
 
-	const debounceFn = debounce(handleDebounceFn, 500)
+  const onToggleSort = () => {
+    dispatch(toggleSort(sort === "asc" ? "desc" : "asc"));
+  };
 
-	function handleDebounceFn(val) {
-		dispatch(setSearch(val))
-	}
+  const onAddNewProject = () => {
+    dispatch(toggleNewProjectDialog(true));
+  };
 
-	const handleInputChange = (e) => {
-		debounceFn(e.target.value)
-	}
+  const debounceFn = debounce(handleDebounceFn, 500);
 
-	return (
-		<div className="lg:flex items-center justify-between mb-4">
-			<h3 className="mb-4 lg:mb-0">services</h3>
-			<div className="flex flex-col md:flex-row md:items-center gap-1">
-				{/* <Input
+  function handleDebounceFn(val) {
+    dispatch(setSearch(val));
+  }
+
+  const handleInputChange = (e) => {
+    debounceFn(e.target.value);
+  };
+
+  return (
+    <div className="lg:flex items-center justify-between mb-4">
+      <h3 className="mb-4 lg:mb-0">{headerText}</h3>
+
+      <div className="flex flex-col md:flex-row md:items-center gap-1">
+        {/* <Input
 					ref={inputRef}
 					size="sm"
 					placeholder="Search"
 					prefix={<HiOutlineSearch className="text-lg" />}
 					onChange={handleInputChange}
 				/> */}
-				{/* <Tooltip title={view === 'grid' ? 'List view' : 'Grid view'}>
+        {/* <Tooltip title={view === 'grid' ? 'List view' : 'Grid view'}>
 					<Button
 						className="hidden md:flex"
 						onClick={() => onViewToggle()}
@@ -64,7 +90,7 @@ const ActionBar = () => {
 						icon={view === 'grid' ? <HiOutlineViewList /> : <HiOutlineViewGrid />}
 					/>
 				</Tooltip> */}
-				{/* <Tooltip title={`Sort: ${sort === 'asc' ? 'A-Z' : 'Z-A'}`}>
+        {/* <Tooltip title={`Sort: ${sort === 'asc' ? 'A-Z' : 'Z-A'}`}>
 					<Button
 						className="hidden md:flex"
 						variant="plain"
@@ -73,7 +99,7 @@ const ActionBar = () => {
 						onClick={onToggleSort}
 					/>
 				</Tooltip> */}
-				{/* <Button
+        {/* <Button
 					size="sm"
 					variant="twoTone"
 					icon={<HiOutlinePlusCircle />}
@@ -81,9 +107,9 @@ const ActionBar = () => {
 				>
 					New Project
 				</Button> */}
-			</div>
-		</div>
-	)
-}
+      </div>
+    </div>
+  );
+};
 
-export default ActionBar
+export default ActionBar;
