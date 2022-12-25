@@ -240,43 +240,191 @@ export const businessData = [
 ];
 export const marketingData = [
   {
-    id: "demo-demo",
-    name: "demo",
+    id: "amazon-product-desc",
+    name: "Amazon Product Descriptions",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Write product descriptions in point form for your amazon product",
   },
   {
-    id: "demo1",
-    name: "demo",
+    id: "blog-conclusions",
+    name: "Blog Conclusions",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Let OnlyAI write a conclusion for your blog article",
   },
   {
-    id: "demo2",
-    name: "demo",
+    id: "blog-headlines",
+    name: "Blog Headlines",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Need an attention-grabbing headline for your article? Ask OnlyAI",
   },
   {
-    id: "demo3",
-    name: "demo",
+    id: "blog-intros",
+    name: "Blog Intros",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Generate a paragraph of blog content using OnlyAI's blog intros tool!",
   },
   {
-    id: "demo4",
-    name: "demo",
+    id: "blog-outlines",
+    name: "Blog Outlines",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Generate an entire outline for your blog article using OnlyAI!",
   },
   {
-    id: "demo5",
-    name: "demo",
+    id: "blog-paragraphs",
+    name: "Blog Paragraphs",
     icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
+    desc: "Let our AI machine help you come up content for your blog article",
   },
-
-
+  {
+    id: "blog-topics",
+    name: "Blog Topics",
+    icon: "FcDocument",
+    desc: "Not too sure what to write for your blog? Let OnlyAI suggest some topics!",
+  },
+  {
+    id: "cold-emails",
+    name: "Cold Emails",
+    icon: "FcDocument",
+    desc: "Need to send a cold email? OnlyAI has a few suggestions for you!",
+  },
+  {
+    id: "explain-child",
+    name: "Explain It To A Child",
+    icon: "FcDocument",
+    desc: "Need to explain a difficult concept to a child? Let OnlyAI try!",
+  },
+  {
+    id: "facebook-ads",
+    name: "Facebook Ads",
+    icon: "FcDocument",
+    desc: "Create the next wining Facebook ads copy with OnlyAI!",
+  },
+  {
+    id: "faqs",
+    name: "FAQs",
+    icon: "FcDocument",
+    desc: "OnlyAI generates questions for your website or sales page",
+  },
+  {
+    id: "fab",
+    name: "Features, Advantages, Benefits",
+    icon: "FcDocument",
+    desc: "Write a compelling FAB statement for your product or service",
+  },
+  {
+    id: "generic-emails",
+    name: "Generic Emails",
+    icon: "FcDocument",
+    desc: "OnlyAI helps you write your next professional email to anyone.",
+  },
+  {
+    id: "google-ads",
+    name: "Google Ads",
+    icon: "FcDocument",
+    desc: "OnlyAI helps you write powerful Google ad headlines that sell!",
+  },
+  {
+    id: "hso-copywriting",
+    name: "HSO Copywriting Formula",
+    icon: "FcDocument",
+    desc: "Need compelling copy for your sales page or ad? Try Hook, Story, Offer!",
+  },
+  {
+    id: "lead-magnets",
+    name: "Lead Magnets",
+    icon: "FcDocument",
+    desc: "Convert Visitors into leads using these suggestions.",
+  },
+  {
+    id: "Listicles",
+    name: "listicles",
+    icon: "FcDocument",
+    desc: "Listicles are great for blog posts, videos and social media!",
+  },
+  {
+    id: "news-paragraphs",
+    name: "News Paragraphs",
+    icon: "FcDocument",
+    desc: "OnlyAI helps you write paragraphs for a news article",
+  },
+  {
+    id: "offer-ideas",
+    name: "Offer Ideas",
+    icon: "FcDocument",
+    desc: "Ran out of ideas for your next offer? let OnlyAI suggest a few for you!",
+  },
+  {
+    id: "press-release",
+    name: "Press Release",
+    icon: "FcDocument",
+    desc: "Let OnlyAI pitch in with a press release for whatever the occasion.",
+  },
+  {
+    id: "product-benefit",
+    name: "Product Benefit Statements",
+    icon: "FcDocument",
+    desc: "OnlyAI writes benefits headers and paragraphs for your sales pages.",
+  },
+  {
+    id: "product-story",
+    name: "Product Story",
+    icon: "FcDocument",
+    desc: "Craft a compelling backstory for your product or service.",
+  },
+  {
+    id: "quotable-quotes",
+    name: "Quotable Quotes",
+    icon: "FcDocument",
+    desc: "Generate quoteworthy statments with OnlyAI's help.,",
+  },
+  {
+    id: "sales-page-cta",
+    name: "Sales Page Call-to-action",
+    icon: "FcDocument",
+    desc: "OnlyAI writes a CTA statement that nudges your reader into action.",
+  },
+  {
+    id: "sales-page-guarantee",
+    name: "Sales Page Guarantee",
+    icon: "FcDocument",
+    desc: "OnlyAI writes a strong guarantee for your sales page.",
+  },
+  {
+    id: "sales-page-headlines",
+    name: "Sales Page Headlines",
+    icon: "FcDocument",
+    desc: "OnlyAI writes a irresistable headlines and subheadings for your sales page.",
+  },
+  {
+    id: "sales-page-opener",
+    name: "Sales Page Opener",
+    icon: "FcDocument",
+    desc: "OnlyAI writes a captivating opening paragraphs for your sales page.",
+  },
+  {
+    id: "seo-desc",
+    name: "SEO Descriptions",
+    icon: "FcDocument",
+    desc: "OnlyAI writes SEO descriptions that everybody hates to write!",
+  },
+  {
+    id: "social-bio",
+    name: "Social Media Bio",
+    icon: "FcDocument",
+    desc: "Write a short but compelling social media bio for your business",
+  },
+  {
+    id: "website-about",
+    name: "Website About Us",
+    icon: "FcDocument",
+    desc: "Hate writing the About Us section of your website? Here comes OnlyAI!",
+  },
+  {
+    id: "welcome-emails",
+    name: "Welcome Emails",
+    icon: "FcDocument",
+    desc: "Greet your new subscribers with a sizzling welcome email!",
+  },
 ];
 export const writingData = [
   {
@@ -315,8 +463,6 @@ export const writingData = [
     icon: "FcDocument",
     desc: "Need captivating description for your book? let us help",
   },
-
-
 ];
 
 export const projectDashboardData = {
