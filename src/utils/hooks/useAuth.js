@@ -6,7 +6,7 @@ import appConfig from 'configs/app.config'
 import { REDIRECT_URL_KEY } from 'constants/app.constant'
 import { useNavigate } from 'react-router-dom'
 import useQuery from './useQuery'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from 'store/auth/firebase'
 import { useEffect, useState } from 'react'
 
@@ -122,6 +122,24 @@ function useAuth() {
 		navigate(appConfig.unAuthenticatedEntryPath)
 	}
 
+	const forgotPasswordHandler = async (values) => {
+		if (values.email)
+			setLoading(true)
+		await sendPasswordResetEmail(auth, values.email).then(() => {
+			setAuthRes({
+				status: 'success',
+				message: "an email has been sent!"
+			})
+			setLoading(false)
+		}).catch((errors) => {
+			setAuthRes({
+				status: 'failed',
+				message: errors?.message
+			})
+			setLoading(false)
+		});
+	};
+
 	const logOut = () => {
 		signOut(auth).then(() => {
 
@@ -136,8 +154,9 @@ function useAuth() {
 		signIn,
 		signUp,
 		logOut,
+		forgotPasswordHandler,
 		authRes, isLoading,
-
+		setAuthRes,
 	}
 }
 
