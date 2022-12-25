@@ -207,7 +207,7 @@ const Editor = ({ }) => {
 							"field1": "BULLET POINTS",
 							"field1Short": "your most important skills point form",
 							"field1Place": `e.g digital marketing freelancer for 3 years
-																			-facebook marketing expert -founder of profit food for kids`,
+							-facebook marketing expert -founder of profit food for kids`,
 							"field2": "TONE",
 							"field2Short": "Tone of voice your want the AI to write in. optional",
 							"field2Place": "e.g excited",

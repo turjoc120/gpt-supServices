@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const sessionSlice = createSlice({
-	name: 'auth/session',
-	initialState: {
+    name: 'auth/session',
+    initialState: {
         token: '',
         signedIn: false,
     },
-	reducers: {
+    reducers: {
         onSignInSuccess: (state, action) => {
             state.signedIn = true
             state.token = action.payload
@@ -15,10 +15,10 @@ export const sessionSlice = createSlice({
             state.signedIn = false
             state.token = ''
         },
-        setToken: (state, action) =>  {
+        setToken: (state, action) => {
             state.token = action.payload
         }
-	},
+    },
 })
 
 export const { onSignInSuccess, onSignOutSuccess, setToken } = sessionSlice.actions

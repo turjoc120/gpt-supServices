@@ -170,6 +170,8 @@ const ServiceInputForm = ({ data, id }) => {
                     class="w-60 block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
                 />
             </div> : ""}
+
+
             {isLoading ?
                 <Button className=" mt-5 py-2 tracking-wide" size="sm" block variant="solid" >
                     <Spinner className="mx-auto block" color="white" />
