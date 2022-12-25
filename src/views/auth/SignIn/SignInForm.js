@@ -4,10 +4,10 @@ import { PasswordInput, ActionLink } from 'components/shared'
 import useTimeOutMessage from 'utils/hooks/useTimeOutMessage'
 import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
-import useAuth from 'utils/hooks/useAuth'
+import useAuthContext from 'utils/hooks/useAuthContext'
 
 const validationSchema = Yup.object().shape({
-	userName: Yup.string().required('Please enter your user name'),
+	email: Yup.string().required('Please enter your email'),
 	password: Yup.string().required('Please enter your password'),
 	rememberMe: Yup.bool()
 })
@@ -23,16 +23,16 @@ const SignInForm = props => {
 
 	const [message, setMessage] = useTimeOutMessage()
 
-	const { signIn } = useAuth()
+	const { signIn, authRes } = useAuthContext()
 
-	const onSignIn = async (values, setSubmitting) => {
-		const { userName, password } = values
+	const onSignIn = (values, setSubmitting) => {
+		const { email, password } = values
 		setSubmitting(true)
 
-		const result = await signIn({ userName, password })
+		signIn({ email, password })
 
-		if (result.status === 'failed') {
-			setMessage(result.message)
+		if (authRes.status === 'failed') {
+			setMessage(authRes.message)
 		}
 
 		setSubmitting(false)
@@ -40,10 +40,10 @@ const SignInForm = props => {
 
 	return (
 		<div className={className}>
-			{message && <Alert className="mb-4" type="danger" showIcon>{message}</Alert>}
+			{authRes.status === 'failed' && <Alert className="mb-4" type="danger" showIcon>{authRes.message}</Alert>}
 			<Formik
 				initialValues={{
-					userName: 'user1@xxx.com',
+					email: 'user1@xxx.com',
 					password: 'gpt321',
 					rememberMe: true
 				}}
@@ -60,15 +60,15 @@ const SignInForm = props => {
 					<Form>
 						<FormContainer>
 							<FormItem
-								label="User Name"
-								invalid={errors.userName && touched.userName}
-								errorMessage={errors.userName}
+								label="Email"
+								invalid={errors.email && touched.email}
+								errorMessage={errors.email}
 							>
 								<Field
 									type="text"
 									autoComplete="off"
-									name="userName"
-									placeholder="User Name"
+									name="email"
+									placeholder="Full Name"
 									component={Input}
 								/>
 							</FormItem>

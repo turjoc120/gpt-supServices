@@ -1,12 +1,15 @@
 import React from 'react'
 import { Avatar, Dropdown } from 'components/ui'
 import withHeaderItem from 'utils/hoc/withHeaderItem'
-import useAuth from 'utils/hooks/useAuth'
+
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import { HiOutlineUser, HiOutlineCog, HiOutlineLogout } from 'react-icons/hi'
 import { FiActivity } from 'react-icons/fi'
+import useAuthContext from 'utils/hooks/useAuthContext'
+import useAuth from 'utils/hooks/useAuth'
+
 
 const dropdownItemList = [
 	{ label: 'Profile', path: '/app/account/settings/profile', icon: <HiOutlineUser /> },
@@ -16,16 +19,16 @@ const dropdownItemList = [
 
 export const UserDropdown = ({ className }) => {
 
-	const { avatar, userName, authority, email } = useSelector((state) => state.auth.user)
+	const { avatar, userName, authority, email } = useSelector((state) => state?.auth?.user)
 
-	const { signOut } = useAuth()
+	const { logOut, isLoading } = useAuth()
 
 	const UserAvatar = (
 		<div className={classNames(className, 'flex items-center gap-2')}>
 			<Avatar size={32} shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 			<div className="hidden md:block">
 				<div className="text-xs capitalize">{authority[0] || 'guest'}</div>
-				<div className="font-bold">Mujtaba</div>
+				<div className="font-bold">{isLoading ? "" : userName}</div>
 			</div>
 		</div>
 	)
@@ -37,7 +40,7 @@ export const UserDropdown = ({ className }) => {
 					<div className="py-2 px-3 flex items-center gap-2">
 						<Avatar shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 						<div>
-							<div className="font-bold text-gray-900 dark:text-gray-100">Mujtaba</div>
+							<div className="font-bold text-gray-900 dark:text-gray-100">{isLoading ? "" : userName}</div>
 							<div className="text-xs">{email}</div>
 						</div>
 					</div>
@@ -52,7 +55,7 @@ export const UserDropdown = ({ className }) => {
 					</Dropdown.Item>
 				))}
 				<Dropdown.Item variant="divider" />
-				<Dropdown.Item onClick={signOut} eventKey="Sign Out" className="gap-2">
+				<Dropdown.Item onClick={logOut} eventKey="Sign Out" className="gap-2">
 					<span className="text-xl opacity-50">
 						<HiOutlineLogout />
 					</span>

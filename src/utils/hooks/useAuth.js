@@ -6,92 +6,142 @@ import appConfig from 'configs/app.config'
 import { REDIRECT_URL_KEY } from 'constants/app.constant'
 import { useNavigate } from 'react-router-dom'
 import useQuery from './useQuery'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
+import { auth } from 'store/auth/firebase'
+import { useEffect, useState } from 'react'
+
 
 function useAuth() {
+	const [authRes, setAuthRes] = useState({});
+	const [isLoading, setLoading] = useState(true)
+	const [userL, setUserL] = useState({})
+	const dispatch = useDispatch()
 
-    const dispatch = useDispatch()
-
-    const navigate = useNavigate()
+	const navigate = useNavigate()
 
 	const query = useQuery()
 
-    const { token, signedIn } = useSelector((state) => state.auth.session)
+	const { token, signedIn } = useSelector((state) => state.auth.session)
 
-    const signIn = async (values) => {
-        try {
-			const resp = await apiSignIn(values)
-			if (resp.data) {
-				const { token } = resp.data
-				dispatch(onSignInSuccess(token))
-				if(resp.data.user) {
-					dispatch(setUser(resp.data.user || { 
-						avatar: '', 
-						userName: 'Anonymous', 
-						authority: ['USER'], 
-						email: ''
+	const signIn = (values) => {
+
+		setLoading(true)
+		signInWithEmailAndPassword(auth, values.email, values.password)
+			.then((userCredential) => {
+				if (userCredential.user) {
+					setAuthRes({
+						status: 'success',
+						message: ""
+					})
+					setUserL(userCredential?.user)
+					dispatch(onSignInSuccess(userCredential?.user?.uid))
+					dispatch(setUser({
+						avatar: '',
+						userName: values.userName,
+						authority: ['admin', 'user'],
+						email: values.email
 					}))
+
+					const redirectUrl = query.get(REDIRECT_URL_KEY)
+					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
 				}
-				const redirectUrl = query.get(REDIRECT_URL_KEY)
-				navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
-                return {
-                    status: 'success',
-                    message: ''
-                }
-			}
-		} catch (errors) {
-			return {
-                status: 'failed',
-                message: errors?.response?.data?.message || errors.toString()
-            }
-		}
-    }
+
+			})
+			.catch((error) => {
+				setAuthRes({
+					status: 'failed',
+					message: error?.message
+				})
+			}).finally(() => setLoading(false))
+	}
 
 	const signUp = async (values) => {
-        try {
-			const resp = await apiSignUp(values)
-			if (resp.data) {
-				const { token } = resp.data
-				dispatch(onSignInSuccess(token))
-				if(resp.data.user) {
-					dispatch(setUser(resp.data.user || { 
-						avatar: '', 
-						userName: 'Anonymous', 
-						authority: ['USER'], 
-						email: ''
+		setLoading(true)
+		createUserWithEmailAndPassword(auth, values.email, values.password)
+			.then((userCredential) => {
+				if (userCredential.user) {
+					setUserL(userCredential?.user)
+					setAuthRes({
+						status: 'success',
+						message: ""
+					})
+					updateProfile(auth.currentUser, {
+						displayName: values.userName
+					})
+					console.log(userCredential.user);
+					dispatch(onSignInSuccess(userCredential?.user?.uid))
+					dispatch(setUser({
+						avatar: '',
+						userName: values.userName,
+						authority: ['admin', 'user'],
+						email: values.email
 					}))
-				}
-				const redirectUrl = query.get(REDIRECT_URL_KEY)
-				navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
-                return {
-                    status: 'success',
-                    message: ''
-                }
-			}
-		} catch (errors) {
-			return {
-                status: 'failed',
-                message: errors?.response?.data?.message || errors.toString()
-            }
-		}
-    }
 
-    const handleSignOut = ()  => {
+
+					///check for sub or not 
+					const redirectUrl = query.get(REDIRECT_URL_KEY)
+					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
+
+				}
+			})
+			.catch((errors) => {
+				setAuthRes({
+					status: 'failed',
+					message: errors?.message
+				})
+			}).finally(() => setLoading(false));
+
+	}
+
+
+	useEffect(() => {
+		const unsubscribed = onAuthStateChanged(auth, (user) => {
+			if (user) {
+				dispatch(setUser({
+					avatar: '',
+					userName: user.displayName,
+					authority: ['admin', 'user'],
+					email: user.email
+				}))
+			} else {
+				dispatch(setUser({
+					avatar: '',
+					userName: '',
+					authority: [],
+					email: ''
+				}))
+
+			}
+			setLoading(false)
+		});
+		return () => unsubscribed
+	}, [])
+
+
+	const handleSignOut = () => {
 		dispatch(onSignOutSuccess())
 		dispatch(setUser(initialState))
 		navigate(appConfig.unAuthenticatedEntryPath)
 	}
 
-    const signOut = async () => {
-		await apiSignOut()
+	const logOut = () => {
+		signOut(auth).then(() => {
+
+		}).catch((error) => {
+			console.log(error);
+		});
 		handleSignOut()
 	}
-    
-    return {
-        authenticated: token && signedIn,
-        signIn,
+
+	return {
+		authenticated: token && signedIn,
+		signIn,
 		signUp,
-        signOut
-    }
+		// signOut,
+		logOut,
+		authRes, isLoading, userL
+
+	}
 }
 
 export default useAuth

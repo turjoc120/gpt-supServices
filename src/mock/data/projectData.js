@@ -238,6 +238,86 @@ export const businessData = [
     desc: "create vision and mission statement for your business",
   },
 ];
+export const marketingData = [
+  {
+    id: "demo-demo",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo1",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo2",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo3",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo4",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo5",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+
+
+];
+export const writingData = [
+  {
+    id: "demo-8",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo-9",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo-0",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo-1",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo-2",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+  {
+    id: "demo-4",
+    name: "demo",
+    icon: "FcDocument",
+    desc: "Need captivating description for your book? let us help",
+  },
+
+
+];
 
 export const projectDashboardData = {
   userName: "Carolyn Perkins",

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { apiGetBusiness, apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiPutProjectList } from 'services/ProjectService'
+import { apiGetBusiness, apiGetMarketing, apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiGetWriting, apiPutProjectList } from 'services/ProjectService'
 
 export const getList = createAsyncThunk('projectList/getList', async (data) => {
     const response = await apiGetProjectList(data)
@@ -11,6 +11,14 @@ export const getMmiscellaneous = createAsyncThunk('projectList/miscellaneous', a
 })
 export const getbusiness = createAsyncThunk('projectList/business', async (data) => {
     const response = await apiGetBusiness(data)
+    return response.data
+})
+export const getMarketing = createAsyncThunk('projectList/marketing', async (data) => {
+    const response = await apiGetMarketing(data)
+    return response.data
+})
+export const getWriting = createAsyncThunk('projectList/writing', async (data) => {
+    const response = await apiGetWriting(data)
     return response.data
 })
 
@@ -51,13 +59,29 @@ const dataSlice = createSlice({
             state.projectList = action.payload
             state.loading = false
         },
+        [getMarketing.fulfilled]: (state, action) => {
+            state.projectList = action.payload
+            state.loading = false
+        },
+        [getWriting.fulfilled]: (state, action) => {
+            state.projectList = action.payload
+            state.loading = false
+        },
+
+        //////loading
         [getList.pending]: (state) => {
+            state.loading = true
+        },
+        [getWriting.pending]: (state) => {
             state.loading = true
         },
         [getMmiscellaneous.pending]: (state) => {
             state.loading = true
         },
         [getbusiness.pending]: (state) => {
+            state.loading = true
+        },
+        [getMarketing.pending]: (state) => {
             state.loading = true
         },
         [getMembers.fulfilled]: (state, action) => {

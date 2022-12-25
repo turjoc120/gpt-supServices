@@ -6,7 +6,7 @@ import ServiceInputForm from "./ServiceInputForm";
 import { useDispatch, useSelector } from "react-redux";
 import { setAiResultText } from "../store/stateSlice";
 
-const Editor = ({}) => {
+const Editor = ({ }) => {
   // const [text, setText] = useState("");
   // const [vidData, setVidData] = useState({});
 
@@ -24,7 +24,7 @@ const Editor = ({}) => {
     dispatch(setAiResultText(""));
   }, [id]);
   console.log("llllll " + id);
-  const handleVidIdeaSubmit = () => {};
+  const handleVidIdeaSubmit = () => { };
   return (
     <div className="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 ">
       <div className="sm:mb-4">

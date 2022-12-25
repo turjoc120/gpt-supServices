@@ -60,15 +60,13 @@ const ServiceInputForm = ({ data, id }) => {
     }
     // personal opinion
     if (id === "28") {
-      finalVidStr = `write down your 5 ${
-        vidData?.tone ? vidData?.tone : ""
-      } opinion about ${vidData.shortDes}`;
+      finalVidStr = `write down your 5 ${vidData?.tone ? vidData?.tone : ""
+        } opinion about ${vidData.shortDes}`;
     }
     // video description
     if (id === "29") {
-      finalVidStr = `write down 5 ${
-        vidData?.tone ? vidData?.tone : ""
-      } video description about ${vidData.shortDes}`;
+      finalVidStr = `write down 5 ${vidData?.tone ? vidData?.tone : ""
+        } video description about ${vidData.shortDes}`;
     }
     // video titles
     if (id === "32") {
@@ -76,11 +74,9 @@ const ServiceInputForm = ({ data, id }) => {
     }
     // cover letter
     if (id === "cover-letters") {
-      finalVidStr = `Write a cover letter to apply as a ${
-        vidData.shortDes
-      } i have ${vidData.skillExp} in ${
-        vidData?.tone ? vidData?.tone : "positive"
-      } tone `;
+      finalVidStr = `Write a cover letter to apply as a ${vidData.shortDes
+        } i have ${vidData.skillExp} in ${vidData?.tone ? vidData?.tone : "positive"
+        } tone `;
     }
     // fictional-story
     if (id === "fictional-story") {
@@ -92,42 +88,34 @@ const ServiceInputForm = ({ data, id }) => {
       finalVidStr = `Write a food recipe for ${vidData.shortDes}`;
     }
     if (id === "quora-answers") {
-      finalVidStr = `Write the ${
-        vidData?.tone ? vidData?.tone : ""
-      } answer for this question ${vidData.shortDes} from quora`;
+      finalVidStr = `Write the ${vidData?.tone ? vidData?.tone : ""
+        } answer for this question ${vidData.shortDes} from quora`;
     }
     if (id === "song-lyrics") {
-      finalVidStr = `Write a ${
-        vidData?.tone ? vidData?.tone : ""
-      } song lyrics for ${vidData.shortDes}`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""
+        } song lyrics for ${vidData.shortDes}`;
     }
     if (id === "job-description") {
-      finalVidStr = `Write a ${
-        vidData?.tone ? vidData?.tone : ""
-      } job description for ${vidData.shortDes}`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""
+        } job description for ${vidData.shortDes}`;
     }
     if (id === "poems") {
-      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""} poems for ${
-        vidData.shortDes
-      }`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""} poems for ${vidData.shortDes
+        }`;
     }
     if (id === "pd-reviews") {
-      finalVidStr = `Write a ${
-        vidData?.tone ? vidData?.tone : ""
-      } product review about ${vidData.shortDes}`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""
+        } product review about ${vidData.shortDes}`;
     }
     if (id === "linkedin-bio") {
-      finalVidStr = `Write a ${
-        vidData?.tone ? vidData?.tone : ""
-      } linkedin bio for ${vidData.shortDes}`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""
+        } linkedin bio for ${vidData.shortDes}`;
     }
 
     if (id === "book-descriptions") {
-      finalVidStr = `Write a ${
-        vidData?.tone ? vidData?.tone : ""
-      } book Description for ${vidData.shortDes} with keywords like ${
-        vidData.keywords
-      }`;
+      finalVidStr = `Write a ${vidData?.tone ? vidData?.tone : ""
+        } book Description for ${vidData.shortDes} with keywords like ${vidData.keywords
+        }`;
     }
 
     if (id === "book-titles") {
@@ -199,9 +187,9 @@ const ServiceInputForm = ({ data, id }) => {
         <small className="text-gray-500 block mb-2">{data.field1Short}</small>
 
         {id === "greetings" ||
-        id === "song-lyrics" ||
-        id === "job-description" ||
-        id === "linkedin-bio" ? (
+          id === "song-lyrics" ||
+          id === "job-description" ||
+          id === "linkedin-bio" ? (
           <textarea
             onChange={(e) =>
               setVidData({ ...vidData, shortDes: e.target.value })
@@ -226,9 +214,9 @@ const ServiceInputForm = ({ data, id }) => {
       </div>
 
       {id === "30" ||
-      id === "fictional-story" ||
-      id === "book-titles" ||
-      id === "marketing-ideas" ? (
+        id === "fictional-story" ||
+        id === "book-titles" ||
+        id === "marketing-ideas" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}
@@ -243,12 +231,12 @@ const ServiceInputForm = ({ data, id }) => {
               id === "30"
                 ? channelOptions
                 : id === "fictional-story"
-                ? genreOptions
-                : id === "book-titles"
-                ? bookTypeOptions
-                : id === "marketing-ideas"
-                ? marketingIdeasOption
-                : ""
+                  ? genreOptions
+                  : id === "book-titles"
+                    ? bookTypeOptions
+                    : id === "marketing-ideas"
+                      ? marketingIdeasOption
+                      : ""
             }
           ></Select>
         </div>
@@ -332,24 +320,24 @@ const ServiceInputForm = ({ data, id }) => {
       )}
 
       {id === "28" ||
-      id === "29" ||
-      id === "27" ||
-      id === "cover-letters" ||
-      id === "quora-answers" ||
-      id === "song-lyrics" ||
-      id === "job-description" ||
-      id === "poems" ||
-      id === "pd-reviews" ||
-      id === "linkedin-bio" ||
-      id === "book-descriptions" ||
-      id === "brand-name" ||
-      id === "product-descriptions" ||
-      id === "product-names" ||
-      id === "reste-des" ||
-      id === "review-responder" ||
-      id === "startup-pitch" ||
-      id === "startup-value" ||
-      id === "vision-mission" ? (
+        id === "29" ||
+        id === "27" ||
+        id === "cover-letters" ||
+        id === "quora-answers" ||
+        id === "song-lyrics" ||
+        id === "job-description" ||
+        id === "poems" ||
+        id === "pd-reviews" ||
+        id === "linkedin-bio" ||
+        id === "book-descriptions" ||
+        id === "brand-name" ||
+        id === "product-descriptions" ||
+        id === "product-names" ||
+        id === "reste-des" ||
+        id === "review-responder" ||
+        id === "startup-pitch" ||
+        id === "startup-value" ||
+        id === "vision-mission" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}

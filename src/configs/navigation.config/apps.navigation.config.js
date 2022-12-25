@@ -25,147 +25,19 @@ const appsNavigationConfig = [
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
         subMenu: [
-          // {
-          // 	key: 'appsProject.dashboard',
-          // 	path: `services/social-media/`,
-          // 	title: 'Social Media Services',
-          // 	translateKey: 'nav.services',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'appsProject.dashboard1',
-          // 	path: `services/social-media/27`,
-          // 	title: 'Image Captions',
-          // 	translateKey: 'nav.services.captions',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'personal.Opinion',
-          // 	path: `services/social-media/28`,
-          // 	title: 'Personal Opinion',
-          // 	translateKey: 'nav.services.personal',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'services.Description',
-          // 	path: `services/social-media/29`,
-          // 	title: 'Video Description',
-          // 	translateKey: 'nav.services.description',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'services.video',
-          // 	path: `services/social-media/30`,
-          // 	title: 'Video Ideas',
-          // 	translateKey: 'nav.services.video',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'services.Post',
-          // 	path: `services/social-media/31`,
-          // 	title: 'Social Media Post Ideas',
-          // 	translateKey: 'nav.services.Post',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // },
-          // {
-          // 	key: 'services.Video',
-          // 	path: `services/social-media/32`,
-          // 	title: 'Video Titles',
-          // 	translateKey: 'nav.services.Video',
-          // 	icon: '',
-          // 	type: NAV_ITEM_TYPE_ITEM,
-          // 	authority: [ADMIN, USER],
-          // 	subMenu: []
-          // }
+
         ],
       },
       {
-        key: "apps.sales",
-        path: "",
+        key: "services.marketing",
+        path: "/services/marketing-tools",
         title: "Marketing Tools",
-        translateKey: "nav.Social.sales",
+        translateKey: "nav.marketing",
         icon: "sales",
         type: NAV_ITEM_TYPE_COLLAPSE,
         authority: [ADMIN, USER],
         subMenu: [
-          // 	{
-          // 		key: 'appsSales.dashboard',
-          // 		path: `${APP_PREFIX_PATH}/sales/dashboard`,
-          // 		title: 'Dashboard',
-          // 		translateKey: 'nav.appsSales.dashboard',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsSales.productList',
-          // 		path: `${APP_PREFIX_PATH}/sales/product-list`,
-          // 		title: 'Product List',
-          // 		translateKey: 'nav.appsSales.productList',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsSales.productEdit',
-          // 		path: `${APP_PREFIX_PATH}/sales/product-edit/12`,
-          // 		title: 'Product Edit',
-          // 		translateKey: 'nav.appsSales.productEdit',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsSales.productNew',
-          // 		path: `${APP_PREFIX_PATH}/sales/product-new`,
-          // 		title: 'New Product',
-          // 		translateKey: 'nav.appsSales.productNew',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsSales.orderList',
-          // 		path: `${APP_PREFIX_PATH}/sales/order-list`,
-          // 		title: 'Order List',
-          // 		translateKey: 'nav.appsSales.orderList',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
-          // 	{
-          // 		key: 'appsSales.orderDetails',
-          // 		path: `${APP_PREFIX_PATH}/sales/order-details/95954`,
-          // 		title: 'Order Details',
-          // 		translateKey: 'nav.appsSales.orderDetails',
-          // 		icon: '',
-          // 		type: NAV_ITEM_TYPE_ITEM,
-          // 		authority: [ADMIN, USER],
-          // 		subMenu: []
-          // 	},
+
         ],
       },
       {
