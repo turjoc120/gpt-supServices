@@ -23,7 +23,7 @@ const SignUpForm = props => {
 	const [message, setMessage] = useTimeOutMessage()
 
 	const onSignUp = (values, setSubmitting) => {
-		const { userName, password, email } = values
+		const { email, password, userName } = values
 		setSubmitting(true)
 		signUp({ userName, password, email })
 		console.log(authRes);
@@ -39,10 +39,10 @@ const SignUpForm = props => {
 			{authRes.status === 'failed' && <Alert className="mb-4" type="danger" showIcon>{authRes.message}</Alert>}
 			<Formik
 				initialValues={{
-					userName: 'admin1',
-					password: '123Qwe1',
-					confirmPassword: '123Qwe1',
-					email: 'test@testmail.com'
+					userName: 'Mujtaba',
+					password: 'gpt321',
+					confirmPassword: 'gpt321',
+					email: 'user1@xxx.com'
 				}}
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting }) => {

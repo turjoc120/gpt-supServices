@@ -19,16 +19,16 @@ const dropdownItemList = [
 
 export const UserDropdown = ({ className }) => {
 
-	const { avatar, userName, authority, email } = useSelector((state) => state.auth.user)
+	const { avatar, userName, authority, email } = useSelector((state) => state?.auth?.user)
 
-	const { logOut } = useAuth()
+	const { logOut, isLoading } = useAuth()
 
 	const UserAvatar = (
 		<div className={classNames(className, 'flex items-center gap-2')}>
 			<Avatar size={32} shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 			<div className="hidden md:block">
 				<div className="text-xs capitalize">{authority[0] || 'guest'}</div>
-				<div className="font-bold">{userName}</div>
+				<div className="font-bold">{isLoading ? "" : userName}</div>
 			</div>
 		</div>
 	)
@@ -40,7 +40,7 @@ export const UserDropdown = ({ className }) => {
 					<div className="py-2 px-3 flex items-center gap-2">
 						<Avatar shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 						<div>
-							<div className="font-bold text-gray-900 dark:text-gray-100">{userName}</div>
+							<div className="font-bold text-gray-900 dark:text-gray-100">{isLoading ? "" : userName}</div>
 							<div className="text-xs">{email}</div>
 						</div>
 					</div>

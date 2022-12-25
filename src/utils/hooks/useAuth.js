@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
+	const [userL, setUserL] = useState({})
 	const dispatch = useDispatch()
 
 	const navigate = useNavigate()
@@ -32,6 +33,7 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
+					setUserL(userCredential?.user)
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
 					dispatch(setUser({
 						avatar: '',
@@ -58,6 +60,7 @@ function useAuth() {
 		createUserWithEmailAndPassword(auth, values.email, values.password)
 			.then((userCredential) => {
 				if (userCredential.user) {
+					setUserL(userCredential?.user)
 					setAuthRes({
 						status: 'success',
 						message: ""
@@ -67,12 +70,12 @@ function useAuth() {
 					})
 					console.log(userCredential.user);
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					// dispatch(setUser({
-					// 	avatar: '',
-					// 	userName: userCredential.user.displayName,
-					// 	authority: ['admin', 'user'],
-					// 	email: values.email
-					// }))
+					dispatch(setUser({
+						avatar: '',
+						userName: values.userName,
+						authority: ['admin', 'user'],
+						email: values.email
+					}))
 
 
 					///check for sub or not 
@@ -136,7 +139,7 @@ function useAuth() {
 		signUp,
 		// signOut,
 		logOut,
-		authRes
+		authRes, isLoading, userL
 
 	}
 }

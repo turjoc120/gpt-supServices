@@ -60,7 +60,7 @@ const SignInForm = props => {
 					<Form>
 						<FormContainer>
 							<FormItem
-								label="Full Name"
+								label="Email"
 								invalid={errors.email && touched.email}
 								errorMessage={errors.email}
 							>
