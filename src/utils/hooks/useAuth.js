@@ -6,7 +6,7 @@ import appConfig from 'configs/app.config'
 import { REDIRECT_URL_KEY } from 'constants/app.constant'
 import { useNavigate } from 'react-router-dom'
 import useQuery from './useQuery'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from 'store/auth/firebase'
 import { useEffect, useState } from 'react'
 
@@ -14,7 +14,8 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
-	const [userL, setUserL] = useState({})
+
+
 	const dispatch = useDispatch()
 
 	const navigate = useNavigate()
@@ -33,7 +34,7 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
-					setUserL(userCredential?.user)
+
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
 					dispatch(setUser({
 						avatar: '',
@@ -60,15 +61,14 @@ function useAuth() {
 		createUserWithEmailAndPassword(auth, values.email, values.password)
 			.then((userCredential) => {
 				if (userCredential.user) {
-					setUserL(userCredential?.user)
 					setAuthRes({
 						status: 'success',
 						message: ""
 					})
+
 					updateProfile(auth.currentUser, {
 						displayName: values.userName
 					})
-					console.log(userCredential.user);
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
 					dispatch(setUser({
 						avatar: '',
@@ -96,14 +96,17 @@ function useAuth() {
 
 	useEffect(() => {
 		const unsubscribed = onAuthStateChanged(auth, (user) => {
-			if (user) {
+			if (user?.email) {
+
 				dispatch(setUser({
 					avatar: '',
 					userName: user.displayName,
 					authority: ['admin', 'user'],
 					email: user.email
 				}))
+
 			} else {
+
 				dispatch(setUser({
 					avatar: '',
 					userName: '',
@@ -124,6 +127,24 @@ function useAuth() {
 		navigate(appConfig.unAuthenticatedEntryPath)
 	}
 
+	const forgotPasswordHandler = async (values) => {
+		if (values.email)
+			setLoading(true)
+		await sendPasswordResetEmail(auth, values.email).then(() => {
+			setAuthRes({
+				status: 'success',
+				message: "an email has been sent!"
+			})
+			setLoading(false)
+		}).catch((errors) => {
+			setAuthRes({
+				status: 'failed',
+				message: errors?.message
+			})
+			setLoading(false)
+		});
+	};
+
 	const logOut = () => {
 		signOut(auth).then(() => {
 
@@ -137,9 +158,10 @@ function useAuth() {
 		authenticated: token && signedIn,
 		signIn,
 		signUp,
-		// signOut,
 		logOut,
-		authRes, isLoading, userL
+		forgotPasswordHandler,
+		authRes, isLoading,
+		setAuthRes,
 
 	}
 }

@@ -9,6 +9,7 @@ import history from './history'
 import mockServer from './mock'
 import appConfig from 'configs/app.config'
 import './locales'
+import AuthProvider from 'views/auth/context/AuthContext'
 
 const environment = process.env.NODE_ENV
 
@@ -18,11 +19,14 @@ if (appConfig.enableMock) {
 
 function App() {
 	return (
+
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
 				<BrowserRouter history={history}>
 					<Theme>
-						<Layout />
+						<AuthProvider>
+							<Layout />
+						</AuthProvider >
 					</Theme>
 				</BrowserRouter >
 			</PersistGate>
