@@ -24,6 +24,7 @@ import {
   HiOutlineShare,
   HiOutlineVariable,
   HiOutlineCode,
+  HiOutlineViewGrid,
 } from "react-icons/hi";
 import {
   FcBusinessman,
@@ -44,6 +45,11 @@ import {
   FcHeadset,
   FcFinePrint,
   FcBusiness,
+  FcReading,
+  FcPaid,
+  FcComments,
+  FcTemplate,
+  FcManager,
 } from "react-icons/fc";
 
 const navigationIcon = {
@@ -65,8 +71,14 @@ const navigationIcon = {
   FcFinePrint: <FcFinePrint />,
   FcHeadset: <FcHeadset />,
   FcBusiness: <FcBusiness />,
+  FcReading: <FcReading />,
+  FcPaid: <FcPaid />,
+  FcComments: <FcComments />,
+  FcTemplate: <FcTemplate />,
+  FcManager: <FcManager />,
 
   apps: <HiOutlineViewGridAdd />,
+  dashboard: <HiOutlineViewGrid />,
   project: <HiOutlineChartSquareBar />,
   crm: <HiOutlineUserGroup />,
   sales: <HiOutlineTrendingUp />,

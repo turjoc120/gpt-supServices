@@ -99,13 +99,13 @@ export const miscellaneousData = [
   {
     id: "fictional-story",
     name: "Fictional Story Ideas",
-    icon: "FcEditImage",
+    icon: "FcReading",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "food-recipe",
     name: "Food Recipes",
-    icon: "FcEditImage",
+    icon: "FcPaid",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
@@ -129,7 +129,7 @@ export const miscellaneousData = [
   {
     id: "greetings",
     name: "Greetings",
-    icon: "FcEditImage",
+    icon: "FcComments",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
@@ -141,13 +141,13 @@ export const miscellaneousData = [
   {
     id: "pd-reviews",
     name: "Product Reviews",
-    icon: "FcEditImage",
+    icon: "FcTemplate",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
   {
     id: "linkedin-bio",
     name: "Personal Linkedin Bio",
-    icon: "FcEditImage",
+    icon: "FcManager",
     desc: "Need help with your cover letter? wer are here to rescue",
   },
 ];
@@ -478,7 +478,7 @@ export const writingData = [
   {
     id: "fictional-story",
     name: "Fictional Story Narration",
-    icon: "FcDocument",
+    icon: "FcReading",
     desc: "Let OnlyAI take over the narration in your next fictional story.",
   },
   {

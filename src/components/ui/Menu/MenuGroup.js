@@ -1,56 +1,45 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import { GroupContextProvider } from './context/groupContext'
-import MenuContext from './context/menuContext'
-import useUniqueId from '../hooks/useUniqueId'
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import { GroupContextProvider } from "./context/groupContext";
+import MenuContext from "./context/menuContext";
+import useUniqueId from "../hooks/useUniqueId";
 
-const MenuGroup = props => {
+const MenuGroup = (props) => {
+  const { label, children, className } = props;
 
-	const { label, children, className } = props
+  const { variant, sideCollapsed } = useContext(MenuContext);
 
-	const { variant, sideCollapsed } = useContext(MenuContext)
+  const menuGroupDefaultClass = "menu-group";
+  const menuGroupClass = classNames(menuGroupDefaultClass, className);
 
-	const menuGroupDefaultClass = 'menu-group'
-	const menuGroupClass = classNames(
-		menuGroupDefaultClass,
-		className
-	)
+  const entityHeaderId = useUniqueId("entity-header-");
 
-	const entityHeaderId = useUniqueId('entity-header-')
-
-	return (
-		<div className={menuGroupClass}>
-			{
-				(label && !sideCollapsed) && (
-					<div 
-						className={classNames('menu-title', `menu-title-${variant}`)} 
-						id={entityHeaderId}
-					>
-						{label}
-					</div>
-				)
-			}
-			<GroupContextProvider value>
-				<ul>
-					{children}
-				</ul>
-			</GroupContextProvider>
-		</div>
-	)
-}
+  return (
+    <div className={menuGroupClass}>
+      {label && !sideCollapsed && (
+        <div
+          className={classNames("menu-title", `menu-title-${variant}`)}
+          id={entityHeaderId}
+        >
+          {label}
+        </div>
+      )}
+      <GroupContextProvider value>
+        <ul>{children}</ul>
+      </GroupContextProvider>
+    </div>
+  );
+};
 
 MenuGroup.propTypes = {
-	label: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.node
-	]),
-	children: PropTypes.node,
-	className: PropTypes.string
-}
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
 
 MenuGroup.defaultProps = {
-	label: null
-}
+  label: null,
+};
 
-export default MenuGroup
+export default MenuGroup;
