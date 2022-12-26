@@ -30,7 +30,7 @@ const SignUpForm = props => {
 		const { email, password, userName } = values
 		setSubmitting(true)
 		signUp({ userName, password, email })
-		console.log(authRes);
+
 		if (authRes.status === 'failed') {
 			setMessage(authRes.message)
 		}

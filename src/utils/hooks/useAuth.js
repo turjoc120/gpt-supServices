@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
-	const [userData, setUserData] = useState({})
+
 
 
 	const dispatch = useDispatch()
@@ -37,12 +37,12 @@ function useAuth() {
 					})
 
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					dispatch(setUser({
-						avatar: '',
-						userName: values.userName,
-						authority: ['admin', 'user'],
-						email: values.email
-					}))
+					// dispatch(setUser({
+					// 	avatar: '',
+					// 	userName: values.userName,
+					// 	authority: ['admin', 'user'],
+					// 	email: values.email
+					// }))
 
 					const redirectUrl = query.get(REDIRECT_URL_KEY)
 					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
@@ -60,10 +60,11 @@ function useAuth() {
 	const signUp = (values) => {
 		setLoading(true)
 		createUserWithEmailAndPassword(auth, values.email, values.password)
-			.then((userCredential) => {
-				updateProfile(auth.currentUser, {
-					displayName: values.userName
-				})
+			.then(async (userCredential) => {
+				const userr = userCredential.user;
+				await updateProfile(userr, {
+					displayName: values.userName,
+				});
 				if (userCredential.user) {
 					setAuthRes({
 						status: 'success',
@@ -71,12 +72,12 @@ function useAuth() {
 					})
 
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					dispatch(setUser({
-						avatar: '',
-						userName: values.userName,
-						authority: ['admin', 'user'],
-						email: values.email
-					}))
+					// dispatch(setUser({
+					// 	avatar: '',
+					// 	userName: values.userName,
+					// 	authority: ['admin', 'user'],
+					// 	email: values.email
+					// }))
 
 
 					///check for sub or not 
@@ -97,8 +98,8 @@ function useAuth() {
 
 	useEffect(() => {
 		const unsubscribed = onAuthStateChanged(auth, (user) => {
-			if (user?.uid) {
-				setUserData(user)
+			if (user) {
+
 				dispatch(setUser({
 					avatar: '',
 					userName: user.displayName,
@@ -162,7 +163,7 @@ function useAuth() {
 		forgotPasswordHandler,
 		authRes, isLoading,
 		setAuthRes,
-		userData
+
 	}
 }
 
