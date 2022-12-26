@@ -60,22 +60,22 @@ function useAuth() {
 		setLoading(true)
 		createUserWithEmailAndPassword(auth, values.email, values.password)
 			.then((userCredential) => {
+				updateProfile(auth.currentUser, {
+					displayName: values.userName
+				})
 				if (userCredential.user) {
 					setAuthRes({
 						status: 'success',
 						message: ""
 					})
 
-					updateProfile(auth.currentUser, {
-						displayName: values.userName
-					})
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					dispatch(setUser({
-						avatar: '',
-						userName: values.userName,
-						authority: ['admin', 'user'],
-						email: values.email
-					}))
+					// dispatch(setUser({
+					// 	avatar: '',
+					// 	userName: values.userName,
+					// 	authority: ['admin', 'user'],
+					// 	email: values.email
+					// }))
 
 
 					///check for sub or not 
