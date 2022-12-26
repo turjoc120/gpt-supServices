@@ -6,7 +6,7 @@ import ServiceInputForm from "./ServiceInputForm";
 import { useDispatch, useSelector } from "react-redux";
 import { setAiResultText } from "../store/stateSlice";
 
-const Editor = ({ }) => {
+const Editor = ({}) => {
   // const [text, setText] = useState("");
   // const [vidData, setVidData] = useState({});
 
@@ -24,7 +24,7 @@ const Editor = ({ }) => {
     dispatch(setAiResultText(""));
   }, [id]);
   console.log("llllll " + id);
-  const handleVidIdeaSubmit = () => { };
+  const handleVidIdeaSubmit = () => {};
   return (
     <div className="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 md:grid-cols-1 sm:grid-cols-1 ">
       <div className="sm:mb-4">
@@ -543,6 +543,364 @@ const Editor = ({ }) => {
                   "breifly describe the role. include important requirements( in short scentance)",
                 field1Place:
                   "e.g marketing director for pharmaceutical company 10 years of experience is required",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {/* Marketing tools */}
+        {
+          // amazon-product-desc
+          id === "amazon-product-desc" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What is the product about. Include any required points.",
+                field1Place:
+                  "e.g Triple-strength omega 3 fish oil supplements with EPA and DHA",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // /blog-conclusions
+          id === "blog-conclusions" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What is the article about. Include any required points.",
+                field1Place:
+                  "e.g How to meditate.  Meditation has many benefits and is easy to pickup",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // blog-headlines
+          id === "blog-headlines" && (
+            <ServiceInputForm
+              data={{
+                field1: "TOPIC",
+                field1Short: "What is the article about.",
+                field1Place:
+                  "e.g gaining instagram followers quickly for beginners",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // blog-intros
+          id === "blog-intros" && (
+            <ServiceInputForm
+              data={{
+                field1: "TOPIC",
+                field1Short: "What is the article or section about.",
+                field1Place:
+                  "e.g simple but effective ways of improving mental health when working from home",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // blog-outlines
+          id === "blog-outlines" && (
+            <ServiceInputForm
+              data={{
+                field1: "TOPIC",
+                field1Short: "What is the article about.",
+                field1Place:
+                  "e.g how to exercise at home using common household items",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // blog-paragraphs
+          id === "blog-paragraphs" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What is the blog section about.",
+                field1Place: "e.g What is Meditation?",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // blog-topics
+          id === "blog-topics" && (
+            <ServiceInputForm
+              data={{
+                field1: "BLOG DESCRIPTION",
+                field1Short: "What is your blog about.",
+                field1Place:
+                  "e.g Making passive income via affiliate marketing and SEO",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // cold-emails
+          id === "cold-emails" && (
+            <ServiceInputForm
+              data={{
+                field1: "TARGET RECIPIENT",
+                field1Short: "Who you are sending the email to.",
+                field1Place: "e.g coffee loving subscriber",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "OBJECTIVE",
+                field3Short: "The purpose of sending the email.",
+                field3Place: "e.g introduce my new coffee subscription service",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // explain-child
+          id === "explain-child" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What is the topic about.",
+                field1Place: "e.g What is life?",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // facebook-ads
+          id === "facebook-ads" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Name of product or service, and what it is about.",
+                field1Place: "e.g The Roaster, home coffee roasting machine",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // faqs
+          id === "faqs" && (
+            <ServiceInputForm
+              data={{
+                field1: "WEBSITE DESCRIPTION",
+                field1Short: "What your website is about.",
+                field1Place: "e.g Helps people write content faster using AI",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // fab
+          id === "fab" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "Name of your product/service and what it does.",
+                field1Place: "e.g OnlyAI, AI content writing tool.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // generic-emails
+          id === "generic-emails" && (
+            <ServiceInputForm
+              data={{
+                field1: "RECIPIENT",
+                field1Short: "Who you are sending the email to.",
+                field1Place: "e.g business owner",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "SHORT DESCRIPTION",
+                field3Short: "What the email is about.",
+                field3Place:
+                  "e.g Why SEO is important for small businesses. Reply to this email to get a free SEO consultation.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // google-ads
+          id === "google-ads" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Name of product or service, and what it is about.",
+                field1Place: "e.g The Roaster, home coffee roasting machine",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // hso-copywriting
+          id === "hso-copywriting" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What the product is about.",
+                field1Place:
+                  "e.g BuzzOff, an electronic repellant for flies and mosquitoes",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // lead-magnets
+          id === "lead-magnets" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What your product/service is about.",
+                field1Place: "e.g Coffee subscription service",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // listicles
+          id === "listicles" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What the topic is about.",
+                field1Place: "e.g How to write better",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // news-paragraphs
+          id === "news-paragraphs" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What this article section is about. Include additional points in short sentences",
+                field1Place:
+                  "e.g Global stocks are down today. Due to fed rate hike.",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // offer-ideas
+          id === "offer-ideas" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What your business is about.",
+                field1Place: "e.g Coffee subscription service",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // press-release
+          id === "press-release" && (
+            <ServiceInputForm
+              data={{
+                field1: "PURPOSE",
+                field1Short: "The purpose of the press release.",
+                field1Place:
+                  "e.g annouce kook coffee's new coffee flavor - Zesty Tangerine",
                 field2: "TONE",
                 field2Short:
                   "Tone of voice your want the AI to write in. optional",

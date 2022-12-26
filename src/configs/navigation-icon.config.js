@@ -52,6 +52,7 @@ import {
   FcManager,
 } from "react-icons/fc";
 
+import { AiFillAmazonCircle } from "react-icons/ai";
 const navigationIcon = {
   FcEditImage: <FcEditImage />,
   FcBusinessman: <FcBusinessman />,
@@ -105,6 +106,8 @@ const navigationIcon = {
   sharedComponentDoc: <HiOutlineShare />,
   utilsDoc: <HiOutlineVariable />,
   changeLog: <HiOutlineCode />,
+
+  amazon: <AiFillAmazonCircle />,
 };
 
 export default navigationIcon;

@@ -242,7 +242,7 @@ export const marketingData = [
   {
     id: "amazon-product-desc",
     name: "Amazon Product Descriptions",
-    icon: "FcDocument",
+    icon: "amazon",
     desc: "Write product descriptions in point form for your amazon product",
   },
   {
@@ -336,8 +336,8 @@ export const marketingData = [
     desc: "Convert Visitors into leads using these suggestions.",
   },
   {
-    id: "Listicles",
-    name: "listicles",
+    id: "listicles",
+    name: "Listicles",
     icon: "FcDocument",
     desc: "Listicles are great for blog posts, videos and social media!",
   },
