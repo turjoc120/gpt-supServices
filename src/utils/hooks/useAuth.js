@@ -57,7 +57,7 @@ function useAuth() {
 			}).finally(() => setLoading(false))
 	}
 
-	const signUp = async (values) => {
+	const signUp = (values) => {
 		setLoading(true)
 		createUserWithEmailAndPassword(auth, values.email, values.password)
 			.then((userCredential) => {
@@ -71,12 +71,12 @@ function useAuth() {
 					})
 
 					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					// dispatch(setUser({
-					// 	avatar: '',
-					// 	userName: values.userName,
-					// 	authority: ['admin', 'user'],
-					// 	email: values.email
-					// }))
+					dispatch(setUser({
+						avatar: '',
+						userName: values.userName,
+						authority: ['admin', 'user'],
+						email: values.email
+					}))
 
 
 					///check for sub or not 
@@ -97,7 +97,7 @@ function useAuth() {
 
 	useEffect(() => {
 		const unsubscribed = onAuthStateChanged(auth, (user) => {
-			if (user?.email) {
+			if (user?.uid) {
 				setUserData(user)
 				dispatch(setUser({
 					avatar: '',
