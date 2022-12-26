@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Avatar, Dropdown } from 'components/ui'
 import withHeaderItem from 'utils/hoc/withHeaderItem'
 
@@ -22,15 +22,15 @@ const dropdownItemList = [
 export const UserDropdown = ({ className }) => {
 
 	const user = useSelector((state) => state?.auth?.user)
-	// console.log(user);
-	const { isLoading, logOut } = useAuthContext()
+
+	const { isLoading, logOut, userData } = useAuthContext()
 
 	const UserAvatar = (
 		<div className={classNames(className, 'flex items-center gap-2')}>
 			<Avatar size={32} shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 			<div className="hidden md:block">
 				<div className="text-xs capitalize">{!isLoading && user.authority[0] || 'guest'}</div>
-				<div className="font-bold">{user.authority[0] && user?.userName}</div>
+				<div className="font-bold">{userData.uid && userData?.displayName}</div>
 			</div>
 		</div>
 	)
@@ -43,8 +43,8 @@ export const UserDropdown = ({ className }) => {
 					<div className="py-2 px-3 flex items-center gap-2">
 						<Avatar shape="circle" src="https://cdn-icons-png.flaticon.com/512/21/21104.png" />
 						<div>
-							<div className="font-bold text-gray-900 dark:text-gray-100">{user.authority[0] && user?.userName}</div>
-							<div className="text-xs">{!isLoading && user?.email}</div>
+							<div className="font-bold text-gray-900 dark:text-gray-100">{userData && userData?.displayName}</div>
+							<div className="text-xs">{userData && userData?.email}</div>
 						</div>
 					</div>
 				</Dropdown.Item>
