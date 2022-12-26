@@ -108,6 +108,66 @@ const EditArticle = () => {
     if (id === "vision-mission") {
       setHedingText("Vision Mission");
     }
+    if (id === "amazon-product-desc") {
+      setHedingText("Amazon Product Description");
+    }
+    if (id === "blog-conclusions") {
+      setHedingText("Blog Conclusions");
+    }
+    if (id === "blog-headlines") {
+      setHedingText("Blog Headlines");
+    }
+    if (id === "blog-intros") {
+      setHedingText("Blog Intros");
+    }
+    if (id === "blog-outlines") {
+      setHedingText("Blog Outlines");
+    }
+    if (id === "blog-paragraphs") {
+      setHedingText("Blog Paragraphs");
+    }
+    if (id === "blog-topics") {
+      setHedingText("Blog Topics");
+    }
+    if (id === "cold-emails") {
+      setHedingText("Cold Emails");
+    }
+    if (id === "explain-child") {
+      setHedingText("Explain It To A Child");
+    }
+    if (id === "facebook-ads") {
+      setHedingText("Facebook Ads");
+    }
+    if (id === "faqs") {
+      setHedingText("FAQs");
+    }
+    if (id === "fab") {
+      setHedingText("Features, Advantages, Benefits");
+    }
+    if (id === "generic-emails") {
+      setHedingText("Generic Emails");
+    }
+    if (id === "google-ads") {
+      setHedingText("Google Ads");
+    }
+    if (id === "hso-copywriting") {
+      setHedingText("HSO Copywriting Formula");
+    }
+    if (id === "lead-magnets") {
+      setHedingText("Lead Magnets");
+    }
+    if (id === "Listicles") {
+      setHedingText("Lead Magnets");
+    }
+    if (id === "news-paragraphs") {
+      setHedingText("News Paragraphs");
+    }
+    if (id === "offer-ideas") {
+      setHedingText("Offer Ideas");
+    }
+    if (id === "press-release") {
+      setHedingText("Press Release");
+    }
   }, [id]);
 
   return (
