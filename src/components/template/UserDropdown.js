@@ -38,7 +38,7 @@ export const UserDropdown = ({ className }) => {
 
 	return (
 		<div>
-			{!isLoading ?
+			{user?.userName?.length > 0 ?
 				<Dropdown menuStyle={{ minWidth: 240 }} renderTitle={UserAvatar} placement="bottom-end">
 					<Dropdown.Item variant="header">
 						<div className="py-2 px-3 flex items-center gap-2">
