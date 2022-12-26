@@ -22,7 +22,7 @@ const dropdownItemList = [
 export const UserDropdown = ({ className }) => {
 
 	const user = useSelector((state) => state?.auth?.user)
-	console.log(user);
+	// console.log(user);
 	const { isLoading, logOut } = useAuthContext()
 
 	const UserAvatar = (
