@@ -24,7 +24,7 @@ const ActionBar = () => {
   let headerText;
 
   if (location.pathname === "/services/social-media") {
-    headerText = "Social Media Services";
+    headerText = "Social Media Tools";
   } else if (location.pathname === "/services/marketing-tools") {
     headerText = "Marketing Tools";
   } else if (location.pathname === "/services/business") {
