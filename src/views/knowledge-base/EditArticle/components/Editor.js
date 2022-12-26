@@ -911,6 +911,236 @@ const Editor = ({}) => {
             ></ServiceInputForm>
           )
         }
+        {
+          // product-benefit
+          id === "product-benefit" && (
+            <ServiceInputForm
+              data={{
+                field1: "PRODUCT DESCRIPTION",
+                field1Short:
+                  "Name and short description of the product you're selling",
+                field1Place: "e.g QuickFunnels, a funnel building sftware",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "FEATURE OR BENEFIT",
+                field3Short: "Write ONE feature or benefit of the product",
+                field3Place: "e.g saves time",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // product-story
+          id === "product-story" && (
+            <ServiceInputForm
+              data={{
+                field1: "PRODUCT DESCRIPTION",
+                field1Short:
+                  "Name and description of the product or service. Include pertinent features",
+                field1Place:
+                  "e.g QuickFunnels, a funnel building sftware. Lightweight and fast",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // quotable-quotes
+          id === "quotable-quotes" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What the topic is about.",
+                field1Place: "e.g motivation",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // sales-page-cta
+          id === "sales-page-cta" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "The Name and description of the product or service, and what it is about.",
+                field1Place: "e.g OnlyAI, AI writing tool",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // sales-page-guarantee
+          id === "sales-page-guarantee" && (
+            <ServiceInputForm
+              data={{
+                field1: "PRODUCT DESCRIPTION",
+                field1Short:
+                  "Name and description of the product you are selling include specific guarantees, if any.",
+                field1Place:
+                  "e.g QuickFunnels, a funnel building software. 60 day money-back",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // sales-page-headlines
+          id === "sales-page-headlines" && (
+            <ServiceInputForm
+              data={{
+                field1: "PRODUCT DESCRIPTION",
+                field1Short:
+                  "Name and description of the product you are selling.",
+                field1Place: "e.g QuickFunnels, a funnel building software. ",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // sales-page-opener
+          id === "sales-page-opener" && (
+            <ServiceInputForm
+              data={{
+                field1: "PRODUCT DESCRIPTION",
+                field1Short:
+                  "Name and short description of the product you are selling. Include any attributes to mention.",
+                field1Place:
+                  "e.g QuickFunnels, a funnel building software. Fast and easy ",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // seo-desc
+          id === "seo-desc" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What your page is about.",
+                field1Place: "e.g Introduction to affiliate marketing",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // social-bio
+          id === "social-bio" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What your business is about.",
+                field1Place: "e.g HealthX, health supplements.",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // website-about
+          id === "website-about" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What your website is about. Use bullet points or short sentences.",
+                field1Place: "e.g - WordHero - AI Content Writing tool",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // website-about
+          id === "website-about" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What your website is about. Use bullet points or short sentences.",
+                field1Place: "e.g - WordHero - AI Content Writing tool",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // welcome-emails
+          id === "welcome-emails" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Name of product or service, and what it is about.",
+                field1Place:
+                  "e.g Addicted coffee, monthly coffee subscription service with doorstep delivery.",
+                field2: "TARGET RECIPIENT",
+                field2Short: "New subscriber, customer, or trial user.",
+                field3: "TONE",
+                field3Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field3Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
         {/* // // other 
 					// <div>
 					// 	<div className="mb-4">

@@ -168,6 +168,39 @@ const EditArticle = () => {
     if (id === "press-release") {
       setHedingText("Press Release");
     }
+    if (id === "product-benefit") {
+      setHedingText("Product Benefit Statements");
+    }
+    if (id === "product-story") {
+      setHedingText("Product Story");
+    }
+    if (id === "quotable-quotes") {
+      setHedingText("Quotable Quotes");
+    }
+    if (id === "sales-page-cta") {
+      setHedingText("Sales Page Call-to-action");
+    }
+    if (id === "sales-page-guarantee") {
+      setHedingText("Sales Page Guarantee");
+    }
+    if (id === "sales-page-headlines") {
+      setHedingText("Sales Page Headlines");
+    }
+    if (id === "sales-page-opener") {
+      setHedingText("Sales Page Opener");
+    }
+    if (id === "seo-desc") {
+      setHedingText("SEO Descriptions");
+    }
+    if (id === "social-bio") {
+      setHedingText("Social Media Bio");
+    }
+    if (id === "website-about") {
+      setHedingText("Website About Us");
+    }
+    if (id === "welcome-emails") {
+      setHedingText("Welcome Emails");
+    }
   }, [id]);
 
   return (

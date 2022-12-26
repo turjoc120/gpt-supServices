@@ -31,6 +31,11 @@ const ServiceInputForm = ({ data, id }) => {
     { value: "conventional", label: "conventional" },
     { value: "viral", label: "viral" },
   ];
+  const welcomeEmailOptions = [
+    { value: "new_subscriber", label: "New Subscriber" },
+    { value: "customer", label: "Customer" },
+    { value: "trial_user", label: "Trial User" },
+  ];
 
   const onStatusFilterChange = (selected) => {
     setVidData({ ...vidData, channel: selected.value });
@@ -233,6 +238,40 @@ const ServiceInputForm = ({ data, id }) => {
     if (id === "press-release") {
       finalVidStr = `Write me a ${vidData.tone} press release statement about ${vidData.shortDes}.`;
     }
+    if (id === "product-benefit") {
+      finalVidStr = `Write me a ${vidData.tone} benefit header and paragraph about ${vidData.shortDes}. Some features or benefits to note include ${vidData.obj}`;
+    }
+    if (id === "product-story") {
+      finalVidStr = `Write me a ${vidData.tone} story for my product which is about ${vidData.shortDes}. Some features or benefits to note include ${vidData.obj}`;
+    }
+    if (id === "quotable-quotes") {
+      finalVidStr = `suggest some quotable quotes about ${vidData.shortDes}. `;
+    }
+    if (id === "sales-page-cta") {
+      finalVidStr = `write me a ${vidData.tone} call to action for my sales page which is about ${vidData.shortDes}. `;
+    }
+    if (id === "sales-page-guarantee") {
+      finalVidStr = `write me a ${vidData.tone} guarantee statement for my sales page which is about ${vidData.shortDes}. `;
+    }
+    if (id === "sales-page-headlines") {
+      finalVidStr = `write me a ${vidData.tone} sales page headline or subheadings for my sales page which is about ${vidData.shortDes}. `;
+    }
+    if (id === "sales-page-opener") {
+      finalVidStr = `write me a ${vidData.tone} opening paragraph for my sales page which is about ${vidData.shortDes}. `;
+    }
+    if (id === "seo-desc") {
+      finalVidStr = `write me a short meta description (seo) for my sales page which is about ${vidData.shortDes}. some keywords to note are ${vidData.keywords} `;
+    }
+    if (id === "social-bio") {
+      finalVidStr = `write me a ${vidData.tone} social media bio about ${vidData.shortDes}.`;
+    }
+    if (id === "website-about") {
+      finalVidStr = `write me a ${vidData.tone} website about us content about ${vidData.shortDes}.`;
+    }
+    if (id === "welcome-emails") {
+      console.log(vidData);
+      finalVidStr = `write me a ${vidData.tone} welcome email for ${vidData.channel} about ${vidData.shortDes}.`;
+    }
 
     setIsLoading(true);
     if (finalVidStr) {
@@ -285,7 +324,8 @@ const ServiceInputForm = ({ data, id }) => {
       {id === "30" ||
       id === "fictional-story" ||
       id === "book-titles" ||
-      id === "marketing-ideas" ? (
+      id === "marketing-ideas" ||
+      id === "welcome-emails" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}
@@ -305,6 +345,8 @@ const ServiceInputForm = ({ data, id }) => {
                 ? bookTypeOptions
                 : id === "marketing-ideas"
                 ? marketingIdeasOption
+                : id === "welcome-emails"
+                ? welcomeEmailOptions
                 : ""
             }
           ></Select>
@@ -335,7 +377,8 @@ const ServiceInputForm = ({ data, id }) => {
       {id === "book-descriptions" ||
       id === "blog-paragraphs" ||
       id === "blog-intros" ||
-      id === "news-paragraphs" ? (
+      id === "news-paragraphs" ||
+      id === "seo-desc" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field3}
@@ -356,7 +399,9 @@ const ServiceInputForm = ({ data, id }) => {
         ""
       )}
 
-      {id === "cold-emails" || id === "generic-emails" ? (
+      {id === "cold-emails" ||
+      id === "generic-emails" ||
+      id === "product-benefit" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field3}
@@ -365,6 +410,25 @@ const ServiceInputForm = ({ data, id }) => {
 
           <textarea
             onChange={(e) => setVidData({ ...vidData, obj: e.target.value })}
+            type="text"
+            name="objective"
+            placeholder={data.field3Place}
+            class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+          />
+        </div>
+      ) : (
+        ""
+      )}
+
+      {id === "welcome-emails" ? (
+        <div className="mt-8">
+          <label className="font-bold text-base text-stone-600">
+            {data.field3}
+          </label>
+          <small className="text-gray-500 block mb-2">{data.field3Short}</small>
+
+          <textarea
+            onChange={(e) => setVidData({ ...vidData, tone: e.target.value })}
             type="text"
             name="objective"
             placeholder={data.field3Place}
@@ -440,7 +504,15 @@ const ServiceInputForm = ({ data, id }) => {
       id === "facebook-ads" ||
       id === "generic-emails" ||
       id === "news-paragraphs" ||
-      id === "press-release" ? (
+      id === "press-release" ||
+      id === "product-benefit" ||
+      id === "product-story" ||
+      id === "sales-page-cta" ||
+      id === "sales-page-guarantee" ||
+      id === "sales-page-headlines" ||
+      id === "sales-page-opener" ||
+      id === "social-bio" ||
+      id === "website-about" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}
