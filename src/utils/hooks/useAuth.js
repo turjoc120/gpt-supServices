@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
+	const [userData, setUserData] = useState({})
 
 
 	const dispatch = useDispatch()
@@ -97,14 +98,13 @@ function useAuth() {
 	useEffect(() => {
 		const unsubscribed = onAuthStateChanged(auth, (user) => {
 			if (user?.email) {
-
+				setUserData(user)
 				dispatch(setUser({
 					avatar: '',
 					userName: user.displayName,
 					authority: ['admin', 'user'],
 					email: user.email
 				}))
-
 			} else {
 
 				dispatch(setUser({
@@ -162,7 +162,7 @@ function useAuth() {
 		forgotPasswordHandler,
 		authRes, isLoading,
 		setAuthRes,
-
+		userData
 	}
 }
 
