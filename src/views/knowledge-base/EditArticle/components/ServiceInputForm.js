@@ -36,6 +36,17 @@ const ServiceInputForm = ({ data, id }) => {
     { value: "customer", label: "Customer" },
     { value: "trial_user", label: "Trial User" },
   ];
+  const toneChangerOptions = [
+    { value: "serious", label: "Serious" },
+    { value: "humorous", label: "Humorous" },
+    { value: "sad", label: "Sad" },
+    { value: "tense", label: "Tense" },
+    { value: "formal", label: "Formal" },
+    { value: "informal", label: "Informal" },
+    { value: "professional", label: "Professional" },
+    { value: "optimistic", label: "Optimistic" },
+    { value: "Cooperative", label: "Cooperative" },
+  ];
 
   const onStatusFilterChange = (selected) => {
     setVidData({ ...vidData, channel: selected.value });
@@ -260,7 +271,7 @@ const ServiceInputForm = ({ data, id }) => {
       finalVidStr = `write me a ${vidData.tone} opening paragraph for my sales page which is about ${vidData.shortDes}. `;
     }
     if (id === "seo-desc") {
-      finalVidStr = `write me a short meta description (seo) for my sales page which is about ${vidData.shortDes}. some keywords to note are ${vidData.keywords} `;
+      finalVidStr = `write me a short meta description (seo) for my sales page which is about ${vidData.shortDes}. some keywords to note are ${vidData.keywords}`;
     }
     if (id === "social-bio") {
       finalVidStr = `write me a ${vidData.tone} social media bio about ${vidData.shortDes}.`;
@@ -269,8 +280,58 @@ const ServiceInputForm = ({ data, id }) => {
       finalVidStr = `write me a ${vidData.tone} website about us content about ${vidData.shortDes}.`;
     }
     if (id === "welcome-emails") {
-      console.log(vidData);
       finalVidStr = `write me a ${vidData.tone} welcome email for ${vidData.channel} about ${vidData.shortDes}.`;
+    }
+    if (id === "aida-copywriting") {
+      finalVidStr = `write me an attention, interest, desire and action about ${vidData.shortDes}.`;
+    }
+    if (id === "analogy-provider") {
+      finalVidStr = `write me a ${vidData.tone} analogy about ${vidData.shortDes}.`;
+    }
+    if (id === "bullet-point-expander") {
+      finalVidStr = `construct some ${vidData.tone} sentences based on these bullet points ${vidData.shortDes}.`;
+    }
+    if (id === "content-rewriter") {
+      finalVidStr = `rewrite my content differently about ${vidData.shortDes}.`;
+    }
+    if (id === "descriptive-expression") {
+      finalVidStr = `write me a more expressive and ${vidData.tone} content about ${vidData.shortDes}.`;
+    }
+    if (id === "essay-paragraphs") {
+      finalVidStr = `write me a ${vidData.tone} essay paragraph  about ${vidData.shortDes}. some keyword to note are ${vidData.keywords}`;
+    }
+    if (id === "example-provider") {
+      finalVidStr = `write me a ${vidData.tone} example for ${vidData.shortDes}.`;
+    }
+    if (id === "fictional-story-narration") {
+      finalVidStr = `write the ${
+        vidData.tone ?? ""
+      } part of a fictional story about ${
+        vidData.shortDes
+      }. You should also know about ${vidData.priorKnowlegde} `;
+    }
+
+    if (id === "grammar-corrector") {
+      finalVidStr = `write me a correct sentence from the grammar:  ${vidData.shortDes}.`;
+    }
+    if (id === "mini-story") {
+      finalVidStr = `write me a mini story about ${vidData.shortDes}.`;
+    }
+    if (id === "pas-copywriting") {
+      finalVidStr = `write me a problem, agitate and solution about ${vidData.shortDes}.`;
+    }
+    if (id === "pros-cons") {
+      finalVidStr = `write me pros and cons about ${vidData.shortDes}.`;
+    }
+    if (id === "sentence-expander") {
+      finalVidStr = `write me an expanded sentence about ${vidData.shortDes}.`;
+    }
+    if (id === "tone-changer") {
+      finalVidStr = `rewrite me this content about ${vidData.shortDes} using a ${vidData.skillExp} tone`;
+    }
+    if (id === "article-writing") {
+      console.log(vidData);
+      finalVidStr = `write me an article of ${vidData.tone} words about ${vidData.shortDes}. some descriptions to note are ${vidData.keywords}`;
     }
 
     setIsLoading(true);
@@ -297,7 +358,9 @@ const ServiceInputForm = ({ data, id }) => {
         {id === "greetings" ||
         id === "song-lyrics" ||
         id === "job-description" ||
-        id === "linkedin-bio" ? (
+        id === "linkedin-bio" ||
+        id === "bullet-point-expander" ||
+        id === "content-rewriter" ? (
           <textarea
             onChange={(e) =>
               setVidData({ ...vidData, shortDes: e.target.value })
@@ -325,7 +388,8 @@ const ServiceInputForm = ({ data, id }) => {
       id === "fictional-story" ||
       id === "book-titles" ||
       id === "marketing-ideas" ||
-      id === "welcome-emails" ? (
+      id === "welcome-emails" ||
+      id === "tone-changer" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}
@@ -347,6 +411,8 @@ const ServiceInputForm = ({ data, id }) => {
                 ? marketingIdeasOption
                 : id === "welcome-emails"
                 ? welcomeEmailOptions
+                : id === "tone-changer"
+                ? toneChangerOptions
                 : ""
             }
           ></Select>
@@ -374,11 +440,32 @@ const ServiceInputForm = ({ data, id }) => {
         </div>
       )}
 
+      {id === "fictional-story-narration" && (
+        <div className="mt-8">
+          <label className="font-bold text-base text-stone-600">
+            {data.field2}
+          </label>
+          <small className="text-gray-500 block mb-2">{data.field2Short}</small>
+
+          <textarea
+            onChange={(e) =>
+              setVidData({ ...vidData, priorKnowlegde: e.target.value })
+            }
+            type="text"
+            name="skillExp"
+            placeholder={data.field2Place}
+            class="w-full block px-3 py-2 border-b-2 border-gray-400 outline-none  focus:border-gray-600 bg-transparent"
+          />
+        </div>
+      )}
+
       {id === "book-descriptions" ||
       id === "blog-paragraphs" ||
       id === "blog-intros" ||
       id === "news-paragraphs" ||
-      id === "seo-desc" ? (
+      id === "seo-desc" ||
+      id === "essay-paragraphs" ||
+      id === "article-writing" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field3}
@@ -420,7 +507,7 @@ const ServiceInputForm = ({ data, id }) => {
         ""
       )}
 
-      {id === "welcome-emails" ? (
+      {id === "welcome-emails" || id === "fictional-story-narration" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field3}
@@ -512,7 +599,13 @@ const ServiceInputForm = ({ data, id }) => {
       id === "sales-page-headlines" ||
       id === "sales-page-opener" ||
       id === "social-bio" ||
-      id === "website-about" ? (
+      id === "website-about" ||
+      id === "analogy-provider" ||
+      id === "bullet-point-expander" ||
+      id === "descriptive-expression" ||
+      id === "essay-paragraphs" ||
+      id === "example-provider" ||
+      id === "article-writing" ? (
         <div className="mt-8">
           <label className="font-bold text-base text-stone-600">
             {data.field2}

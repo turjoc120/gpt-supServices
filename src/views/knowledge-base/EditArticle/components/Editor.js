@@ -1141,6 +1141,275 @@ const Editor = ({}) => {
             ></ServiceInputForm>
           )
         }
+        {
+          // aida-copywriting
+          id === "aida-copywriting" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "Name of product and what it is about.",
+                field1Place:
+                  "e.g BuzzOff, electronic repellant for flies and mosquitoes",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // analogy-provider
+          id === "analogy-provider" && (
+            <ServiceInputForm
+              data={{
+                field1: "STATEMENT",
+                field1Short: "Statement you want an analogy for.",
+                field1Place: "e.g Bitcoin investing is highly risky.",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // bullet-point-expander
+          id === "bullet-point-expander" && (
+            <ServiceInputForm
+              data={{
+                field1: "BULLET POINTS",
+                field1Short: "Use a new line for each point.",
+                field1Place: `e.g - new coffee subscription
+- $25/month
+- free trial for new customers`,
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // content-rewriter
+          id === "content-rewriter" && (
+            <ServiceInputForm
+              data={{
+                field1: "CONTENT",
+                field1Short: "Content to be rewritten.",
+                field1Place:
+                  "e.g OnlyAI is a fast developing AI content writing tool that's giving its competitors a run for their money.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // descriptive-expression
+          id === "descriptive-expression" && (
+            <ServiceInputForm
+              data={{
+                field1: "CONTENT",
+                field1Short: "Content to be transformed.",
+                field1Place: "e.g The house is beautiful and faces the ocean.",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // essay-paragraphs
+          id === "essay-paragraphs" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "What this essay section is about. Include additional points in short sentences",
+                field1Place: "e.g Global warming",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // example-provider
+          id === "example-provider" && (
+            <ServiceInputForm
+              data={{
+                field1: "STATEMENT",
+                field1Short: "Statement that you want an example for.",
+                field1Place:
+                  "e.g Income inequality is worsening around the world.",
+                field2: "TONE",
+                field2Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field2Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // fictional-story-narration
+          id === "fictional-story-narration" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Briefly describe what you want to be narrated, in short sentences.",
+                field1Place:
+                  "e.g Daga the dragon plots another visits to the palace.",
+                field2: "PRIOR KNOWLEDGE",
+                field2Short:
+                  "What happened just before this scene, that the AI should know.",
+                field2Place:
+                  "e.g Daga failed to capture the princess on his first try.",
+                field3: "TONE",
+                field3Short:
+                  "Tone of voice your want the AI to write in. optional",
+                field3Place: "e.g excited",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // grammar-corrector
+          id === "grammar-corrector" && (
+            <ServiceInputForm
+              data={{
+                field1: "CONTENT",
+                field1Short: "Content to be corrected",
+                field1Place:
+                  "e.g I no buy coffee today. I bought coffee tomorrow.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // mini-story
+          id === "mini-story" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Briefly describe what you want to be narrated, in short sentences.",
+                field1Place:
+                  "e.g Daga the dragon plots another visits to the palace.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // pas-copywriting
+          id === "pas-copywriting" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short:
+                  "Name of product or service, and what it is about.",
+                field1Place:
+                  "e.g BuzzOff, electronic repellant for flies and mosquitoes.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // pros-cons
+          id === "pros-cons" && (
+            <ServiceInputForm
+              data={{
+                field1: "SHORT DESCRIPTION",
+                field1Short: "What the subject is about.",
+                field1Place: "e.g artificial intelligence",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // sentence-expander
+          id === "sentence-expander" && (
+            <ServiceInputForm
+              data={{
+                field1: "CONTENT",
+                field1Short:
+                  "Content to be expanded upon. Do not use AI's previous output.",
+                field1Place:
+                  "e.g Coffee is a great way to perk up your mornings. In fact, it also has little known health benefits.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // tone-changer
+          id === "tone-changer" && (
+            <ServiceInputForm
+              data={{
+                field1: "CONTENT",
+                field1Short: "Content to be changed.",
+                field1Place:
+                  "e.g Coffee is a great way to perk up your mornings. In fact, it also has little known health benefits.",
+                field2: "TONE",
+                field2Short: "How the content should sound.",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
+        {
+          // article-writing
+          id === "article-writing" && (
+            <ServiceInputForm
+              data={{
+                field1: "TOPIC",
+                field1Short: "What the article is about.",
+                field1Place:
+                  "e.g Coffee is a great way to perk up your mornings. In fact, it also has little known health benefits.",
+                field2: "WORD COUNT",
+                field2Short: "How many word artcle you want.",
+                field2Place: "200",
+                field3: "KEYWORDS",
+                field3Short:
+                  "Keywords to be included, separated by commas, Optional.",
+                field3Place: "e.g Keyword1, Keyword2",
+              }}
+              key={id}
+              id={id}
+            ></ServiceInputForm>
+          )
+        }
         {/* // // other 
 					// <div>
 					// 	<div className="mb-4">

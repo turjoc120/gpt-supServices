@@ -201,6 +201,51 @@ const EditArticle = () => {
     if (id === "welcome-emails") {
       setHedingText("Welcome Emails");
     }
+    if (id === "aida-copywriting") {
+      setHedingText("AIDA Copywriting Formula");
+    }
+    if (id === "analogy-provider") {
+      setHedingText("Analogy Provider");
+    }
+    if (id === "bullet-point-expander") {
+      setHedingText("Bullet Point Expander");
+    }
+    if (id === "content-rewriter") {
+      setHedingText("Content Rewriter v2");
+    }
+    if (id === "descriptive-expression") {
+      setHedingText("Descriptive Expression");
+    }
+    if (id === "essay-paragraphs") {
+      setHedingText("Essay Paragraphs");
+    }
+    if (id === "example-provider") {
+      setHedingText("Example Provider");
+    }
+    if (id === "fictional-story-narration") {
+      setHedingText("Fictional Story Narration");
+    }
+    if (id === "grammar-corrector") {
+      setHedingText("Grammar Corrector");
+    }
+    if (id === "mini-story") {
+      setHedingText("Mini Story");
+    }
+    if (id === "pas-copywriting") {
+      setHedingText("PAS Copywriting Formula");
+    }
+    if (id === "pros-cons") {
+      setHedingText("Pros and Cons");
+    }
+    if (id === "sentence-expander") {
+      setHedingText("Sentence Expander");
+    }
+    if (id === "tone-changer") {
+      setHedingText("Tone Changer");
+    }
+    if (id === "article-writing") {
+      setHedingText("Article Writing");
+    }
   }, [id]);
 
   return (

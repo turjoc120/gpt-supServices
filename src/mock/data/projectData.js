@@ -458,12 +458,6 @@ export const writingData = [
     desc: "Transform bland sentences into colorful ones using OnlyAI",
   },
   {
-    id: "demo-4",
-    name: "demo",
-    icon: "FcDocument",
-    desc: "Need captivating description for your book? let us help",
-  },
-  {
     id: "essay-paragraphs",
     name: "Essay Paragraphs",
     icon: "FcDocument",
@@ -476,7 +470,7 @@ export const writingData = [
     desc: "Use examples to justify vague statements! (Note: Please fact check!)",
   },
   {
-    id: "fictional-story",
+    id: "fictional-story-narration",
     name: "Fictional Story Narration",
     icon: "FcReading",
     desc: "Let OnlyAI take over the narration in your next fictional story.",
@@ -514,6 +508,12 @@ export const writingData = [
   {
     id: "tone-changer",
     name: "Tone Changer",
+    icon: "FcDocument",
+    desc: "Can't seem to get your desired tone? OnlyAI will set it right for you!",
+  },
+  {
+    id: "article-writing",
+    name: "Article Writing",
     icon: "FcDocument",
     desc: "Can't seem to get your desired tone? OnlyAI will set it right for you!",
   },
