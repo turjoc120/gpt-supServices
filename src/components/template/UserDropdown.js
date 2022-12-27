@@ -25,7 +25,7 @@ export const UserDropdown = ({ className }) => {
 
 	const { isLoading, logOut, } = useAuthContext()
 
-	console.log(user);
+	// console.log(user);
 
 
 	if (isLoading && user?.userName?.length === 0) {

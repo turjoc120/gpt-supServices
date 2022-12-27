@@ -6,7 +6,7 @@ import appConfig from 'configs/app.config'
 import { REDIRECT_URL_KEY } from 'constants/app.constant'
 import { useNavigate } from 'react-router-dom'
 import useQuery from './useQuery'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail, getIdToken } from 'firebase/auth'
 import { auth } from 'store/auth/firebase'
 import { useEffect, useState } from 'react'
 
@@ -14,8 +14,6 @@ import { useEffect, useState } from 'react'
 function useAuth() {
 	const [authRes, setAuthRes] = useState({});
 	const [isLoading, setLoading] = useState(true)
-
-
 
 	const dispatch = useDispatch()
 
@@ -35,14 +33,10 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
+					getIdToken(userCredential.user).then((token) => {
+						dispatch(onSignInSuccess(token))
+					})
 
-					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					// dispatch(setUser({
-					// 	avatar: '',
-					// 	userName: values.userName,
-					// 	authority: ['admin', 'user'],
-					// 	email: values.email
-					// }))
 
 					const redirectUrl = query.get(REDIRECT_URL_KEY)
 					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
@@ -70,14 +64,9 @@ function useAuth() {
 						status: 'success',
 						message: ""
 					})
-
-					dispatch(onSignInSuccess(userCredential?.user?.uid))
-					// dispatch(setUser({
-					// 	avatar: '',
-					// 	userName: values.userName,
-					// 	authority: ['admin', 'user'],
-					// 	email: values.email
-					// }))
+					getIdToken(userCredential.user).then((token) => {
+						dispatch(onSignInSuccess(token))
+					})
 
 
 					///check for sub or not 
