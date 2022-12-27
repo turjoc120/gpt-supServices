@@ -1,3 +1,5 @@
+
+// import components
 import React, { useState, useEffect, useRef } from "react";
 import { Input, Button, Spinner, Select } from "components/ui";
 import { writeInOpenAI } from "./openAIMachine";
