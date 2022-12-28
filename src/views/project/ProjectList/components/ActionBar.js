@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Input, Tooltip } from "components/ui";
 import { useLocation } from "react-router-dom";
 import {
@@ -43,6 +43,8 @@ const ActionBar = () => {
 
   const inputRef = useRef();
 
+  const [search, setSearch] = useState("");
+
   const view = useSelector((state) => state.projectList.state.view);
 
   const { sort } = useSelector((state) => state.projectList.state.query);
@@ -70,43 +72,22 @@ const ActionBar = () => {
   };
 
   return (
-    <div className="lg:flex items-center justify-between mb-4">
-      <h3 className="mb-4 lg:mb-0">{headerText}</h3>
+    <div className="space-y-4">
+      <h3 className="">{headerText}</h3>
 
-      <div className="flex flex-col md:flex-row md:items-center gap-1">
-        {/* <Input
-					ref={inputRef}
-					size="sm"
-					placeholder="Search"
-					prefix={<HiOutlineSearch className="text-lg" />}
-					onChange={handleInputChange}
-				/> */}
-        {/* <Tooltip title={view === 'grid' ? 'List view' : 'Grid view'}>
-					<Button
-						className="hidden md:flex"
-						onClick={() => onViewToggle()}
-						variant="plain"
-						size="sm"
-						icon={view === 'grid' ? <HiOutlineViewList /> : <HiOutlineViewGrid />}
-					/>
-				</Tooltip> */}
-        {/* <Tooltip title={`Sort: ${sort === 'asc' ? 'A-Z' : 'Z-A'}`}>
-					<Button
-						className="hidden md:flex"
-						variant="plain"
-						size="sm"
-						icon={sort === 'asc' ? <HiOutlineSortAscending /> : <HiOutlineSortDescending />}
-						onClick={onToggleSort}
-					/>
-				</Tooltip> */}
-        {/* <Button
-					size="sm"
-					variant="twoTone"
-					icon={<HiOutlinePlusCircle />}
-					onClick={onAddNewProject}
-				>
-					New Project
-				</Button> */}
+      <div>
+        <Input
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          value={search}
+          placeholder="Search for a service"
+          suffix={
+            <Tooltip title="Search for a service">
+              <HiOutlineSearch className="text-lg cursor-pointer ml-1"></HiOutlineSearch>
+            </Tooltip>
+          }
+        />
       </div>
     </div>
   );

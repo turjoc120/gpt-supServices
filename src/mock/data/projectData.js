@@ -248,19 +248,19 @@ export const marketingData = [
   {
     id: "blog-conclusions",
     name: "Blog Conclusions",
-    icon: "FcDocument",
+    icon: "FcNook",
     desc: "Let OnlyAI write a conclusion for your blog article",
   },
   {
     id: "blog-headlines",
     name: "Blog Headlines",
-    icon: "FcDocument",
+    icon: "FcNews",
     desc: "Need an attention-grabbing headline for your article? Ask OnlyAI",
   },
   {
     id: "blog-intros",
     name: "Blog Intros",
-    icon: "FcDocument",
+    icon: "FcKindle",
     desc: "Generate a paragraph of blog content using OnlyAI's blog intros tool!",
   },
   {
@@ -290,7 +290,7 @@ export const marketingData = [
   {
     id: "explain-child",
     name: "Explain It To A Child",
-    icon: "FcDocument",
+    icon: "FcPortraitMode",
     desc: "Need to explain a difficult concept to a child? Let OnlyAI try!",
   },
   {
@@ -302,7 +302,7 @@ export const marketingData = [
   {
     id: "faqs",
     name: "FAQs",
-    icon: "FcDocument",
+    icon: "FcList",
     desc: "OnlyAI generates questions for your website or sales page",
   },
   {
@@ -374,7 +374,7 @@ export const marketingData = [
   {
     id: "quotable-quotes",
     name: "Quotable Quotes",
-    icon: "FcDocument",
+    icon: "FcNook",
     desc: "Generate quoteworthy statments with OnlyAI's help.,",
   },
   {
@@ -398,7 +398,7 @@ export const marketingData = [
   {
     id: "sales-page-opener",
     name: "Sales Page Opener",
-    icon: "FcDocument",
+    icon: "FcNook",
     desc: "OnlyAI writes a captivating opening paragraphs for your sales page.",
   },
   {
@@ -416,7 +416,7 @@ export const marketingData = [
   {
     id: "website-about",
     name: "Website About Us",
-    icon: "FcDocument",
+    icon: "FcLink",
     desc: "Hate writing the About Us section of your website? Here comes OnlyAI!",
   },
   {
@@ -430,7 +430,7 @@ export const writingData = [
   {
     id: "aida-copywriting",
     name: "AIDA Copywriting Formula",
-    icon: "FcDocument",
+    icon: "FcNook",
     desc: "Create better copy using Attention, Interest, Desire & Action",
   },
   {
@@ -442,7 +442,7 @@ export const writingData = [
   {
     id: "bullet-point-expander",
     name: "Bullet Point Expander",
-    icon: "FcDocument",
+    icon: "FcList",
     desc: "Write in point form, and let OnlyAI transform into proper sentences!",
   },
   {
@@ -454,13 +454,13 @@ export const writingData = [
   {
     id: "descriptive-expression",
     name: "Descriptive Expression",
-    icon: "FcDocument",
+    icon: "FcNook",
     desc: "Transform bland sentences into colorful ones using OnlyAI",
   },
   {
     id: "essay-paragraphs",
     name: "Essay Paragraphs",
-    icon: "FcDocument",
+    icon: "FcTemplate",
     desc: "OnlyAI helps you create a quick personal essay about a topic.",
   },
   {
@@ -519,13 +519,25 @@ export const writingData = [
   },
 ];
 
-export const allServiceData = [
+let all_services = [
   ...projectList,
   ...marketingData,
   ...businessData,
   ...writingData,
-  ...miscellaneousData
-]
+  ...miscellaneousData,
+];
+
+let sorted_all_services = all_services.sort((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+});
+
+export const allServiceData = sorted_all_services;
 
 export const projectDashboardData = {
   userName: "Carolyn Perkins",
