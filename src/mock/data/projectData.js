@@ -278,7 +278,7 @@ export const marketingData = [
   {
     id: "blog-topics",
     name: "Blog Topics",
-    icon: "FcDocument",
+    icon: "FcNews",
     desc: "Not too sure what to write for your blog? Let OnlyAI suggest some topics!",
   },
   {
@@ -296,7 +296,7 @@ export const marketingData = [
   {
     id: "facebook-ads",
     name: "Facebook Ads",
-    icon: "FcDocument",
+    icon: "FcStackOfPhotos",
     desc: "Create the next wining Facebook ads copy with OnlyAI!",
   },
   {
@@ -326,7 +326,7 @@ export const marketingData = [
   {
     id: "hso-copywriting",
     name: "HSO Copywriting Formula",
-    icon: "FcDocument",
+    icon: "FcTemplate",
     desc: "Need compelling copy for your sales page or ad? Try Hook, Story, Offer!",
   },
   {
@@ -338,7 +338,7 @@ export const marketingData = [
   {
     id: "listicles",
     name: "Listicles",
-    icon: "FcDocument",
+    icon: "FcTodoList",
     desc: "Listicles are great for blog posts, videos and social media!",
   },
   {
@@ -436,7 +436,7 @@ export const writingData = [
   {
     id: "analogy-provider",
     name: "Analogy Provider",
-    icon: "FcDocument",
+    icon: "FcRules",
     desc: "Provide an analogy to illustrate a given statement",
   },
   {
@@ -448,7 +448,7 @@ export const writingData = [
   {
     id: "content-rewriter",
     name: "Content Rewriter v2",
-    icon: "FcDocument",
+    icon: "FcRatings",
     desc: "Get OnlyAI to rewrite your sentence in a different way.",
   },
   {
@@ -484,7 +484,7 @@ export const writingData = [
   {
     id: "mini-story",
     name: "Mini Story",
-    icon: "FcDocument",
+    icon: "FcTemplate",
     desc: "Write a memorable mini story with the help of OnlyAI's creative juices.",
   },
   {
@@ -496,19 +496,19 @@ export const writingData = [
   {
     id: "pros-cons",
     name: "Pros and Cons",
-    icon: "FcDocument",
+    icon: "FcTodoList",
     desc: "Let OnlyAI come up with compelling pros and cons for any subject.",
   },
   {
     id: "sentence-expander",
     name: "Sentence Expander",
-    icon: "FcDocument",
+    icon: "FcOpenedFolder",
     desc: "Stuck for words? OnlyAI will continue where you left off!",
   },
   {
     id: "tone-changer",
     name: "Tone Changer",
-    icon: "FcDocument",
+    icon: "FcProcess",
     desc: "Can't seem to get your desired tone? OnlyAI will set it right for you!",
   },
   {
