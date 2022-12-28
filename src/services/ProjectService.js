@@ -43,6 +43,13 @@ export async function apiGetWriting(data) {
         data
     })
 }
+export async function apiGetAll(data) {
+    return ApiService.fetchData({
+        url: '/project/all',
+        method: 'post',
+        data
+    })
+}
 
 export async function apiPutProjectList(data) {
     return ApiService.fetchData({

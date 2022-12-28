@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { apiGetBusiness, apiGetMarketing, apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiGetWriting, apiPutProjectList } from 'services/ProjectService'
+import { apiGetAll, apiGetBusiness, apiGetMarketing, apiGetMiscellaneous, apiGetProjectList, apiGetScrumBoardtMembers, apiGetWriting, apiPutProjectList } from 'services/ProjectService'
 
 export const getList = createAsyncThunk('projectList/getList', async (data) => {
     const response = await apiGetProjectList(data)
@@ -19,6 +19,10 @@ export const getMarketing = createAsyncThunk('projectList/marketing', async (dat
 })
 export const getWriting = createAsyncThunk('projectList/writing', async (data) => {
     const response = await apiGetWriting(data)
+    return response.data
+})
+export const getAllService = createAsyncThunk('projectList/writing', async (data) => {
+    const response = await apiGetAll(data)
     return response.data
 })
 
@@ -67,12 +71,19 @@ const dataSlice = createSlice({
             state.projectList = action.payload
             state.loading = false
         },
+        [getAllService.fulfilled]: (state, action) => {
+            state.projectList = action.payload
+            state.loading = false
+        },
 
         //////loading
         [getList.pending]: (state) => {
             state.loading = true
         },
         [getWriting.pending]: (state) => {
+            state.loading = true
+        },
+        [getAllService.pending]: (state) => {
             state.loading = true
         },
         [getMmiscellaneous.pending]: (state) => {
