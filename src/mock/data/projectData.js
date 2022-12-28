@@ -519,6 +519,14 @@ export const writingData = [
   },
 ];
 
+export const allServiceData = [
+  ...projectList,
+  ...marketingData,
+  ...businessData,
+  ...writingData,
+  ...miscellaneousData
+]
+
 export const projectDashboardData = {
   userName: "Carolyn Perkins",
   taskCount: 5,
