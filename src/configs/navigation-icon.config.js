@@ -49,12 +49,19 @@ import {
   FcPaid,
   FcComments,
   FcTemplate,
+  FcStatistics,
   FcManager,
   FcPortraitMode,
   FcAdvertising,
   FcLink,
   FcNook,
   FcList,
+  FcSalesPerformance,
+  FcGoogle,
+  FcFeedback,
+  FcSmartphoneTablet,
+  FcRating,
+  FcFaq,
 } from "react-icons/fc";
 
 import { AiFillAmazonCircle } from "react-icons/ai";
@@ -87,6 +94,13 @@ const navigationIcon = {
   FcAdvertising: <FcAdvertising />,
   FcNook: <FcNook />,
   FcList: <FcList />,
+  FcStatistics: <FcStatistics />,
+  FcSalesPerformance: <FcSalesPerformance />,
+  FcGoogle: <FcGoogle />,
+  FcFeedback: <FcFeedback />,
+  FcFaq: <FcFaq />,
+  FcSmartphoneTablet: <FcSmartphoneTablet />,
+  FcRating: <FcRating />,
 
   apps: <HiOutlineViewGridAdd />,
   dashboard: <HiOutlineViewGrid />,

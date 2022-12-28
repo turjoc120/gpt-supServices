@@ -284,7 +284,7 @@ export const marketingData = [
   {
     id: "cold-emails",
     name: "Cold Emails",
-    icon: "FcDocument",
+    icon: "FcFeedback",
     desc: "Need to send a cold email? OnlyAI has a few suggestions for you!",
   },
   {
@@ -302,7 +302,7 @@ export const marketingData = [
   {
     id: "faqs",
     name: "FAQs",
-    icon: "FcList",
+    icon: "FcFaq",
     desc: "OnlyAI generates questions for your website or sales page",
   },
   {
@@ -314,13 +314,13 @@ export const marketingData = [
   {
     id: "generic-emails",
     name: "Generic Emails",
-    icon: "FcDocument",
+    icon: "FcFeedback",
     desc: "OnlyAI helps you write your next professional email to anyone.",
   },
   {
     id: "google-ads",
     name: "Google Ads",
-    icon: "FcDocument",
+    icon: "FcGoogle",
     desc: "OnlyAI helps you write powerful Google ad headlines that sell!",
   },
   {
@@ -332,7 +332,7 @@ export const marketingData = [
   {
     id: "lead-magnets",
     name: "Lead Magnets",
-    icon: "FcDocument",
+    icon: "FcLink",
     desc: "Convert Visitors into leads using these suggestions.",
   },
   {
@@ -350,7 +350,7 @@ export const marketingData = [
   {
     id: "offer-ideas",
     name: "Offer Ideas",
-    icon: "FcDocument",
+    icon: "FcIdea",
     desc: "Ran out of ideas for your next offer? let OnlyAI suggest a few for you!",
   },
   {
@@ -380,19 +380,19 @@ export const marketingData = [
   {
     id: "sales-page-cta",
     name: "Sales Page Call-to-action",
-    icon: "FcDocument",
+    icon: "FcRating",
     desc: "OnlyAI writes a CTA statement that nudges your reader into action.",
   },
   {
     id: "sales-page-guarantee",
     name: "Sales Page Guarantee",
-    icon: "FcDocument",
+    icon: "FcStatistics",
     desc: "OnlyAI writes a strong guarantee for your sales page.",
   },
   {
     id: "sales-page-headlines",
     name: "Sales Page Headlines",
-    icon: "FcDocument",
+    icon: "FcSalesPerformance",
     desc: "OnlyAI writes a irresistable headlines and subheadings for your sales page.",
   },
   {
@@ -404,13 +404,13 @@ export const marketingData = [
   {
     id: "seo-desc",
     name: "SEO Descriptions",
-    icon: "FcDocument",
+    icon: "FcSmartphoneTablet",
     desc: "OnlyAI writes SEO descriptions that everybody hates to write!",
   },
   {
     id: "social-bio",
     name: "Social Media Bio",
-    icon: "FcDocument",
+    icon: "FcIdea",
     desc: "Write a short but compelling social media bio for your business",
   },
   {
@@ -422,7 +422,7 @@ export const marketingData = [
   {
     id: "welcome-emails",
     name: "Welcome Emails",
-    icon: "FcDocument",
+    icon: "FcFeedback",
     desc: "Greet your new subscribers with a sizzling welcome email!",
   },
 ];
