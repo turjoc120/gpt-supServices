@@ -20,14 +20,12 @@ export const projectList = [
     name: "Video Descriptions",
     icon: "FcNews",
     desc: "Ai Creatives will generate you the best description for your videos with ease. Let us make it stand out.",
-
   },
   {
     id: 30,
     name: "Video Ideas",
     icon: "FcIdea",
     desc: "Use our ideas and increase the chances of your next video to go viral! ",
-
   },
   {
     id: 31,
@@ -40,7 +38,6 @@ export const projectList = [
     name: "Video Titles",
     icon: "FcVideoCall",
     desc: "We’ll make you some attention-grabbing titles for your videos. Give them what they deserve.",
-
   },
 ];
 
@@ -117,7 +114,7 @@ export const businessData = [
   {
     id: "book-titles",
     name: "Book Titles",
-    icon: "FcDocument",
+    icon: "FcDiploma2",
     desc: "Want best selling book tiles for your books? ask us",
   },
   {
@@ -299,7 +296,7 @@ export const marketingData = [
   {
     id: "news-paragraphs",
     name: "News Paragraphs",
-    icon: "FcDocument",
+    icon: "FcNews",
     desc: "OnlyAI helps you write paragraphs for a news article",
   },
   {
@@ -385,7 +382,7 @@ export const writingData = [
   {
     id: "aida-copywriting",
     name: "AIDA Copywriting Formula",
-    icon: "FcNook",
+    icon: "FcEditImage",
     desc: "Create better copy using Attention, Interest, Desire & Action",
   },
   {
@@ -421,7 +418,7 @@ export const writingData = [
   {
     id: "example-provider",
     name: "Example Provider",
-    icon: "FcDocument",
+    icon: "FcKindle",
     desc: "Use examples to justify vague statements! (Note: Please fact check!)",
   },
   {
@@ -445,7 +442,7 @@ export const writingData = [
   {
     id: "pas-copywriting",
     name: "PAS Copywriting Formula",
-    icon: "FcDocument",
+    icon: "FcEditImage",
     desc: "OnlyAI crafts copy using the Pain, Agitate, Solution copywriting formula.",
   },
   {
@@ -469,7 +466,7 @@ export const writingData = [
   {
     id: "article-writing",
     name: "Article Writing",
-    icon: "FcDocument",
+    icon: "FcPrint",
     desc: "Can't seem to get your desired tone? OnlyAI will set it right for you!",
   },
 ];

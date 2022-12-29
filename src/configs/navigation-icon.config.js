@@ -67,6 +67,8 @@ import {
   FcStackOfPhotos,
   FcProcess,
   FcOpenedFolder,
+  FcPrint,
+  FcDiploma2,
 } from "react-icons/fc";
 
 import { AiFillAmazonCircle } from "react-icons/ai";
@@ -111,6 +113,8 @@ const navigationIcon = {
   FcRatings: <FcRatings />,
   FcProcess: <FcProcess />,
   FcOpenedFolder: <FcOpenedFolder />,
+  FcPrint: <FcPrint />,
+  FcDiploma2: <FcDiploma2 />,
 
   apps: <HiOutlineViewGridAdd />,
   dashboard: <HiOutlineViewGrid />,
