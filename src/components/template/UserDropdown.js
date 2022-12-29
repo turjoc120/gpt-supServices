@@ -10,7 +10,7 @@ import { FiActivity } from 'react-icons/fi'
 
 import useAuth from 'utils/hooks/useAuth'
 import useAuthContext from 'utils/hooks/useAuthContext'
-import { apiGetPlans } from 'services/AuthService'
+
 
 
 
@@ -25,10 +25,6 @@ export const UserDropdown = ({ className }) => {
 	const user = useSelector((state) => state?.auth?.user)
 	const { token } = useSelector((state) => state.auth.session)
 
-	useEffect(() => {
-		const a = apiGetPlans({ authorization: "Bearer " + token })
-		console.log(a);
-	}, [token])
 
 	const { isLoading, logOut, } = useAuthContext()
 

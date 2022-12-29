@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Input, Tooltip } from "components/ui";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
   HiOutlinePlusCircle,
   HiOutlineSearch,
@@ -16,60 +16,48 @@ import {
   toggleNewProjectDialog,
 } from "../store/stateSlice";
 import { useDispatch, useSelector } from "react-redux";
-import debounce from "lodash/debounce";
+import { debounce } from 'lodash';
+
+
 
 const ActionBar = () => {
   const location = useLocation();
+  const [headerText, setHeaderText] = useState("")
+  // const [search, setSearch] = useState("");
 
-  let headerText;
+  const inputRef = useRef()
+  const { categoryIdx } = useParams();
 
-  if (location.pathname === "/services/social-media") {
-    headerText = "Social Media Tools";
-  } else if (location.pathname === "/services/marketing-tools") {
-    headerText = "Marketing Tools";
-  } else if (location.pathname === "/services/business") {
-    headerText = "Business Tools";
-  } else if (location.pathname === "/services/writing-tools") {
-    headerText = "Writing Tools";
-  } else if (location.pathname === "/services/miscellaneous") {
-    headerText = "Miscellaneous";
-  } else if (location.pathname === "/services/all-services") {
-    headerText = "All Services";
-  } else {
-    headerText = "Services";
-  }
+  useEffect(() => {
+    if (location.pathname === "/services/social-media") {
+      setHeaderText("Social Media Tools")
+    } else if (location.pathname === "/services/marketing-tools") {
+      setHeaderText("Marketing Tools")
+    } else if (location.pathname === "/services/business") {
+      setHeaderText("Business Tools")
+    } else if (location.pathname === "/services/writing-tools") {
+      setHeaderText("Writing Tools")
+    } else if (location.pathname === "/services/miscellaneous") {
+      setHeaderText("Miscellaneous")
+    } else if (location.pathname === "/services/all-services") {
+      setHeaderText("All Services")
+    } else {
+      setHeaderText("Services")
+    }
+
+
+    dispatch(setSearch(""))
+    inputRef.current.value = ""
+
+
+  }, [categoryIdx])
+
 
   const dispatch = useDispatch();
 
-  const inputRef = useRef();
+  const updateQuery = (e) => dispatch(setSearch(e?.target?.value));
 
-  const [search, setSearch] = useState("");
-
-  const view = useSelector((state) => state.projectList.state.view);
-
-  const { sort } = useSelector((state) => state.projectList.state.query);
-
-  const onViewToggle = () => {
-    dispatch(toggleView(view === "grid" ? "list" : "grid"));
-  };
-
-  const onToggleSort = () => {
-    dispatch(toggleSort(sort === "asc" ? "desc" : "asc"));
-  };
-
-  const onAddNewProject = () => {
-    dispatch(toggleNewProjectDialog(true));
-  };
-
-  const debounceFn = debounce(handleDebounceFn, 500);
-
-  function handleDebounceFn(val) {
-    dispatch(setSearch(val));
-  }
-
-  const handleInputChange = (e) => {
-    debounceFn(e.target.value);
-  };
+  const handleInputChange = debounce(updateQuery, 500);
 
   return (
     <div className="space-y-4">
@@ -77,10 +65,8 @@ const ActionBar = () => {
 
       <div>
         <Input
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-          value={search}
+          ref={inputRef}
+          onChange={handleInputChange}
           placeholder="Search for a service"
           suffix={
             <Tooltip title="Search for a service">

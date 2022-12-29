@@ -18,7 +18,6 @@ const ProjectListContent = () => {
 	const view = useSelector((state) => state.projectList.state.view)
 	const { sort, search } = useSelector((state) => state.projectList.state.query)
 
-
 	useEffect(() => {
 		if (categoryIdx === "social-media") {
 			dispatch(getList({ sort, search }))
@@ -40,7 +39,7 @@ const ProjectListContent = () => {
 		}
 
 
-	}, [categoryIdx, dispatch])
+	}, [categoryIdx, dispatch, search])
 
 	return (
 		<div className={classNames('mt-6 h-full flex flex-col', loading && 'justify-center')}>

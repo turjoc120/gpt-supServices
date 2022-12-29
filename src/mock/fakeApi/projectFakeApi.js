@@ -24,33 +24,88 @@ export default function projectFakeApi(server, apiPrefix) {
     })
     server.post(`${apiPrefix}/project/miscellaneous`, (schema, { requestBody }) => {
 
+        const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.miscellaneousData
+        if (sort === 'asc') {
+            data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        }
+        if (sort === 'desc') {
+            data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+
+        if (search) {
+            data = wildCardSearch(data, search)
+        }
 
         return data
     })
     server.post(`${apiPrefix}/project/business`, (schema, { requestBody }) => {
-
+        const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.businessData
+        if (sort === 'asc') {
+            data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        }
+        if (sort === 'desc') {
+            data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+
+        if (search) {
+            data = wildCardSearch(data, search)
+        }
 
         return data
+
     })
     server.post(`${apiPrefix}/project/marketing`, (schema, { requestBody }) => {
-
+        const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.marketingData
+        if (sort === 'asc') {
+            data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        }
+        if (sort === 'desc') {
+            data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+
+        if (search) {
+            data = wildCardSearch(data, search)
+        }
 
         return data
     })
+
     server.post(`${apiPrefix}/project/writing`, (schema, { requestBody }) => {
-
+        const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.writingData
+        if (sort === 'asc') {
+            data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        }
+        if (sort === 'desc') {
+            data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+
+        if (search) {
+            data = wildCardSearch(data, search)
+        }
 
         return data
     })
-    server.post(`${apiPrefix}/project/all`, (schema, { requestBody }) => {
 
+    server.post(`${apiPrefix}/project/all`, (schema, { requestBody }) => {
+        const { sort, search } = JSON.parse(requestBody)
         let data = schema.db.allServiceData
+        if (sort === 'asc') {
+            data = data.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        }
+        if (sort === 'desc') {
+            data = data.sort((a, b) => (a.name > b.name) ? -1 : 1)
+        }
+
+        if (search) {
+            data = wildCardSearch(data, search)
+        }
 
         return data
+
     })
 
     server.put(`${apiPrefix}/project/list/add`, (schema, { requestBody }) => {

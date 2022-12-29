@@ -1,12 +1,6 @@
 import ApiService from './ApiService'
 
-export async function apiGetPlans(data) {
-    return ApiService.fetchData({
-        url: 'http://localhost:5000/api/payment/get-plans',
-        method: 'post',
-        data
-    })
-}
+
 export async function apiSignIn(data) {
     return ApiService.fetchData({
         url: '/sign-in',
