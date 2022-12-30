@@ -4,15 +4,18 @@ import uiComponentsRoute from './uiComponentsRoute'
 import pagesRoute from './pagesRoute'
 import authDemoRoute from './authDemoRoute'
 import docsRoute from './docsRoute'
+import plansRoute from './plansRoute'
 
 export const publicRoutes = [
-    ...authRoute
+    ...authRoute,
+
 ]
 
 export const protectedRoutes = [
     ...appsRoute,
+    ...plansRoute,
     // ...uiComponentsRoute,
-    // ...pagesRoute,
+    ...pagesRoute,
     // ...authDemoRoute,
     // ...docsRoute
 ]

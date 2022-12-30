@@ -2,7 +2,7 @@ import React, { useState, Suspense, lazy } from 'react'
 import classNames from 'classnames'
 import { Drawer } from 'components/ui'
 import {
-	NAV_MODE_THEMED, 
+	NAV_MODE_THEMED,
 	NAV_MODE_TRANSPARENT,
 	DIR_RTL,
 } from 'constants/theme.constant'
@@ -35,16 +35,16 @@ const MobileNav = () => {
 	const direction = useSelector(state => state.theme.direction)
 	const currentRouteKey = useSelector(state => state.base.common.currentRouteKey)
 	const sideNavCollapse = useSelector(state => state.theme.layout.sideNavCollapse)
-	const userAuthority = useSelector((state) => state.auth.user.authority)
+	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
 	const { smaller } = useResponsive()
- 
+
 	const navColor = () => {
-		if(navMode === NAV_MODE_THEMED) {
+		if (navMode === NAV_MODE_THEMED) {
 			return `bg-${themeColor}-${primaryColorLevel} side-nav-${navMode}`
 		}
 
-		if(navMode === NAV_MODE_TRANSPARENT) {
+		if (navMode === NAV_MODE_TRANSPARENT) {
 			return `side-nav-${mode}`
 		}
 
@@ -70,7 +70,7 @@ const MobileNav = () => {
 						<Suspense fallback={<></>}>
 							{isOpen && (
 								<VerticalMenuContent
-									navMode={navMode} 
+									navMode={navMode}
 									collapsed={sideNavCollapse}
 									navigationTree={navigationConfig}
 									routeKey={currentRouteKey}

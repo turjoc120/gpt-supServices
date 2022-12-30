@@ -10,18 +10,19 @@ import PublicRoute from 'components/route/PublicRoute'
 import AuthorityGuard from 'components/route/AuthorityGuard'
 import AppRoute from 'components/route/AppRoute'
 import AuthProvider from './auth/context/AuthContext'
+import useAuthContext from 'utils/hooks/useAuthContext'
 
-const { authenticatedEntryPath } = appConfig
+const { authenticatedEntryPath, unsubEntryPath } = appConfig
 
 const AllRoutes = props => {
 
-	const userAuthority = useSelector((state) => state.auth.user.authority)
+	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
 	return (
 
 		<Routes>
 			<Route path="/" element={<ProtectedRoute />}>
-				<Route path="/" element={<Navigate replace to={authenticatedEntryPath} />} />
+				<Route path="/" element={<Navigate replace to={userAuthority?.includes("premium", "basic") ? authenticatedEntryPath : unsubEntryPath} />} />
 				{protectedRoutes.map((route, index) => (
 					<Route
 						key={route.key + index}

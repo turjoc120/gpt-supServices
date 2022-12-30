@@ -7,21 +7,21 @@ const appsRoute = [
         key: 'services.socialMedia',
         path: `/services/:categoryIdx`,
         component: React.lazy(() => import('views/project/ProjectList')),
-        authority: [ADMIN, USER],
+        authority: [ADMIN],
 
     },
-    // dynamic routes for services
     {
         path: `/services/:catId/:id`,
         component: React.lazy(() => import('views/knowledge-base/EditArticle')),
-
+        authority: [ADMIN],
     },
-    // {
-    //     path: `services/:miscellaneous/:id`,
-    //     component: React.lazy(() => import('views/knowledge-base/EditArticle')),
-
-    // },
-
+    {
+        key: 'appsCrm.dashboard',
+        path: `${APP_PREFIX_PATH}/crm/dashboard`,
+        component: React.lazy(() => import('views/crm/CrmDashboard')),
+        authority: [ADMIN],
+    },
+    ///////
 
     {
         key: 'appsProject.projectList',
@@ -29,6 +29,7 @@ const appsRoute = [
         component: React.lazy(() => import('views/project/ProjectList')),
         authority: [ADMIN, USER],
     },
+
     {
         key: 'appsProject.scrumBoard',
         path: `${APP_PREFIX_PATH}/project/scrum-board`,
@@ -44,12 +45,7 @@ const appsRoute = [
         component: React.lazy(() => import('views/project/Issue')),
         authority: [ADMIN, USER],
     },
-    {
-        key: 'appsCrm.dashboard',
-        path: `${APP_PREFIX_PATH}/crm/dashboard`,
-        component: React.lazy(() => import('views/crm/CrmDashboard')),
-        authority: [ADMIN, USER],
-    },
+
     {
         key: 'appsCrm.calendar',
         path: `${APP_PREFIX_PATH}/crm/calendar`,

@@ -12,12 +12,12 @@ const SecondaryHeader = props => {
 	const navMode = useSelector(state => state.theme.navMode)
 	const themeColor = useSelector(state => state.theme.themeColor)
 	const primaryColorLevel = useSelector(state => state.theme.primaryColorLevel)
-	const userAuthority = useSelector((state) => state.auth.user.authority)
+	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
 	const { larger } = useResponsive()
 
 	const headerColor = () => {
-		if(navMode === NAV_MODE_THEMED) {
+		if (navMode === NAV_MODE_THEMED) {
 			return `bg-${themeColor}-${primaryColorLevel} secondary-header-${navMode}`
 		}
 		return `secondary-header-${navMode}`
@@ -27,14 +27,14 @@ const SecondaryHeader = props => {
 		<>
 			{
 				larger.md && (
-					<div 
+					<div
 						className={
 							classNames(
 								'h-16 flex items-center',
 								headerColor(),
 								className,
 							)
-						} 
+						}
 					>
 						<div className={
 							classNames(
@@ -43,7 +43,7 @@ const SecondaryHeader = props => {
 								headerColor
 							)
 						} >
-							<HorizontalMenuContent 
+							<HorizontalMenuContent
 								manuVariant={navMode}
 								userAuthority={userAuthority}
 							/>

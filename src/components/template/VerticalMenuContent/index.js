@@ -4,9 +4,9 @@ import { Menu } from 'components/ui'
 import VerticalSingleMenuItem from './VerticalSingleMenuItem'
 import VerticalCollapsedMenuItem from './VerticalCollapsedMenuItem'
 import { themeConfig } from 'configs/theme.config'
-import { 
-	NAV_ITEM_TYPE_TITLE, 
-	NAV_ITEM_TYPE_COLLAPSE, 
+import {
+	NAV_ITEM_TYPE_TITLE,
+	NAV_ITEM_TYPE_COLLAPSE,
 	NAV_ITEM_TYPE_ITEM,
 } from 'constants/navigation.constant'
 import useMenuActive from 'utils/hooks/useMenuActive'
@@ -16,10 +16,10 @@ const { MenuGroup } = Menu
 
 const VerticalMenuContent = props => {
 
-	const { 
-		navMode = themeConfig.navMode, 
-		collapsed, 
-		routeKey, 
+	const {
+		navMode = themeConfig.navMode,
+		collapsed,
+		routeKey,
 		navigationTree = [],
 		userAuthority = [],
 		onMenuItemClick,
@@ -45,12 +45,12 @@ const VerticalMenuContent = props => {
 
 	const getNavItem = nav => {
 
-		if(nav.subMenu.length === 0 && nav.type === NAV_ITEM_TYPE_ITEM) {
+		if (nav.subMenu.length === 0 && nav.type === NAV_ITEM_TYPE_ITEM) {
 			return (
-				<VerticalSingleMenuItem 
-					key={nav.key} 
-					nav={nav} 
-					onLinkClick={handleLinkClick} 
+				<VerticalSingleMenuItem
+					key={nav.key}
+					nav={nav}
+					onLinkClick={handleLinkClick}
 					sideCollapsed={collapsed}
 					userAuthority={userAuthority}
 					direction={direction}
@@ -58,12 +58,12 @@ const VerticalMenuContent = props => {
 			)
 		}
 
-		if(nav.subMenu.length > 0 && nav.type === NAV_ITEM_TYPE_COLLAPSE) {
+		if (nav.subMenu.length > 0 && nav.type === NAV_ITEM_TYPE_COLLAPSE) {
 			return (
-				<VerticalCollapsedMenuItem 
-					key={nav.key} 
-					nav={nav} 
-					onLinkClick={onMenuItemClick} 
+				<VerticalCollapsedMenuItem
+					key={nav.key}
+					nav={nav}
+					onLinkClick={onMenuItemClick}
 					sideCollapsed={collapsed}
 					userAuthority={userAuthority}
 					direction={direction}
@@ -71,32 +71,32 @@ const VerticalMenuContent = props => {
 			)
 		}
 
-		if(nav.type === NAV_ITEM_TYPE_TITLE) {
+		if (nav.type === NAV_ITEM_TYPE_TITLE) {
 
 			if (nav.subMenu.length > 0) {
 				return (
-					<MenuGroup key={nav.key} label={t(nav.translateKey) || nav.title }>
+					<MenuGroup key={nav.key} label={t(nav.translateKey) || nav.title}>
 						{
 							nav.subMenu.map(subNav => (
-								subNav.subMenu.length > 0 
-								? 
-								<VerticalCollapsedMenuItem 
-									key={subNav.key} 
-									nav={subNav} 
-									onLinkClick={onMenuItemClick} 
-									sideCollapsed={collapsed}
-									userAuthority={userAuthority}
-									direction={direction}
-								/>
-								:
-								<VerticalSingleMenuItem 
-									key={subNav.key} 
-									nav={subNav} 
-									onLinkClick={onMenuItemClick} 
-									sideCollapsed={collapsed}
-									userAuthority={userAuthority}
-									direction={direction}
-								/>
+								subNav.subMenu.length > 0
+									?
+									<VerticalCollapsedMenuItem
+										key={subNav.key}
+										nav={subNav}
+										onLinkClick={onMenuItemClick}
+										sideCollapsed={collapsed}
+										userAuthority={userAuthority}
+										direction={direction}
+									/>
+									:
+									<VerticalSingleMenuItem
+										key={subNav.key}
+										nav={subNav}
+										onLinkClick={onMenuItemClick}
+										sideCollapsed={collapsed}
+										userAuthority={userAuthority}
+										direction={direction}
+									/>
 							))
 						}
 					</MenuGroup>
@@ -110,12 +110,12 @@ const VerticalMenuContent = props => {
 	return (
 		<Menu
 			className="px-4 pb-4"
-			variant={navMode} 
+			variant={navMode}
 			sideCollapsed={collapsed}
 			defaultActiveKeys={activedRoute?.key ? [activedRoute.key] : []}
 			defaultExpandedKeys={defaulExpandKey}
 		>
-			{navigationTree.map(nav =>  getNavItem(nav))}
+			{navigationTree.map(nav => getNavItem(nav))}
 		</Menu>
 	)
 }
