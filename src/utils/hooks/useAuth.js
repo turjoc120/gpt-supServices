@@ -105,6 +105,8 @@ function useAuth() {
 			if (user) {
 				const userDe = await apiGetUser({ uid: user.uid })
 				dispatch(setUser(userDe.data))
+				const fireToken = await getIdToken(user)
+				dispatch(onSignInSuccess(fireToken))
 			} else {
 
 				dispatch(setUser({

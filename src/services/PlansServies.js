@@ -8,6 +8,16 @@ export async function apiGetPlans() {
         method: 'get',
     })
 }
+
+export async function apiPlanSubscription(headers) {
+    return ApiService.fetchData({
+        url: `${BASE_URL_MY}/payment/subscription`,
+        method: 'post',
+
+        headers
+    })
+}
+
 export async function apiAddUser(data, headers) {
     return ApiService.fetchData({
         url: `${BASE_URL_MY}/user/add-user`,
@@ -23,6 +33,7 @@ export async function apiGetUser(headers) {
         headers
     })
 }
+
 
 // export async function apiSignUp(data) {
 //     return ApiService.fetchData({

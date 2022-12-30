@@ -3,11 +3,20 @@ import React from 'react'
 import { Card, Avatar, Button } from 'components/ui'
 import { IconText } from 'components/shared'
 import { FcApproval } from 'react-icons/fc'
+import { apiPlanSubscription } from 'services/PlansServies'
+import { useSelector } from 'react-redux'
 
 const PlansCard = ({ plan }) => {
 
-    const handlePlan = (id) => {
-        console.log(id);
+    const token = useSelector((state) => state?.auth?.session?.token)
+    const userEmail = useSelector((state) => state?.auth?.user?.email)
+
+    const handlePlan = (priceId) => {
+        apiPlanSubscription(
+            { authorization: `Bearer ${token}` }
+        ).then(res => {
+            console.log(res);
+        })
     }
 
     return (

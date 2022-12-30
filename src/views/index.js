@@ -17,7 +17,8 @@ const { authenticatedEntryPath, unsubEntryPath } = appConfig
 const AllRoutes = props => {
 
 	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
-
+	// const user = useSelector((state) => state?.auth?.user)
+	// console.log(user);
 	return (
 
 		<Routes>
