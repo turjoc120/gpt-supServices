@@ -6,21 +6,9 @@ import { FcApproval } from 'react-icons/fc'
 
 const PlansCard = ({ plan }) => {
 
-    // const cardFooter = (
-    //     <div className="flex items-center">
-    //         <Avatar size={30} className="mr-2" shape="circle" src="/img/avatars/thumb-1.jpg" />
-    //         <span>
-    //             <h6 className="text-sm">Kristen Fisher</h6>
-    //             <span className="text-xs">Sep 23, 2021</span>
-    //         </span>
-    //     </div>
-    // )
-
-    // const cardHeader = (
-    //     <div className="rounded-tl-lg rounded-tr-lg overflow-hidden">
-    //         <img src="/img/others/img-1.jpg" alt="image" />
-    //     </div>
-    // )
+    const handlePlan = (id) => {
+        console.log(id);
+    }
 
     return (
         <div className="max-w-xs text-center">
@@ -49,9 +37,8 @@ const PlansCard = ({ plan }) => {
                     <li>lorem ipsum,lorem ipsum</li>
                     <li>lorem ipsum,lorem ipsum</li>
                     <li>lorem ipsum,lorem ipsum</li>
-
                 </ul>
-                <Button className="mt-5 w-full block" variant="solid"><span>Get Started</span>
+                <Button onClick={() => handlePlan(plan.id)} className="mt-5 w-full block" variant="solid"><span>Get Started</span>
                 </Button>
             </Card>
         </div>
