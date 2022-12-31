@@ -25,6 +25,11 @@ import {
   HiOutlineVariable,
   HiOutlineCode,
   HiOutlineViewGrid,
+  HiOutlineSpeakerphone,
+  HiOutlineRss,
+  HiSupport,
+  HiOutlineMailOpen,
+  HiOutlineGift,
 } from "react-icons/hi";
 import {
   FcBusinessman,
@@ -122,6 +127,7 @@ const navigationIcon = {
   crm: <HiOutlineUserGroup />,
   sales: <HiOutlineTrendingUp />,
   crypto: <HiOutlineCurrencyDollar />,
+  communication: <HiOutlineSpeakerphone />,
   knowledgeBase: <HiOutlineBookOpen />,
   account: <HiOutlineUserCircle />,
   uiComponents: <HiOutlineTemplate />,
@@ -144,6 +150,10 @@ const navigationIcon = {
   sharedComponentDoc: <HiOutlineShare />,
   utilsDoc: <HiOutlineVariable />,
   changeLog: <HiOutlineCode />,
+  socialMedia: <HiOutlineRss />,
+  support: <HiSupport />,
+  envelopeOpen: <HiOutlineMailOpen />,
+  gift: <HiOutlineGift />,
 
   amazon: <AiFillAmazonCircle />,
 };
