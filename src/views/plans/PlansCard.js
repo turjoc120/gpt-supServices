@@ -1,21 +1,38 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Avatar, Button } from 'components/ui'
 import { IconText } from 'components/shared'
 import { FcApproval } from 'react-icons/fc'
 import { apiPlanSubscription } from 'services/PlansServies'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setUser } from 'store/auth/userSlice'
 
 const PlansCard = ({ plan }) => {
 
     const token = useSelector((state) => state?.auth?.session?.token)
     const userEmail = useSelector((state) => state?.auth?.user?.email)
+    const [isLoading, setLoading] = useState(false)
+    const dispatch = useDispatch()
 
     const handlePlan = (priceId) => {
+        setLoading(true)
         apiPlanSubscription(
+            {
+                email: userEmail,
+                priceId
+            },
             { authorization: `Bearer ${token}` }
         ).then(res => {
-            console.log(res);
+            if (res) {
+                setLoading(false);
+                // test remove
+                dispatch(setUser(res.data.updatedUser))
+                console.log(res.data);
+                // test remove
+                window.location.href = res.data.session.url;
+
+            }
+
         })
     }
 
@@ -37,18 +54,28 @@ const PlansCard = ({ plan }) => {
                 </div>
 
 
-                <span className="text-emerald-600 font-semibold">{plan.id === "price_1MJg02E7WZj5EJtA1sjdjffX" ? "Premium" : "Basic"}</span>
+                <span className="text-emerald-600 font-semibold">{plan.id === "price_1MJg02E7WZj5EJtA1sjdjffX" ? "Premium" : plan.id === "price_1ML91EE7WZj5EJtARMjZNhu3" ? "Standard" : "Basic"}</span>
                 <h4 className="font-bold my-3">This Service Includes</h4>
                 <ul>
-                    <li>lorem ipsum,lorem ipsum</li>
-                    <li>lorem ipsum,lorem ipsum</li>
-                    <li>lorem ipsum,lorem ipsum</li>
-                    <li>lorem ipsum,lorem ipsum</li>
-                    <li>lorem ipsum,lorem ipsum</li>
-                    <li>lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+                    <li>- lorem ipsum,lorem ipsum</li>
+
                 </ul>
-                <Button onClick={() => handlePlan(plan.id)} className="mt-5 w-full block" variant="solid"><span>Get Started</span>
+                <Button
+                    className="mt-5 w-full block"
+                    block
+                    loading={isLoading}
+                    variant="solid"
+                    onClick={() => handlePlan(plan.id)}
+                >
+                    {isLoading ? 'Redirecting...' : 'Get Started'}
                 </Button>
+
             </Card>
         </div>
     )

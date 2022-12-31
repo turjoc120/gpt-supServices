@@ -11,7 +11,6 @@ const Plans = () => {
     useEffect(() => {
         apiGetPlans().then(res => {
             setPlans(res.data.data);
-            console.log(res.data.data);
         })
     }, [])
 
@@ -20,7 +19,7 @@ const Plans = () => {
             <div className="mb-8">
                 <h3 className="mb-1 mx-auto ">Plans</h3>
                 <div className='mt-5 mx-auto'>
-                    <div className=" content-center	grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+                    <div className="mx-auto content-center grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                         {!plans ? <Spinner></Spinner> :
                             plans?.map(plan => <PlansCard key={plan.id} plan={plan}></PlansCard>)
                         }

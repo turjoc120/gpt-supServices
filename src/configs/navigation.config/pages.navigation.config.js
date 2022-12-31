@@ -1,6 +1,6 @@
 import { PAGES_PREFIX_PATH } from 'constants/route.constant'
 import { NAV_ITEM_TYPE_TITLE, NAV_ITEM_TYPE_ITEM } from 'constants/navigation.constant'
-import { ADMIN, USER } from 'constants/roles.constant'
+import { ADMIN, BASIC, PREMIUM, USER } from 'constants/roles.constant'
 
 const pagesNavigationConfig = [
 	{
@@ -29,7 +29,7 @@ const pagesNavigationConfig = [
 				translateKey: 'nav.pages.accessDenied',
 				icon: 'accessDenied',
 				type: NAV_ITEM_TYPE_ITEM,
-				authority: [ADMIN, USER],
+				authority: [USER, BASIC, PREMIUM],
 				subMenu: []
 			},
 		]

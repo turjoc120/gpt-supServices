@@ -24,14 +24,14 @@ const AllRoutes = props => {
 		<Routes>
 			<Route path="/" element={<ProtectedRoute />}>
 				<Route path="/" element={<Navigate replace to={userAuthority?.includes("premium", "basic") ? authenticatedEntryPath : unsubEntryPath} />} />
-				{protectedRoutes.map((route, index) => (
+				{protectedRoutes?.map((route, index) => (
 					<Route
 						key={route.key + index}
 						path={route.path}
 						element={
 							<AuthorityGuard
 								userAuthority={userAuthority}
-								authority={route.authority}
+								authority={route?.authority}
 							>
 								<PageContainer {...props} {...route.meta}>
 									<AppRoute

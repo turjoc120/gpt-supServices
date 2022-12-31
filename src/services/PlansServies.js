@@ -1,26 +1,26 @@
 import ApiService from './ApiService'
 
-const BASE_URL_MY = "http://localhost:5000/api"
+
 
 export async function apiGetPlans() {
     return ApiService.fetchData({
-        url: `${BASE_URL_MY}/payment/get-plans`,
+        url: `${process.env.REACT_APP_BASE_API_URL}/payment/get-plans`,
         method: 'get',
     })
 }
 
-export async function apiPlanSubscription(headers) {
+export async function apiPlanSubscription(data, headers) {
     return ApiService.fetchData({
-        url: `${BASE_URL_MY}/payment/subscription`,
+        url: `${process.env.REACT_APP_BASE_API_URL}/payment/subscription`,
         method: 'post',
-
+        data,
         headers
     })
 }
 
 export async function apiAddUser(data, headers) {
     return ApiService.fetchData({
-        url: `${BASE_URL_MY}/user/add-user`,
+        url: `${process.env.REACT_APP_BASE_API_URL}/user/add-user`,
         method: 'post',
         data,
         headers
@@ -28,7 +28,7 @@ export async function apiAddUser(data, headers) {
 }
 export async function apiGetUser(headers) {
     return ApiService.fetchData({
-        url: `${BASE_URL_MY}/user/get-user`,
+        url: `${process.env.REACT_APP_BASE_API_URL}/user/get-user`,
         method: 'get',
         headers
     })

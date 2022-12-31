@@ -4,6 +4,8 @@ import isEmpty from 'lodash/isEmpty'
 function useAuthority(userAuthority = [], authority = [], emptyCheck = false) {
 
 	const roleMatched = useMemo(() => {
+
+		// console.log(authority.some(role => userAuthority.includes(role)));
 		return authority.some(role => userAuthority.includes(role))
 
 	}, [authority, userAuthority])

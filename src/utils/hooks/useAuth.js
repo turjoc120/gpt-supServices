@@ -83,9 +83,12 @@ function useAuth() {
 						message: ""
 					})
 					dispatch(onSignInSuccess(fireToken))
+					dispatch(setUser(addTodb.data.userDe))
+					// console.log(addTodb.data);
+					navigate(appConfig.unsubEntryPath)
 				}
 
-				navigate(appConfig.unsubEntryPath)
+
 
 			})
 			.catch((errors) => {
@@ -117,8 +120,9 @@ function useAuth() {
 				}))
 
 			}
-			setLoading(false)
+
 		});
+		setLoading(false)
 		return () => unsubscribed
 	}, [])
 

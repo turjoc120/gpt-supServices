@@ -10,7 +10,7 @@ const AuthorityGuard = props => {
 	const { isLoading } = useAuthContext;
 	const roleMatched = useAuthority(userAuthority, authority)
 
-	return roleMatched ? children : isLoading ? <Spinner></Spinner> : <Navigate to="/access-denied" />
+	return isLoading ? <Spinner></Spinner> : roleMatched ? children : <Navigate to="/access-denied" />
 }
 
 export default AuthorityGuard
