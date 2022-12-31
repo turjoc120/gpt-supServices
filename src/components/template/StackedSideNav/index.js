@@ -24,19 +24,19 @@ const StackedSideNav = () => {
 
 	const [selectedMenu, setSelectedMenu] = useState({})
 	const [activeKeys, setActiveKeys] = useState()
-	
+
 	const themeColor = useSelector(state => state.theme.themeColor)
 	const primaryColorLevel = useSelector(state => state.theme.primaryColorLevel)
 	const navMode = useSelector(state => state.theme.navMode)
 	const mode = useSelector(state => state.theme.mode)
 	const direction = useSelector(state => state.theme.direction)
 	const currentRouteKey = useSelector(state => state.base.common.currentRouteKey)
-	const userAuthority = useSelector((state) => state.auth.user.authority)
+	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
 	const { larger } = useResponsive()
 
 	const navColor = (navType, mode, ableTheme = true) => {
-		if(navMode === NAV_MODE_THEMED && ableTheme ) {
+		if (navMode === NAV_MODE_THEMED && ableTheme) {
 			return `bg-${themeColor}-${primaryColorLevel} ${navType}-${mode}`
 		}
 		return `${navType}-${mode}`
@@ -59,13 +59,13 @@ const StackedSideNav = () => {
 		let style = {}
 		const marginValue = `${-SPLITTED_SIDE_NAV_SECONDARY_WIDTH}px`
 		if (direction === DIR_LTR) {
-			style =  { marginLeft: marginValue}
+			style = { marginLeft: marginValue }
 		}
 
 		if (direction === DIR_RTL) {
-			style = { marginRight: marginValue}
+			style = { marginRight: marginValue }
 		}
-		
+
 		return style
 	}
 
@@ -75,16 +75,16 @@ const StackedSideNav = () => {
 				larger.md && (
 					<div className={`stacked-side-nav`}>
 						<StackedSideNavMini
-							className={`stacked-side-nav-mini ${navColor('stacked-side-nav-mini', navMode )}`}
-							style={stackedSideNavDefaultStyle} 
+							className={`stacked-side-nav-mini ${navColor('stacked-side-nav-mini', navMode)}`}
+							style={stackedSideNavDefaultStyle}
 							routeKey={currentRouteKey}
 							activeKeys={activeKeys}
 							navMode={navMode}
-							onChange={handleChange} 
+							onChange={handleChange}
 							onSetActiveKey={handleSetActiveKey}
 							userAuthority={userAuthority}
 						/>
-						<div 
+						<div
 							className={`stacked-side-nav-secondary ${navColor('stacked-side-nav-secondary', mode, false)}`}
 							style={
 								{
@@ -94,8 +94,8 @@ const StackedSideNav = () => {
 							}
 						>
 							{!isEmpty(selectedMenu) && (
-								<StackedSideNavSecondary 
-									title={t(selectedMenu.translateKey, selectedMenu.title) }
+								<StackedSideNavSecondary
+									title={t(selectedMenu.translateKey, selectedMenu.title)}
 									menu={selectedMenu.menu}
 									routeKey={currentRouteKey}
 									navMode={NAV_MODE_TRANSPARENT}

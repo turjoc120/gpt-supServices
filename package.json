@@ -17,7 +17,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@visx/pattern": "2.10.0",
     "apexcharts": "^3.35.2",
-    "axios": "^0.27.2",
+    "axios": "^0.21.0",
     "buffer": "^6.0.3",
     "classnames": "^2.2.6",
     "d3-fetch": "^2.0.0",

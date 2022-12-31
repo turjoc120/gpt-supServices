@@ -9,6 +9,7 @@ import useQuery from './useQuery'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail, getIdToken } from 'firebase/auth'
 import { auth } from 'store/auth/firebase'
 import { useEffect, useState } from 'react'
+import { apiAddUser, apiGetPlans, apiGetUser } from 'services/PlansServies'
 
 
 function useAuth() {
@@ -27,19 +28,25 @@ function useAuth() {
 
 		setLoading(true)
 		signInWithEmailAndPassword(auth, values.email, values.password)
-			.then((userCredential) => {
+			.then(async (userCredential) => {
 				if (userCredential.user) {
 					setAuthRes({
 						status: 'success',
 						message: ""
 					})
+
 					getIdToken(userCredential.user).then((token) => {
 						dispatch(onSignInSuccess(token))
 					})
 
+					const userDe = await apiGetUser({ uid: userCredential.user.uid })
+					if (userDe.data.authority.includes("premium", "basic")) {
+						const redirectUrl = query.get(REDIRECT_URL_KEY)
+						navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
+					} else {
+						navigate(appConfig.unsubEntryPath)
+					}
 
-					const redirectUrl = query.get(REDIRECT_URL_KEY)
-					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
 				}
 
 			})
@@ -59,21 +66,30 @@ function useAuth() {
 				await updateProfile(userr, {
 					displayName: values.userName,
 				});
-				if (userCredential.user) {
+				const fireToken = await getIdToken(userCredential.user)
+
+				const addTodb = await apiAddUser(
+					{
+						uid: userCredential.user.uid,
+						avatar: '',
+						userName: values.userName,
+						authority: ['user'],
+						email: values.email
+					}, { authorization: "Bearer " + fireToken })
+
+				if (addTodb.data.status === "valid") {
 					setAuthRes({
 						status: 'success',
 						message: ""
 					})
-					getIdToken(userCredential.user).then((token) => {
-						dispatch(onSignInSuccess(token))
-					})
-
-
-					///check for sub or not 
-					const redirectUrl = query.get(REDIRECT_URL_KEY)
-					navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath)
-
+					dispatch(onSignInSuccess(fireToken))
+					dispatch(setUser(addTodb.data.userDe))
+					// console.log(addTodb.data);
+					navigate(appConfig.unsubEntryPath)
 				}
+
+
+
 			})
 			.catch((errors) => {
 				setAuthRes({
@@ -85,16 +101,15 @@ function useAuth() {
 	}
 
 
-	useEffect(() => {
-		const unsubscribed = onAuthStateChanged(auth, (user) => {
-			if (user) {
 
-				dispatch(setUser({
-					avatar: '',
-					userName: user.displayName,
-					authority: ['admin', 'user'],
-					email: user.email
-				}))
+	useEffect(() => {
+		setLoading(true)
+		const unsubscribed = onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				const userDe = await apiGetUser({ uid: user.uid })
+				dispatch(setUser(userDe.data))
+				const fireToken = await getIdToken(user)
+				dispatch(onSignInSuccess(fireToken))
 			} else {
 
 				dispatch(setUser({
@@ -105,10 +120,13 @@ function useAuth() {
 				}))
 
 			}
-			setLoading(false)
+
 		});
+		setLoading(false)
 		return () => unsubscribed
 	}, [])
+
+
 
 
 	const handleSignOut = () => {

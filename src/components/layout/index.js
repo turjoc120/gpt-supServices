@@ -1,9 +1,9 @@
-import React, { memo, useMemo, lazy, Suspense } from 'react'
+import React, { memo, useMemo, lazy, Suspense, useEffect } from 'react'
 import { Loading } from 'components/shared'
-import { useSelector } from 'react-redux'
-import { 
-	LAYOUT_TYPE_CLASSIC, 
-	LAYOUT_TYPE_MODERN, 
+import { useDispatch, useSelector } from 'react-redux'
+import {
+	LAYOUT_TYPE_CLASSIC,
+	LAYOUT_TYPE_MODERN,
 	LAYOUT_TYPE_SIMPLE,
 	LAYOUT_TYPE_STACKED_SIDE,
 	LAYOUT_TYPE_DECKED,
@@ -12,6 +12,7 @@ import {
 import useAuth from 'utils/hooks/useAuth'
 import useDirection from 'utils/hooks/useDirection'
 import useLocale from 'utils/hooks/useLocale'
+import { setLayout } from 'store/theme/themeSlice'
 
 const layouts = {
 	[LAYOUT_TYPE_CLASSIC]: lazy(() => import('./ClassicLayout')),
@@ -31,16 +32,20 @@ const Layout = () => {
 	useDirection()
 
 	useLocale()
+	const dispatch = useDispatch()
 
 	const AppLayout = useMemo(() => {
+
 		if (authenticated) {
-			return layouts[layoutType]
+			return layouts["classic"]
 		}
 		return lazy(() => import('./AuthLayout'))
+
+
 	}, [layoutType, authenticated])
 
 	return (
-		<Suspense 
+		<Suspense
 			fallback={
 				<div className="flex flex-auto flex-col h-[100vh]">
 					<Loading loading={true} />

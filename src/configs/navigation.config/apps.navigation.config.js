@@ -4,7 +4,7 @@ import {
   NAV_ITEM_TYPE_COLLAPSE,
   NAV_ITEM_TYPE_ITEM,
 } from "constants/navigation.constant";
-import { ADMIN, USER } from "constants/roles.constant";
+import { BASIC, PREMIUM } from "constants/roles.constant";
 
 const appsNavigationConfig = [
   {
@@ -14,7 +14,7 @@ const appsNavigationConfig = [
     translateKey: "menu",
     icon: "apps",
     type: NAV_ITEM_TYPE_TITLE,
-    authority: [ADMIN, USER],
+    authority: [BASIC, PREMIUM],
     subMenu: [
       {
         key: "account",
@@ -42,7 +42,7 @@ const appsNavigationConfig = [
             translateKey: "nav.account.profile.settings",
             icon: "account",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [],
           },
         ],
@@ -83,7 +83,7 @@ const appsNavigationConfig = [
             translateKey: "nav.dashboard.reminders",
             icon: "apps",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [],
           },
         ],
@@ -124,7 +124,7 @@ const appsNavigationConfig = [
             translateKey: "nav.business",
             icon: "crm",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [],
           },
           {
@@ -134,7 +134,7 @@ const appsNavigationConfig = [
             translateKey: "nav.writingTools",
             icon: "guide",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [],
           },
           {
@@ -144,7 +144,7 @@ const appsNavigationConfig = [
             translateKey: "nav.miscellaneous",
             icon: "apps",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [
               // {
               // 	key: 'miscellaneous.dashboard',
@@ -153,7 +153,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.all',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -163,7 +163,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.Cover',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -173,7 +173,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.fictional',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -183,7 +183,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.recipe',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -193,7 +193,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.quora',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -203,7 +203,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.greetings',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -213,7 +213,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.song',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -223,7 +223,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.Job',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -233,7 +233,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.pdDes',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // },
               // {
@@ -243,7 +243,7 @@ const appsNavigationConfig = [
               // 	translateKey: 'nav.miscellaneous.linkedinbio',
               // 	icon: '',
               // 	type: NAV_ITEM_TYPE_ITEM,
-              // 	authority: [ADMIN, USER],
+              // 	authority: [BASIC,PREMIUM],
               // 	subMenu: []
               // }
             ],
@@ -255,7 +255,7 @@ const appsNavigationConfig = [
             translateKey: "nav.allServices",
             icon: "dashboard",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM],
             subMenu: [],
           },
           //   {
@@ -265,7 +265,7 @@ const appsNavigationConfig = [
           //     translateKey: "nav.Descriptions.crypto",
           //     icon: "crypto",
           //     type: NAV_ITEM_TYPE_COLLAPSE,
-          //     authority: [ADMIN, USER],
+          //     authority: [BASIC,PREMIUM],
           //     subMenu: [
           //       // 	{
           //       // 		key: 'appsCrypto.dashboard',
@@ -274,7 +274,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsCrypto.dashboard',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -284,7 +284,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsCrypto.portfolio',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -294,7 +294,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsCrypto.market',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -304,7 +304,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsCrypto.wallets',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //     ],
@@ -316,7 +316,7 @@ const appsNavigationConfig = [
           //     translateKey: "nav.Ideas.knowledgeBase",
           //     icon: "knowledgeBase",
           //     type: NAV_ITEM_TYPE_COLLAPSE,
-          //     authority: [ADMIN, USER],
+          //     authority: [BASIC,PREMIUM],
           //     subMenu: [
           //       // 	{
           //       // 		key: 'appsknowledgeBase.helpCenter',
@@ -325,7 +325,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsknowledgeBase.helpCenter',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -335,7 +335,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsknowledgeBase.article',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -345,7 +345,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsknowledgeBase.manageArticles',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -355,7 +355,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsknowledgeBase.editArticle',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //     ],
@@ -367,7 +367,7 @@ const appsNavigationConfig = [
           //     translateKey: "nav.Titles.account",
           //     icon: "account",
           //     type: NAV_ITEM_TYPE_COLLAPSE,
-          //     authority: [ADMIN, USER],
+          //     authority: [BASIC,PREMIUM],
           //     subMenu: [
           //       // 	{
           //       // 		key: 'appsAccount.settings',
@@ -376,7 +376,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsAccount.settings',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -386,7 +386,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsAccount.invoice',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -396,7 +396,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsAccount.activityLog',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //       // 	{
@@ -406,7 +406,7 @@ const appsNavigationConfig = [
           //       // 		translateKey: 'nav.appsAccount.kycForm',
           //       // 		icon: '',
           //       // 		type: NAV_ITEM_TYPE_ITEM,
-          //       // 		authority: [ADMIN, USER],
+          //       // 		authority: [BASIC,PREMIUM],
           //       // 		subMenu: []
           //       // 	},
           //     ],

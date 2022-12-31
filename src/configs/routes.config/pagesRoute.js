@@ -7,7 +7,7 @@ const pagesRoute = [
         key: 'pages.welcome',
         path: `${PAGES_PREFIX_PATH}/welcome`,
         component: React.lazy(() => import('views/pages/Welcome')),
-        authority: [ADMIN, USER],
+        authority: [USER],
     },
     {
         key: 'pages.accessDenied',
