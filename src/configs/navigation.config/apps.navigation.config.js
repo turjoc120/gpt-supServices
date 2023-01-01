@@ -4,7 +4,7 @@ import {
   NAV_ITEM_TYPE_COLLAPSE,
   NAV_ITEM_TYPE_ITEM,
 } from "constants/navigation.constant";
-import { BASIC, PREMIUM } from "constants/roles.constant";
+import { BASIC, PREMIUM, ADMIN, USER } from "constants/roles.constant";
 
 const appsNavigationConfig = [
   {
@@ -14,7 +14,7 @@ const appsNavigationConfig = [
     translateKey: "menu",
     icon: "apps",
     type: NAV_ITEM_TYPE_TITLE,
-    authority: [BASIC, PREMIUM],
+    authority: [BASIC, PREMIUM, USER],
     subMenu: [
       {
         key: "account",
@@ -23,7 +23,7 @@ const appsNavigationConfig = [
         translateKey: "account",
         icon: "account",
         type: NAV_ITEM_TYPE_TITLE,
-        authority: [ADMIN, USER],
+        authority: [BASIC, PREMIUM, USER],
         subMenu: [
           {
             key: "account.profile",
@@ -32,7 +32,7 @@ const appsNavigationConfig = [
             translateKey: "nav.account.profile",
             icon: "account",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [BASIC, PREMIUM, USER],
             subMenu: [],
           },
           {
@@ -42,7 +42,7 @@ const appsNavigationConfig = [
             translateKey: "nav.account.profile.settings",
             icon: "account",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [BASIC, PREMIUM],
+            authority: [BASIC, PREMIUM, USER],
             subMenu: [],
           },
         ],

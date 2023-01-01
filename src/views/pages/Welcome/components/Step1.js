@@ -11,9 +11,9 @@ const Step1 = ({ onNext, onSkip }) => {
 				darkModeSrc="/img/others/welcome-dark.png"
 				alt="Welcome"
 			/>
-			<h3 className="mb-2">Welcome on Board, lets get started with Elstar</h3>
-			<p className="text-base">Telling us a bit about yourself to get the best experience, this will only take a minute or two.</p>
-			<div className="mt-8 max-w-[350px] mx-auto">
+			<h3 className="mb-2">Welcome on Board!</h3>
+			<p className="text-base">thanks for trusting us! </p>
+			{/* <div className="mt-8 max-w-[350px] mx-auto">
 				<Button 
 					className="mb-2" 
 					variant="solid"
@@ -28,7 +28,7 @@ const Step1 = ({ onNext, onSkip }) => {
 				>
 					Skip now
 				</Button>
-			</div>
+			</div> */}
 		</div>
 	)
 }

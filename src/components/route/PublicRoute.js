@@ -13,7 +13,7 @@ const PublicRoute = () => {
     const { authenticated, isLoading } = useAuthContext()
     const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
-    return authenticated ? isLoading ? <Spinner></Spinner> : <Navigate to={userAuthority?.includes("premium", "basic") ? authenticatedEntryPath : unsubEntryPath} /> : <Outlet />
+    return authenticated ? isLoading ? <Spinner></Spinner> : <Navigate to={userAuthority?.includes("premium") ? authenticatedEntryPath : unsubEntryPath} /> : <Outlet />
 }
 
 export default PublicRoute

@@ -1,6 +1,6 @@
 
 import { NAV_ITEM_TYPE_COLLAPSE, NAV_ITEM_TYPE_TITLE } from "constants/navigation.constant";
-import { ADMIN, USER } from "constants/roles.constant";
+import { PREMIUM, USER } from "constants/roles.constant";
 const plansNavigationConfig = [
     {
         key: "subs",
@@ -9,7 +9,7 @@ const plansNavigationConfig = [
         translateKey: "SUBSCRIPTION",
         icon: "apps",
         type: NAV_ITEM_TYPE_TITLE,
-        authority: [USER],
+        authority: [USER, PREMIUM, USER],
         subMenu: [{
             key: "plans",
             path: `/plans`,
@@ -17,7 +17,7 @@ const plansNavigationConfig = [
             translateKey: "nav.subs.plans",
             icon: "project",
             type: NAV_ITEM_TYPE_COLLAPSE,
-            authority: [ADMIN, USER],
+            authority: [USER, PREMIUM, USER],
             subMenu: [],
         },]
     }

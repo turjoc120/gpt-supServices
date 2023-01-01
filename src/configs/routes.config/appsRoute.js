@@ -22,7 +22,13 @@ const appsRoute = [
         component: React.lazy(() => import('views/crm/CrmDashboard')),
         authority: [BASIC, PREMIUM],
     },
-    ///////
+    {
+        key: 'apps.welcome',
+        path: `${APP_PREFIX_PATH}/welcome-page`,
+        component: React.lazy(() => import('views/pages/Welcome')),
+        authority: [USER, BASIC, PREMIUM],
+    },
+    ////////////////////////////////////////////////////
 
     {
         key: 'appsProject.projectList',

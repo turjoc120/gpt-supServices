@@ -23,7 +23,7 @@ const AllRoutes = props => {
 
 		<Routes>
 			<Route path="/" element={<ProtectedRoute />}>
-				<Route path="/" element={<Navigate replace to={userAuthority?.includes("premium", "basic") ? authenticatedEntryPath : unsubEntryPath} />} />
+				<Route path="/" element={<Navigate replace to={userAuthority?.includes("premium") ? authenticatedEntryPath : unsubEntryPath} />} />
 				{protectedRoutes?.map((route, index) => (
 					<Route
 						key={route.key + index}

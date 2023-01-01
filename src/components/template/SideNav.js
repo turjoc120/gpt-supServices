@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { ScrollBar } from 'components/ui'
+import { ScrollBar, Spinner } from 'components/ui'
 import PropTypes from 'prop-types'
 import {
 	SIDE_NAV_WIDTH,
@@ -17,6 +17,7 @@ import VerticalMenuContent from 'components/template/VerticalMenuContent'
 import useResponsive from 'utils/hooks/useResponsive'
 import { useSelector } from 'react-redux'
 import planNavigation from 'configs/navigation.config/plansNavigation'
+import useAuthContext from 'utils/hooks/useAuthContext'
 
 const sideNavStyle = {
 	width: SIDE_NAV_WIDTH,
@@ -40,6 +41,7 @@ const SideNav = () => {
 	const userAuthority = useSelector((state) => state?.auth?.user?.authority)
 
 	const { larger } = useResponsive()
+	const { isLoading } = useAuthContext()
 
 	const sideNavColor = () => {
 		if (navMode === NAV_MODE_THEMED) {
@@ -61,14 +63,15 @@ const SideNav = () => {
 	}
 
 	const menuContent = (
-		<VerticalMenuContent
-			navMode={navMode}
-			collapsed={sideNavCollapse}
-			navigationTree={userAuthority?.includes("basic", "premium") ? navigationConfig : planNavigation}
-			routeKey={currentRouteKey}
-			userAuthority={userAuthority}
-			direction={direction}
-		/>
+		!isLoading ?
+			<VerticalMenuContent
+				navMode={navMode}
+				collapsed={sideNavCollapse}
+				navigationTree={userAuthority?.includes("premium") ? navigationConfig : planNavigation}
+				routeKey={currentRouteKey}
+				userAuthority={userAuthority}
+				direction={direction}
+			/> : <Spinner></Spinner>
 	)
 
 	return (
