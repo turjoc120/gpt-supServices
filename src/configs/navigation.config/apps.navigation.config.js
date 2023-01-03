@@ -58,7 +58,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "dashboard.users",
-            path: ``,
+            path: `/dashboard/map_of_users`,
             title: "Map Of Users",
             translateKey: "nav.dashboard.users",
             icon: "apps",
@@ -68,7 +68,7 @@ const appsNavigationConfig = [
           },
           {
             key: "dashboard.users",
-            path: ``,
+            path: `/dashboard/user_statistics`,
             title: "User Statistics",
             translateKey: "nav.dashboard.users",
             icon: "apps",
@@ -78,7 +78,7 @@ const appsNavigationConfig = [
           },
           {
             key: "dashboard.reminders",
-            path: ``,
+            path: `/dashboard/reminders`,
             title: "Reminders/To-Do List",
             translateKey: "nav.dashboard.reminders",
             icon: "apps",
@@ -415,7 +415,7 @@ const appsNavigationConfig = [
       },
       {
         key: "project",
-        path: "",
+        path: "/project_management",
         title: "PROJECT MANAGEMENT",
         translateKey: "project",
         icon: "project",
@@ -424,7 +424,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "project.current",
-            path: ``,
+            path: `/project_management/current_projects`,
             title: "Current Projects",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -434,7 +434,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.past",
-            path: ``,
+            path: `/project_management/past_projects`,
             title: "Past Projects",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -444,7 +444,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.favorites",
-            path: ``,
+            path: `/project_management/favorites`,
             title: "Favorites",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
