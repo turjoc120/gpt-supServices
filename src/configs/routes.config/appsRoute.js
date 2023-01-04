@@ -31,6 +31,11 @@ const appsRoute = [
     authority: [USER, BASIC, PREMIUM],
   },
   {
+    path: `/coming_soon`,
+    component: React.lazy(() => import("views/coming_soon")),
+    authority: [USER, BASIC, PREMIUM],
+  },
+  {
     key: "appsCrm.dashboard",
     path: `${APP_PREFIX_PATH}/crm/dashboard`,
     component: React.lazy(() => import("views/crm/CrmDashboard")),

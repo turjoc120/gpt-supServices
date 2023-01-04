@@ -424,7 +424,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "project.current",
-            path: `/project_management/current_projects`,
+            path: `/coming_soon`,
             title: "Current Projects",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -434,7 +434,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.past",
-            path: `/project_management/past_projects`,
+            path: `/coming_soon`,
             title: "Past Projects",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -444,7 +444,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.favorites",
-            path: `/project_management/favorites`,
+            path: `/coming_soon`,
             title: "Favorites",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -454,7 +454,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.top.searched.questions",
-            path: ``,
+            path: `/coming_soon`,
             title: "Top Searched Questions",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -464,7 +464,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.top.searched.topics",
-            path: ``,
+            path: `/coming_soon`,
             title: "Top Searched Topics",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -474,7 +474,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.top.searched.services",
-            path: ``,
+            path: `/coming_soon`,
             title: "Top Searched Services",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -484,7 +484,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.top.searched.words",
-            path: ``,
+            path: `/coming_soon`,
             title: "Top Searched Words",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -494,7 +494,7 @@ const appsNavigationConfig = [
           },
           {
             key: "project.top.used.tools",
-            path: ``,
+            path: `/coming_soon`,
             title: "Top Used Tools",
             translateKey: "nav.dashboard.projects",
             icon: "apps",
@@ -515,7 +515,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "content.videos",
-            path: ``,
+            path: `/coming_soon`,
             title: "Videos",
             translateKey: "nav.dashboard.content",
             icon: "apps",
@@ -525,7 +525,7 @@ const appsNavigationConfig = [
           },
           {
             key: "content.photos",
-            path: ``,
+            path: `/coming_soon`,
             title: "Photos",
             translateKey: "nav.dashboard.content",
             icon: "apps",
@@ -535,7 +535,7 @@ const appsNavigationConfig = [
           },
           {
             key: "content.documents",
-            path: ``,
+            path: `/coming_soon`,
             title: "Documents",
             translateKey: "nav.dashboard.content",
             icon: "apps",
@@ -556,7 +556,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "communication.instagram",
-            path: ``,
+            path: `/coming_soon`,
             title: "Instagram",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -566,7 +566,7 @@ const appsNavigationConfig = [
           },
           {
             key: "communication.tikTok",
-            path: ``,
+            path: `/coming_soon`,
             title: "Tik-Tok",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -576,7 +576,7 @@ const appsNavigationConfig = [
           },
           {
             key: "communication.facebook",
-            path: ``,
+            path: `/coming_soon`,
             title: "Facebook",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -586,7 +586,7 @@ const appsNavigationConfig = [
           },
           {
             key: "communication.twitter",
-            path: ``,
+            path: `/coming_soon`,
             title: "Twitter",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -596,7 +596,7 @@ const appsNavigationConfig = [
           },
           {
             key: "communication.linkedin",
-            path: ``,
+            path: `/coming_soon`,
             title: "LinkedIn",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -606,7 +606,7 @@ const appsNavigationConfig = [
           },
           {
             key: "communication.youtube",
-            path: ``,
+            path: `/coming_soon`,
             title: "Youtube",
             translateKey: "nav.dashboard.communication",
             icon: "apps",
@@ -627,7 +627,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "socialMedia.instagram",
-            path: ``,
+            path: `/coming_soon`,
             title: "Instagram",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -637,7 +637,7 @@ const appsNavigationConfig = [
           },
           {
             key: "socialMedia.tikTok",
-            path: ``,
+            path: `/coming_soon`,
             title: "Tik-Tok",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -647,7 +647,7 @@ const appsNavigationConfig = [
           },
           {
             key: "socialMedia.facebook",
-            path: ``,
+            path: `/coming_soon`,
             title: "Facebook",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -657,7 +657,7 @@ const appsNavigationConfig = [
           },
           {
             key: "socialMedia.twitter",
-            path: ``,
+            path: `/coming_soon`,
             title: "Twitter",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -667,7 +667,7 @@ const appsNavigationConfig = [
           },
           {
             key: "socialMedia.linkedin",
-            path: ``,
+            path: `/coming_soon`,
             title: "LinkedIn",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -677,7 +677,7 @@ const appsNavigationConfig = [
           },
           {
             key: "socialMedia.youtube",
-            path: ``,
+            path: `/coming_soon`,
             title: "Youtube",
             translateKey: "nav.dashboard.socialMedia",
             icon: "apps",
@@ -698,7 +698,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "analytics.allReports",
-            path: ``,
+            path: `/coming_soon`,
             title: "All Reports",
             translateKey: "nav.dashboard.analytics",
             icon: "apps",
@@ -708,7 +708,7 @@ const appsNavigationConfig = [
           },
           {
             key: "analytics.pastReports",
-            path: ``,
+            path: `/coming_soon`,
             title: "Past Reports",
             translateKey: "nav.dashboard.analytics",
             icon: "apps",
@@ -718,7 +718,7 @@ const appsNavigationConfig = [
           },
           {
             key: "analytics.industry",
-            path: ``,
+            path: `/coming_soon`,
             title: "Industry Benchmarking",
             translateKey: "nav.dashboard.analytics",
             icon: "apps",
@@ -728,7 +728,7 @@ const appsNavigationConfig = [
           },
           {
             key: "analytics.statistics",
-            path: ``,
+            path: `/coming_soon`,
             title: "Post Statistics",
             translateKey: "nav.dashboard.analytics",
             icon: "apps",
@@ -749,7 +749,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "knowledgeBase.articles",
-            path: ``,
+            path: `/coming_soon`,
             title: "Articles",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -759,7 +759,7 @@ const appsNavigationConfig = [
           },
           {
             key: "knowledgeBase.upcomingServices",
-            path: ``,
+            path: `/coming_soon`,
             title: "Upcoming Services",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -769,7 +769,7 @@ const appsNavigationConfig = [
           },
           {
             key: "knowledgeBase.roadmap",
-            path: ``,
+            path: `/coming_soon`,
             title: "Roadmap",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -779,7 +779,7 @@ const appsNavigationConfig = [
           },
           {
             key: "knowledgeBase.inspiration",
-            path: ``,
+            path: `/coming_soon`,
             title: "Inspiration",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -789,7 +789,7 @@ const appsNavigationConfig = [
           },
           {
             key: "knowledgeBase.community",
-            path: ``,
+            path: `/coming_soon`,
             title: "Community",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -799,7 +799,7 @@ const appsNavigationConfig = [
           },
           {
             key: "knowledgeBase.resources",
-            path: ``,
+            path: `/coming_soon`,
             title: "Resources",
             translateKey: "nav.dashboard.knowledgeBase",
             icon: "apps",
@@ -820,7 +820,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "newsletter.campaign",
-            path: ``,
+            path: `/coming_soon`,
             title: "Campaign",
             translateKey: "nav.dashboard.newsletter",
             icon: "apps",
@@ -830,7 +830,7 @@ const appsNavigationConfig = [
           },
           {
             key: "newsletter.audiences",
-            path: ``,
+            path: `/coming_soon`,
             title: "Audiences",
             translateKey: "nav.dashboard.newsletter",
             icon: "apps",
@@ -851,7 +851,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "royaltyProgram.referral",
-            path: ``,
+            path: `/coming_soon`,
             title: "Referral Link",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -861,7 +861,7 @@ const appsNavigationConfig = [
           },
           {
             key: "royaltyProgram.trackActivity",
-            path: ``,
+            path: `/coming_soon`,
             title: "Track User Activity",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -871,7 +871,7 @@ const appsNavigationConfig = [
           },
           {
             key: "royaltyProgram.rewards",
-            path: ``,
+            path: `/coming_soon`,
             title: "Rewards & Milestones",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -881,7 +881,7 @@ const appsNavigationConfig = [
           },
           {
             key: "royaltyProgram.abr",
-            path: ``,
+            path: `/coming_soon`,
             title: "Action Based Rewards",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -891,7 +891,7 @@ const appsNavigationConfig = [
           },
           {
             key: "royaltyProgram.badge",
-            path: ``,
+            path: `/coming_soon`,
             title: "Badge Level",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -901,7 +901,7 @@ const appsNavigationConfig = [
           },
           {
             key: "royaltyProgram.lcr",
-            path: ``,
+            path: `/coming_soon`,
             title: "Loyalty Customer Rating",
             translateKey: "nav.dashboard.royaltyProgram",
             icon: "apps",
@@ -922,7 +922,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "team.upgradePackages",
-            path: ``,
+            path: `/coming_soon`,
             title: "Upgrade Packages",
             translateKey: "nav.dashboard.upgradePackages",
             icon: "apps",
@@ -943,7 +943,7 @@ const appsNavigationConfig = [
         subMenu: [
           {
             key: "support.videoGuides",
-            path: ``,
+            path: `/coming_soon`,
             title: "Video Guides",
             translateKey: "nav.dashboard.support",
             icon: "apps",
@@ -953,7 +953,7 @@ const appsNavigationConfig = [
           },
           {
             key: "support.faq",
-            path: ``,
+            path: `/coming_soon`,
             title: "FAQ",
             translateKey: "nav.dashboard.support",
             icon: "apps",
@@ -963,7 +963,7 @@ const appsNavigationConfig = [
           },
           {
             key: "support.contact",
-            path: ``,
+            path: `/coming_soon`,
             title: "Contact Us",
             translateKey: "nav.dashboard.support",
             icon: "apps",
