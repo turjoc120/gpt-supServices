@@ -15,7 +15,7 @@ Welcome to ChatGPT Services, a collection of AI-powered services designed to ass
 - Sentiment Analysis
 - Keyword Extraction
 - Chatbot
-- and many more...
+- and many more..
 
 ## Usage
 
