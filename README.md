@@ -21,6 +21,10 @@ Welcome to ChatGPT Services, a collection of AI-powered services designed to ass
 
 To use our services, simply visit our website at [https://ai-dashboard-six.vercel.app/] and choose the service that best fits your needs. Follow the instructions on the service page to input your text, image, or other data, and receive your AI-generated output.
 
+## server side
+
+Check out the server side repo [https://github.com/turjoc120/aiDb-server]
+
 ## Support
 
 If you encounter any issues or have any questions or feedback about our services, please contact us at [turjoc120@gmail.com].
