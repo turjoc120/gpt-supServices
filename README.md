@@ -29,4 +29,21 @@ If you encounter any issues or have any questions or feedback about our services
 
 We welcome contributions to our project! If you would like to contribute.
 
+## Prerequisites
+
+Before you can install the this project, you need to have the following software installed on your computer:
+
+- Node.js (version 10 or higher)
+- npm (version 5.2 or higher)
+
+## Installation
+
+To install the React project, follow these steps:
+
+1. Clone the repository to your local machine using `git clone https://github.com/clickableman1/ai_dashboard`
+2. Change to the project directory using `cd ai_dashboard`
+3. Run `npm install` to install the project dependencies
+4. Once the installation is complete, run `npm start` to start the development server
+5. Open your web browser and navigate to `http://localhost:3000`
+
 
