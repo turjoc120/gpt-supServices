@@ -1,4 +1,4 @@
-# ChatGPT Services
+# GPTsup Services
 
 Welcome to ChatGPT Services, a collection of AI-powered services designed to assist you in various tasks. These services are powered by ChatGPT, a large language model trained by OpenAI.
 
