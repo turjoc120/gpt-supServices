@@ -44,7 +44,7 @@ Before you can install the this project, you need to have the following software
 
 To install the React project, follow these steps:
 
-1. Clone the repository to your local machine using `git clone https://github.com/clickableman1/ai_dashboard`
+1. Clone the repository to your local machine using `git clone https://github.com/turjoc120/gpt-supServices`
 2. Change to the project directory using `cd ai_dashboard`
 3. Run `npm install` to install the project dependencies
 4. Once the installation is complete, run `npm start` to start the development server
